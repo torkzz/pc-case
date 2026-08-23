@@ -55,6 +55,31 @@ chmod +x setup.sh
 
 ---
 
+## 🔬 Hardware & Wire Protocol Architecture
+
+- **Target USB Device:** VID `0x33c3` (`HL VMAX`), PID `0xf101` (`HL-VMAX-USB-Device`)
+- **USB Interface:** Interface `1` (`CDC Data`)
+- **Endpoint:** Endpoint `0x02` Bulk OUT (High Speed USB 2.0)
+- **Native Resolution:** `460 × 1920` (1:4 Portrait aspect ratio)
+- **Keep-Alive Requirement:** Periodic frame transmission every `<= 3.5s` (prevents firmware backlight auto-turnoff).
+
+### 12-Byte MSDisplay Header Format
+
+```
++------------------------------------------------------------------------------------+
+| Offset (Hex) | Size (Bytes) | Field Name             | Type       | Value          |
++------------------------------------------------------------------------------------+
+| 0x00 - 0x03  | 4            | Magic Header Signature | uint32_le  | 0x0008100A     |
+| 0x04 - 0x05  | 2            | Frame Width            | uint16_le  | 460 (0x01CC)   |
+| 0x06 - 0x07  | 2            | Frame Height           | uint16_le  | 1920 (0x0780)  |
+| 0x08 - 0x09  | 2            | Frame Stride           | uint16_le  | 0 (0x0000)     |
+| 0x0A - 0x0B  | 2            | Quality / Flag         | uint16_le  | 1 (0x0001)     |
+| 0x0C - End   | N            | TurboJPEG Frame Data   | Bytes      | Starts 0xFFD8  |
++------------------------------------------------------------------------------------+
+```
+
+---
+
 ## 🎮 CLI Manual Usage
 
 Run test patterns, solid colors, or custom images:
