@@ -10,7 +10,7 @@ USBDEVFS_CLAIMINTERFACE = 0x8004550F
 USBDEVFS_RELEASEINTERFACE = 0x80045510
 USBDEVFS_BULK = 0xC0185502
 
-WIDTH = 480
+WIDTH = 460
 HEIGHT = 1920
 MSDISPLAY_MAGIC_SIGNATURE = 0x0008100A
 
@@ -40,17 +40,17 @@ def send_frame(fd, jpeg_bytes):
     # MSDisplay Header: W=480 (0x01E0), H=1920 (0x0780), Stride=0, Flag=1
     header = struct.pack("<IHHHH", MSDISPLAY_MAGIC_SIGNATURE, WIDTH, HEIGHT, 0, 1)
     payload = header + jpeg_bytes
-    
+
     data_buf = ctypes.create_string_buffer(payload)
     bulk_req = struct.pack('IIIIPI', 0x02, len(payload), 2000, 0, ctypes.addressof(data_buf), 0)
     return fcntl.ioctl(fd, USBDEVFS_BULK, bulk_req)
 
 def generate_3col_grid_jpeg():
     jpg_path = "/tmp/480x1920_3col_grid.jpg"
-    
+
     img = Image.new('RGB', (WIDTH, HEIGHT), (0, 0, 0))
     draw = ImageDraw.Draw(img)
-    
+
     # 3 Vertical Columns across 480px width (each 160px wide)
     # 4 Horizontal Rows across 1920px height (each 480px tall)
     colors_grid = [
@@ -63,10 +63,10 @@ def generate_3col_grid_jpeg():
         # Row 3 (Y: 1440 - 1920)
         [(128, 0, 0),   (0, 128, 0),   (0, 0, 128)]      # Dark Red, Dark Green, Dark Blue
     ]
-    
+
     col_w = 160
     row_h = 480
-    
+
     for row_idx in range(4):
         y0 = row_idx * row_h
         y1 = (row_idx + 1) * row_h
@@ -76,9 +76,9 @@ def generate_3col_grid_jpeg():
             c = colors_grid[row_idx][col_idx]
             # Non-overlapping rectangle boundary
             draw.rectangle([x0, y0, x1 - 1, y1 - 1], fill=c)
-            
+
     img.save(jpg_path, "JPEG", quality=95, subsampling=0)
-    
+
     with open(jpg_path, 'rb') as f:
         return f.read()
 
@@ -87,7 +87,7 @@ def main():
     if not dev_path:
         print("[ERROR] Device 33c3:f101 not found.")
         sys.exit(1)
-        
+
     unbind_cdc_acm()
     jpeg_bytes = generate_3col_grid_jpeg()
     print(f"=== 480x1920 3-Column x 4-Row Test (JPEG size: {len(jpeg_bytes)} B) ===")
@@ -95,7 +95,7 @@ def main():
     print("  Column 1 (Left 0-160px)  : RED, Yellow, Orange, Dark Red")
     print("  Column 2 (Mid  160-320px): GREEN, Cyan, Mint, Dark Green")
     print("  Column 3 (Right 320-480px): BLUE, Magenta, Purple, Dark Blue")
-    
+
     fd = os.open(dev_path, os.O_RDWR)
     try:
         fcntl.ioctl(fd, USBDEVFS_CLAIMINTERFACE, struct.pack('I', 1))
