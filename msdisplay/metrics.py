@@ -4,6 +4,7 @@ import time
 import socket
 import platform
 import subprocess
+import urllib.request
 from collections import deque
 
 class RingBuffer:
@@ -25,6 +26,10 @@ class SystemMetricsCollector:
         self.prev_cpu_time = None
         self.prev_net_time = None
         self.prev_net_bytes = None
+        
+        # Public IP Caching (refresh every 5 minutes)
+        self.cached_public_ip = "N/A"
+        self.last_public_ip_fetch = 0.0
         
         # History buffers for sparklines
         self.history_cpu = RingBuffer(maxlen=history_len)
@@ -199,6 +204,28 @@ class SystemMetricsCollector:
             return {'rx_mb_s': 0.0, 'tx_mb_s': 0.0}
 
     def get_cpu_temp(self):
+        # 1. Try hwmon (k10temp / coretemp / zen)
+        try:
+            hw_path = '/sys/class/hwmon'
+            if os.path.exists(hw_path):
+                for h in sorted(os.listdir(hw_path)):
+                    nf = os.path.join(hw_path, h, 'name')
+                    name = ''
+                    if os.path.exists(nf):
+                        with open(nf, 'r') as f_n:
+                            name = f_n.read().strip().lower()
+                    if name in ('k10temp', 'coretemp', 'zenpower', 'cpu_thermal'):
+                        for f in sorted(os.listdir(os.path.join(hw_path, h))):
+                            if f.startswith('temp') and f.endswith('_input'):
+                                tf_path = os.path.join(hw_path, h, f)
+                                with open(tf_path, 'r') as f_t:
+                                    val = int(f_t.read().strip()) // 1000
+                                if 10 <= val <= 110:
+                                    return val
+        except Exception:
+            pass
+
+        # 2. Try thermal_zone
         try:
             sys_path = '/sys/class/thermal'
             if os.path.exists(sys_path):
@@ -207,13 +234,44 @@ class SystemMetricsCollector:
                         type_f = os.path.join(sys_path, zone, 'type')
                         temp_f = os.path.join(sys_path, zone, 'temp')
                         if os.path.exists(type_f) and os.path.exists(temp_f):
-                            ztype = open(type_f).read().strip().lower()
-                            if 'x86_pkg_temp' in ztype or 'cpu' in ztype or 'acpitz' in ztype:
-                                temp = int(open(temp_f).read().strip()) // 1000
-                                return temp
+                            with open(type_f, 'r') as f_type:
+                                ztype = f_type.read().strip().lower()
+                            if 'x86_pkg_temp' in ztype or 'cpu' in ztype or 'acpitz' in ztype or 'k10temp' in ztype:
+                                with open(temp_f, 'r') as f_temp:
+                                    temp = int(f_temp.read().strip()) // 1000
+                                if 10 <= temp <= 110:
+                                    return temp
         except Exception:
             pass
         return None
+
+    def get_ip_addresses(self):
+        # Local IP Address
+        local_ip = "127.0.0.1"
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.connect(('10.255.255.255', 1))
+            local_ip = s.getsockname()[0]
+            s.close()
+        except Exception:
+            pass
+
+        # Public IP Address (Cached 5 minutes)
+        now = time.monotonic()
+        if (now - self.last_public_ip_fetch) > 300.0 or self.cached_public_ip == "N/A":
+            try:
+                req = urllib.request.Request('https://api.ipify.org', headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req, timeout=1.5) as resp:
+                    self.cached_public_ip = resp.read().decode('utf-8').strip()
+                    self.last_public_ip_fetch = now
+            except Exception:
+                if self.cached_public_ip == "N/A":
+                    self.cached_public_ip = "Offline"
+
+        return {
+            'local': local_ip,
+            'public': self.cached_public_ip
+        }
 
     def get_system_info(self):
         try:
@@ -226,10 +284,14 @@ class SystemMetricsCollector:
         except Exception:
             uptime_str = "N/A"
 
+        ips = self.get_ip_addresses()
+
         return {
             'hostname': socket.gethostname().upper(),
             'kernel': platform.release(),
-            'uptime': uptime_str
+            'uptime': uptime_str,
+            'ip_local': ips['local'],
+            'ip_public': ips['public']
         }
 
     def collect_all(self):

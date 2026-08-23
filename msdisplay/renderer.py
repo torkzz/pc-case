@@ -89,105 +89,109 @@ class DashboardRenderer:
         WHITE_TEXT     = (255, 255, 255)
 
         # ----------------------------------------------------
-        # TOP HEADER CARD (Y: 18 - 165)
+        # TOP HEADER CARD (Y: 18 - 175)
         # ----------------------------------------------------
-        draw.rectangle([x0, 18, x1, 165], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 18, x1, 60], fill=RED_HEADER_BG)
-        draw.text((28, 26), sys_info['hostname'], fill=WHITE_TEXT, font=self.font_header)
+        draw.rectangle([x0, 18, x1, 175], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 18, x1, 58], fill=RED_HEADER_BG)
+        draw.text((28, 24), sys_info['hostname'], fill=WHITE_TEXT, font=self.font_header)
         
         clk_str = time.strftime("%H:%M:%S")
-        draw.text((28, 75), f"UPTIME: {sys_info['uptime']}", fill=WHITE_TEXT, font=self.font_sub)
-        draw.text((28, 115), f"KERNEL: {sys_info['kernel']}", fill=RED_TEXT_MUTED, font=self.font_micro)
-        draw.text((310, 115), clk_str, fill=WHITE_TEXT, font=self.font_title)
+        draw.text((310, 24), clk_str, fill=WHITE_TEXT, font=self.font_title)
+
+        draw.text((28, 68), f"UPTIME: {sys_info['uptime']}", fill=WHITE_TEXT, font=self.font_sub)
+        draw.text((28, 96), f"LOCAL IP: {sys_info['ip_local']}", fill=WHITE_TEXT, font=self.font_micro)
+        draw.text((28, 118), f"PUBLIC IP: {sys_info['ip_public']}", fill=WHITE_TEXT, font=self.font_micro)
+        draw.text((28, 140), f"KERNEL: {sys_info['kernel']}", fill=RED_TEXT_MUTED, font=self.font_micro)
 
         # ----------------------------------------------------
-        # SECTION 1: CPU MONITOR (Y: 180 - 500)
+        # SECTION 1: CPU MONITOR (Y: 190 - 510)
         # ----------------------------------------------------
-        draw.rectangle([x0, 180, x1, 500], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 180, x1, 225], fill=RED_HEADER_BG)
-        draw.text((28, 190), "CPU PROCESSOR", fill=WHITE_TEXT, font=self.font_title)
+        draw.rectangle([x0, 190, x1, 510], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 190, x1, 235], fill=RED_HEADER_BG)
+        draw.text((28, 200), "CPU PROCESSOR", fill=WHITE_TEXT, font=self.font_title)
         
         cpu_pct = cpu['utilization']
-        draw.text((28, 240), f"{cpu_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
+        draw.text((28, 250), f"{cpu_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
         
-        if cpu_temp:
-            draw.text((270, 250), f"TEMP: {cpu_temp}°C", fill=WHITE_TEXT, font=self.font_sub)
+        # Display CPU Temperature
+        cpu_temp_str = f"TEMP: {cpu_temp}°C" if cpu_temp else "TEMP: N/A"
+        draw.text((250, 255), cpu_temp_str, fill=WHITE_TEXT, font=self.font_title)
             
         load_str = f"LOAD: {cpu['load_avg'][0]}  {cpu['load_avg'][1]}  {cpu['load_avg'][2]}"
-        draw.text((28, 300), load_str, fill=RED_TEXT_MUTED, font=self.font_micro)
+        draw.text((28, 310), load_str, fill=RED_TEXT_MUTED, font=self.font_micro)
         
-        self.draw_progress_bar(draw, inner_x, 335, inner_w, 24, cpu_pct, RED_BAR_FG)
-        self.draw_sparkline(draw, inner_x, 375, inner_w, 110, hist['cpu'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
+        self.draw_progress_bar(draw, inner_x, 345, inner_w, 24, cpu_pct, RED_BAR_FG)
+        self.draw_sparkline(draw, inner_x, 385, inner_w, 105, hist['cpu'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
 
         # ----------------------------------------------------
-        # SECTION 2: GPU MONITOR (Y: 515 - 835)
+        # SECTION 2: GPU MONITOR (Y: 525 - 845)
         # ----------------------------------------------------
-        draw.rectangle([x0, 515, x1, 835], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 515, x1, 560], fill=RED_HEADER_BG)
-        draw.text((28, 525), "GPU GRAPHICS" if gpu else "GPU N/A", fill=WHITE_TEXT, font=self.font_title)
+        draw.rectangle([x0, 525, x1, 845], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 525, x1, 570], fill=RED_HEADER_BG)
+        draw.text((28, 535), "GPU GRAPHICS" if gpu else "GPU N/A", fill=WHITE_TEXT, font=self.font_title)
         
         if gpu:
             gpu_pct = gpu['utilization']
-            draw.text((28, 575), f"{gpu_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
-            draw.text((270, 585), f"TEMP: {gpu['temp_c']}°C", fill=WHITE_TEXT, font=self.font_sub)
+            draw.text((28, 585), f"{gpu_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
+            draw.text((270, 590), f"TEMP: {gpu['temp_c']}°C", fill=WHITE_TEXT, font=self.font_sub)
             vram_str = f"VRAM: {gpu['vram_used_gb']} / {gpu['vram_total_gb']} GB ({gpu['vram_pct']}%)"
-            draw.text((28, 635), vram_str, fill=RED_TEXT_MUTED, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 670, inner_w, 24, gpu['vram_pct'], RED_BAR_FG)
-            self.draw_sparkline(draw, inner_x, 710, inner_w, 110, hist['gpu'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
+            draw.text((28, 645), vram_str, fill=RED_TEXT_MUTED, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 680, inner_w, 24, gpu['vram_pct'], RED_BAR_FG)
+            self.draw_sparkline(draw, inner_x, 720, inner_w, 105, hist['gpu'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
         else:
-            draw.text((28, 595), "NVIDIA GPU NOT DETECTED", fill=RED_TEXT_MUTED, font=self.font_sub)
+            draw.text((28, 605), "NVIDIA GPU NOT DETECTED", fill=RED_TEXT_MUTED, font=self.font_sub)
 
         # ----------------------------------------------------
-        # SECTION 3: RAM MEMORY (Y: 850 - 1170)
+        # SECTION 3: RAM MEMORY (Y: 860 - 1180)
         # ----------------------------------------------------
-        draw.rectangle([x0, 850, x1, 1170], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 850, x1, 895], fill=RED_HEADER_BG)
-        draw.text((28, 860), "RAM MEMORY", fill=WHITE_TEXT, font=self.font_title)
+        draw.rectangle([x0, 860, x1, 1180], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 860, x1, 905], fill=RED_HEADER_BG)
+        draw.text((28, 870), "RAM MEMORY", fill=WHITE_TEXT, font=self.font_title)
         
         ram_pct = ram['pct']
-        draw.text((28, 910), f"{ram_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
-        draw.text((250, 920), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=WHITE_TEXT, font=self.font_sub)
-        self.draw_progress_bar(draw, inner_x, 970, inner_w, 24, ram_pct, RED_BAR_FG)
-        self.draw_sparkline(draw, inner_x, 1010, inner_w, 145, hist['ram'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
+        draw.text((28, 920), f"{ram_pct:.1f}%", fill=WHITE_TEXT, font=self.font_val)
+        draw.text((250, 930), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=WHITE_TEXT, font=self.font_sub)
+        self.draw_progress_bar(draw, inner_x, 980, inner_w, 24, ram_pct, RED_BAR_FG)
+        self.draw_sparkline(draw, inner_x, 1020, inner_w, 140, hist['ram'], min_v=0.0, max_v=100.0, line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
 
         # ----------------------------------------------------
-        # SECTION 4: DISK STORAGE (ROOT, HDD1, HDD2) (Y: 1185 - 1495)
+        # SECTION 4: DISK STORAGE (ROOT, HDD1, HDD2) (Y: 1195 - 1500)
         # ----------------------------------------------------
-        draw.rectangle([x0, 1185, x1, 1495], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 1185, x1, 1225], fill=RED_HEADER_BG)
-        draw.text((28, 1192), "DISK STORAGE MONITOR", fill=WHITE_TEXT, font=self.font_title)
+        draw.rectangle([x0, 1195, x1, 1500], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 1195, x1, 1235], fill=RED_HEADER_BG)
+        draw.text((28, 1202), "DISK STORAGE MONITOR", fill=WHITE_TEXT, font=self.font_title)
         
         # Disk 1: Root /
         root_info = storage['root']
-        draw.text((28, 1235), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
-        self.draw_progress_bar(draw, inner_x, 1258, inner_w, 18, root_info['pct'], RED_BAR_FG)
+        draw.text((28, 1245), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
+        self.draw_progress_bar(draw, inner_x, 1268, inner_w, 18, root_info['pct'], RED_BAR_FG)
 
         # Disk 2: HDD1 (/mnt/dd)
         hdd1_info = storage.get('hdd1')
         if hdd1_info:
-            draw.text((28, 1288), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 1311, inner_w, 18, hdd1_info['pct'], RED_BAR_FG)
+            draw.text((28, 1298), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 1321, inner_w, 18, hdd1_info['pct'], RED_BAR_FG)
 
         # Disk 3: HDD2 (/mnt/dd2)
         hdd2_info = storage.get('hdd2')
         if hdd2_info:
-            draw.text((28, 1341), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 1364, inner_w, 18, hdd2_info['pct'], RED_BAR_FG)
+            draw.text((28, 1351), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=WHITE_TEXT, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 1374, inner_w, 18, hdd2_info['pct'], RED_BAR_FG)
 
-        draw.text((28, 1455), "FILESYSTEMS: EXT4 / BTRFS", fill=RED_TEXT_MUTED, font=self.font_micro)
+        draw.text((28, 1465), "FILESYSTEMS: EXT4 / BTRFS", fill=RED_TEXT_MUTED, font=self.font_micro)
 
         # ----------------------------------------------------
-        # SECTION 5: NETWORK TRAFFIC (Y: 1510 - 1810)
+        # SECTION 5: NETWORK TRAFFIC (Y: 1515 - 1815)
         # ----------------------------------------------------
-        draw.rectangle([x0, 1510, x1, 1810], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
-        draw.rectangle([x0, 1510, x1, 1555], fill=RED_HEADER_BG)
-        draw.text((28, 1520), "NETWORK TRAFFIC", fill=WHITE_TEXT, font=self.font_title)
+        draw.rectangle([x0, 1515, x1, 1815], fill=RED_CARD_BG, outline=RED_BORDER, width=2)
+        draw.rectangle([x0, 1515, x1, 1560], fill=RED_HEADER_BG)
+        draw.text((28, 1525), "NETWORK TRAFFIC", fill=WHITE_TEXT, font=self.font_title)
         
-        draw.text((28, 1570), f"RX: {net['rx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
-        draw.text((250, 1570), f"TX: {net['tx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
+        draw.text((28, 1575), f"RX: {net['rx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
+        draw.text((250, 1575), f"TX: {net['tx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
         
-        self.draw_sparkline(draw, inner_x, 1605, inner_w, 85, hist['net_rx'], min_v=0.0, max_v=max(5.0, max(hist['net_rx'] or [1.0])), line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
-        self.draw_sparkline(draw, inner_x, 1705, inner_w, 85, hist['net_tx'], min_v=0.0, max_v=max(5.0, max(hist['net_tx'] or [1.0])), line_color=(255, 120, 130), fill_color=(150, 20, 30, 100))
+        self.draw_sparkline(draw, inner_x, 1610, inner_w, 85, hist['net_rx'], min_v=0.0, max_v=max(5.0, max(hist['net_rx'] or [1.0])), line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
+        self.draw_sparkline(draw, inner_x, 1710, inner_w, 85, hist['net_tx'], min_v=0.0, max_v=max(5.0, max(hist['net_tx'] or [1.0])), line_color=(255, 120, 130), fill_color=(150, 20, 30, 100))
 
         # ----------------------------------------------------
         # FOOTER BADGE (Y: 1825 - 1885)
