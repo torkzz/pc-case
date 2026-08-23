@@ -1,0 +1,2000 @@
+{
+  "KERNEL32.dll": {
+    "CloseHandle": [
+      {
+        "line": 25249,
+        "target_va": "0x180074088",
+        "instruction": "180017226:\tff 15 5c ce 05 00    \tcall   *0x5ce5c(%rip)        # 0x180074088"
+      },
+      {
+        "line": 26624,
+        "target_va": "0x180074088",
+        "instruction": "1800184d0:\tff 15 b2 bb 05 00    \tcall   *0x5bbb2(%rip)        # 0x180074088"
+      },
+      {
+        "line": 26669,
+        "target_va": "0x180074088",
+        "instruction": "18001858f:\t48 ff 25 f2 ba 05 00 \trex.W jmp *0x5baf2(%rip)        # 0x180074088"
+      },
+      {
+        "line": 26793,
+        "target_va": "0x180074088",
+        "instruction": "180018798:\tff 15 ea b8 05 00    \tcall   *0x5b8ea(%rip)        # 0x180074088"
+      },
+      {
+        "line": 27772,
+        "target_va": "0x180074088",
+        "instruction": "1800196cd:\tff 15 b5 a9 05 00    \tcall   *0x5a9b5(%rip)        # 0x180074088"
+      },
+      {
+        "line": 28232,
+        "target_va": "0x180074088",
+        "instruction": "180019d8d:\tff 15 f5 a2 05 00    \tcall   *0x5a2f5(%rip)        # 0x180074088"
+      },
+      {
+        "line": 28259,
+        "target_va": "0x180074088",
+        "instruction": "180019dce:\t48 ff 25 b3 a2 05 00 \trex.W jmp *0x5a2b3(%rip)        # 0x180074088"
+      },
+      {
+        "line": 29078,
+        "target_va": "0x180074088",
+        "instruction": "18001a723:\tff 15 5f 99 05 00    \tcall   *0x5995f(%rip)        # 0x180074088"
+      },
+      {
+        "line": 29923,
+        "target_va": "0x180074088",
+        "instruction": "18001b392:\t48 ff 25 ef 8c 05 00 \trex.W jmp *0x58cef(%rip)        # 0x180074088"
+      },
+      {
+        "line": 96994,
+        "target_va": "0x180074088",
+        "instruction": "1800551a9:\tff 15 d9 ee 01 00    \tcall   *0x1eed9(%rip)        # 0x180074088"
+      },
+      {
+        "line": 121904,
+        "target_va": "0x180074088",
+        "instruction": "180069dfa:\tff 15 88 a2 00 00    \tcall   *0xa288(%rip)        # 0x180074088"
+      },
+      {
+        "line": 130889,
+        "target_va": "0x180074088",
+        "instruction": "180071a11:\tff 15 71 26 00 00    \tcall   *0x2671(%rip)        # 0x180074088"
+      },
+      {
+        "line": 130916,
+        "target_va": "0x180074088",
+        "instruction": "180071a71:\tff 15 11 26 00 00    \tcall   *0x2611(%rip)        # 0x180074088"
+      }
+    ],
+    "CompareStringW": [
+      {
+        "line": 122395,
+        "target_va": "0x1800742c0",
+        "instruction": "18006a491:\tff 15 29 9e 00 00    \tcall   *0x9e29(%rip)        # 0x1800742c0"
+      }
+    ],
+    "CreateDirectoryW": [
+      {
+        "line": 37813,
+        "target_va": "0x180074178",
+        "instruction": "18002271c:\tff 15 56 1a 05 00    \tcall   *0x51a56(%rip)        # 0x180074178"
+      }
+    ],
+    "CreateEventW": [
+      {
+        "line": 96970,
+        "target_va": "0x1800741c0",
+        "instruction": "180055153:\tff 15 67 f0 01 00    \tcall   *0x1f067(%rip)        # 0x1800741c0"
+      }
+    ],
+    "CreateFileW": [
+      {
+        "line": 25184,
+        "target_va": "0x180074100",
+        "instruction": "18001713e:\tff 15 bc cf 05 00    \tcall   *0x5cfbc(%rip)        # 0x180074100"
+      },
+      {
+        "line": 27722,
+        "target_va": "0x180074100",
+        "instruction": "1800195e7:\tff 15 13 ab 05 00    \tcall   *0x5ab13(%rip)        # 0x180074100"
+      },
+      {
+        "line": 37869,
+        "target_va": "0x180074100",
+        "instruction": "1800227fc:\tff 15 fe 18 05 00    \tcall   *0x518fe(%rip)        # 0x180074100"
+      },
+      {
+        "line": 37930,
+        "target_va": "0x180074100",
+        "instruction": "1800228f5:\tff 15 05 18 05 00    \tcall   *0x51805(%rip)        # 0x180074100"
+      },
+      {
+        "line": 38053,
+        "target_va": "0x180074100",
+        "instruction": "180022ac1:\tff 15 39 16 05 00    \tcall   *0x51639(%rip)        # 0x180074100"
+      },
+      {
+        "line": 130875,
+        "target_va": "0x180074100",
+        "instruction": "1800719e2:\tff 15 18 27 00 00    \tcall   *0x2718(%rip)        # 0x180074100"
+      },
+      {
+        "line": 130924,
+        "target_va": "0x180074100",
+        "instruction": "180071a9c:\tff 15 5e 26 00 00    \tcall   *0x265e(%rip)        # 0x180074100"
+      }
+    ],
+    "CreateThread": [
+      {
+        "line": 23443,
+        "target_va": "0x180074090",
+        "instruction": "18001595a:\tff 15 30 e7 05 00    \tcall   *0x5e730(%rip)        # 0x180074090"
+      },
+      {
+        "line": 29580,
+        "target_va": "0x180074090",
+        "instruction": "18001ae32:\tff 15 58 92 05 00    \tcall   *0x59258(%rip)        # 0x180074090"
+      }
+    ],
+    "DeleteCriticalSection": [
+      {
+        "line": 23685,
+        "target_va": "0x1800740d0",
+        "instruction": "180015d28:\tff 15 a2 e3 05 00    \tcall   *0x5e3a2(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 23717,
+        "target_va": "0x1800740d0",
+        "instruction": "180015da5:\tff 15 25 e3 05 00    \tcall   *0x5e325(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 26649,
+        "target_va": "0x1800740d0",
+        "instruction": "180018540:\tff 15 8a bb 05 00    \tcall   *0x5bb8a(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 26655,
+        "target_va": "0x1800740d0",
+        "instruction": "180018559:\tff 15 71 bb 05 00    \tcall   *0x5bb71(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 28912,
+        "target_va": "0x1800740d0",
+        "instruction": "18001a53d:\tff 15 8d 9b 05 00    \tcall   *0x59b8d(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 28934,
+        "target_va": "0x1800740d0",
+        "instruction": "18001a587:\tff 15 43 9b 05 00    \tcall   *0x59b43(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 29792,
+        "target_va": "0x1800740d0",
+        "instruction": "18001b198:\tff 15 32 8f 05 00    \tcall   *0x58f32(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 29904,
+        "target_va": "0x1800740d0",
+        "instruction": "18001b348:\tff 15 82 8d 05 00    \tcall   *0x58d82(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 29910,
+        "target_va": "0x1800740d0",
+        "instruction": "18001b361:\tff 15 69 8d 05 00    \tcall   *0x58d69(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 36854,
+        "target_va": "0x1800740d0",
+        "instruction": "1800219de:\tff 15 ec 26 05 00    \tcall   *0x526ec(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 96990,
+        "target_va": "0x1800740d0",
+        "instruction": "180055197:\tff 15 33 ef 01 00    \tcall   *0x1ef33(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 98079,
+        "target_va": "0x1800740d0",
+        "instruction": "1800560b5:\tff 15 15 e0 01 00    \tcall   *0x1e015(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 101490,
+        "target_va": "0x1800740d0",
+        "instruction": "180058d4b:\tff 15 7f b3 01 00    \tcall   *0x1b37f(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 109658,
+        "target_va": "0x1800740d0",
+        "instruction": "18005faf1:\tff 15 d9 45 01 00    \tcall   *0x145d9(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 121472,
+        "target_va": "0x1800740d0",
+        "instruction": "18006981b:\tff 15 af a8 00 00    \tcall   *0xa8af(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 122798,
+        "target_va": "0x1800740d0",
+        "instruction": "18006aa76:\tff 15 54 96 00 00    \tcall   *0x9654(%rip)        # 0x1800740d0"
+      },
+      {
+        "line": 128367,
+        "target_va": "0x1800740d0",
+        "instruction": "18006f809:\tff 15 c1 48 00 00    \tcall   *0x48c1(%rip)        # 0x1800740d0"
+      }
+    ],
+    "DeviceIoControl": [
+      {
+        "line": 26913,
+        "target_va": "0x180074120",
+        "instruction": "18001897e:\tff 15 9c b7 05 00    \tcall   *0x5b79c(%rip)        # 0x180074120"
+      },
+      {
+        "line": 27424,
+        "target_va": "0x180074120",
+        "instruction": "1800190d2:\tff 15 48 b0 05 00    \tcall   *0x5b048(%rip)        # 0x180074120"
+      },
+      {
+        "line": 27536,
+        "target_va": "0x180074120",
+        "instruction": "1800192e2:\tff 15 38 ae 05 00    \tcall   *0x5ae38(%rip)        # 0x180074120"
+      },
+      {
+        "line": 27570,
+        "target_va": "0x180074120",
+        "instruction": "18001938a:\tff 15 90 ad 05 00    \tcall   *0x5ad90(%rip)        # 0x180074120"
+      },
+      {
+        "line": 27754,
+        "target_va": "0x180074120",
+        "instruction": "180019681:\tff 15 99 aa 05 00    \tcall   *0x5aa99(%rip)        # 0x180074120"
+      },
+      {
+        "line": 36418,
+        "target_va": "0x180074120",
+        "instruction": "1800213e9:\tff 15 31 2d 05 00    \tcall   *0x52d31(%rip)        # 0x180074120"
+      },
+      {
+        "line": 36493,
+        "target_va": "0x180074120",
+        "instruction": "180021524:\tff 15 f6 2b 05 00    \tcall   *0x52bf6(%rip)        # 0x180074120"
+      }
+    ],
+    "EncodePointer": [
+      {
+        "line": 100495,
+        "target_va": "0x180074250",
+        "instruction": "180058023:\tff 15 27 c2 01 00    \tcall   *0x1c227(%rip)        # 0x180074250"
+      }
+    ],
+    "EnterCriticalSection": [
+      {
+        "line": 28944,
+        "target_va": "0x1800740b8",
+        "instruction": "18001a5a4:\t48 ff 25 0d 9b 05 00 \trex.W jmp *0x59b0d(%rip)        # 0x1800740b8"
+      },
+      {
+        "line": 109671,
+        "target_va": "0x1800740b8",
+        "instruction": "18005fb20:\t48 ff 25 91 45 01 00 \trex.W jmp *0x14591(%rip)        # 0x1800740b8"
+      },
+      {
+        "line": 121460,
+        "target_va": "0x1800740b8",
+        "instruction": "1800697f2:\t48 ff 25 bf a8 00 00 \trex.W jmp *0xa8bf(%rip)        # 0x1800740b8"
+      },
+      {
+        "line": 128433,
+        "target_va": "0x1800740b8",
+        "instruction": "18006f8f8:\t48 ff 25 b9 47 00 00 \trex.W jmp *0x47b9(%rip)        # 0x1800740b8"
+      }
+    ],
+    "ExitProcess": [
+      {
+        "line": 109518,
+        "target_va": "0x1800742a8",
+        "instruction": "18005f8ef:\tff 15 b3 49 01 00    \tcall   *0x149b3(%rip)        # 0x1800742a8"
+      }
+    ],
+    "FileTimeToLocalFileTime": [
+      {
+        "line": 23941,
+        "target_va": "0x1800740a0",
+        "instruction": "1800160cc:\tff 15 ce df 05 00    \tcall   *0x5dfce(%rip)        # 0x1800740a0"
+      }
+    ],
+    "FileTimeToSystemTime": [
+      {
+        "line": 23944,
+        "target_va": "0x180074098",
+        "instruction": "1800160da:\tff 15 b8 df 05 00    \tcall   *0x5dfb8(%rip)        # 0x180074098"
+      },
+      {
+        "line": 37298,
+        "target_va": "0x180074098",
+        "instruction": "180021fc9:\tff 15 c9 20 05 00    \tcall   *0x520c9(%rip)        # 0x180074098"
+      }
+    ],
+    "FindClose": [
+      {
+        "line": 124896,
+        "target_va": "0x180074188",
+        "instruction": "18006c6cd:\tff 15 b5 7a 00 00    \tcall   *0x7ab5(%rip)        # 0x180074188"
+      }
+    ],
+    "FindFirstFileExW": [
+      {
+        "line": 124799,
+        "target_va": "0x1800742c8",
+        "instruction": "18006c566:\tff 15 5c 7d 00 00    \tcall   *0x7d5c(%rip)        # 0x1800742c8"
+      }
+    ],
+    "FindNextFileW": [
+      {
+        "line": 124875,
+        "target_va": "0x180074180",
+        "instruction": "18006c678:\tff 15 02 7b 00 00    \tcall   *0x7b02(%rip)        # 0x180074180"
+      }
+    ],
+    "FlushFileBuffers": [
+      {
+        "line": 122838,
+        "target_va": "0x180074110",
+        "instruction": "18006ab06:\tff 15 04 96 00 00    \tcall   *0x9604(%rip)        # 0x180074110"
+      }
+    ],
+    "FormatMessageW": [
+      {
+        "line": 39188,
+        "target_va": "0x180074170",
+        "instruction": "1800238e5:\tff 15 85 08 05 00    \tcall   *0x50885(%rip)        # 0x180074170"
+      },
+      {
+        "line": 39388,
+        "target_va": "0x180074170",
+        "instruction": "180023b69:\tff 15 01 06 05 00    \tcall   *0x50601(%rip)        # 0x180074170"
+      }
+    ],
+    "FreeEnvironmentStringsW": [
+      {
+        "line": 125760,
+        "target_va": "0x180074010",
+        "instruction": "18006d30d:\tff 15 fd 6c 00 00    \tcall   *0x6cfd(%rip)        # 0x180074010"
+      }
+    ],
+    "FreeLibrary": [
+      {
+        "line": 101584,
+        "target_va": "0x180074278",
+        "instruction": "180058e90:\tff 15 e2 b3 01 00    \tcall   *0x1b3e2(%rip)        # 0x180074278"
+      },
+      {
+        "line": 101767,
+        "target_va": "0x180074278",
+        "instruction": "18005911a:\tff 15 58 b1 01 00    \tcall   *0x1b158(%rip)        # 0x180074278"
+      },
+      {
+        "line": 109542,
+        "target_va": "0x180074278",
+        "instruction": "18005f947:\tff 15 2b 49 01 00    \tcall   *0x1492b(%rip)        # 0x180074278"
+      },
+      {
+        "line": 122218,
+        "target_va": "0x180074278",
+        "instruction": "18006a1f8:\tff 15 7a a0 00 00    \tcall   *0xa07a(%rip)        # 0x180074278"
+      },
+      {
+        "line": 122755,
+        "target_va": "0x180074278",
+        "instruction": "18006a9df:\tff 15 93 98 00 00    \tcall   *0x9893(%rip)        # 0x180074278"
+      }
+    ],
+    "GetACP": [
+      {
+        "line": 125059,
+        "target_va": "0x180074040",
+        "instruction": "18006c915:\tff 15 25 77 00 00    \tcall   *0x7725(%rip)        # 0x180074040"
+      }
+    ],
+    "GetCPInfo": [
+      {
+        "line": 125132,
+        "target_va": "0x180074030",
+        "instruction": "18006ca26:\tff 15 04 76 00 00    \tcall   *0x7604(%rip)        # 0x180074030"
+      },
+      {
+        "line": 125492,
+        "target_va": "0x180074030",
+        "instruction": "18006cf77:\tff 15 b3 70 00 00    \tcall   *0x70b3(%rip)        # 0x180074030"
+      },
+      {
+        "line": 129046,
+        "target_va": "0x180074030",
+        "instruction": "18007013b:\tff 15 ef 3e 00 00    \tcall   *0x3eef(%rip)        # 0x180074030"
+      }
+    ],
+    "GetCommandLineA": [
+      {
+        "line": 125685,
+        "target_va": "0x180074028",
+        "instruction": "18006d20c:\tff 15 16 6e 00 00    \tcall   *0x6e16(%rip)        # 0x180074028"
+      }
+    ],
+    "GetCommandLineW": [
+      {
+        "line": 125687,
+        "target_va": "0x180074020",
+        "instruction": "18006d219:\tff 15 01 6e 00 00    \tcall   *0x6e01(%rip)        # 0x180074020"
+      }
+    ],
+    "GetConsoleCP": [
+      {
+        "line": 122927,
+        "target_va": "0x180074198",
+        "instruction": "18006ac47:\tff 15 4b 95 00 00    \tcall   *0x954b(%rip)        # 0x180074198"
+      }
+    ],
+    "GetConsoleMode": [
+      {
+        "line": 123643,
+        "target_va": "0x1800741a8",
+        "instruction": "18006b630:\tff 15 72 8b 00 00    \tcall   *0x8b72(%rip)        # 0x1800741a8"
+      }
+    ],
+    "GetCurrentProcess": [
+      {
+        "line": 97004,
+        "target_va": "0x180074168",
+        "instruction": "1800551ce:\tff 15 94 ef 01 00    \tcall   *0x1ef94(%rip)        # 0x180074168"
+      },
+      {
+        "line": 107538,
+        "target_va": "0x180074168",
+        "instruction": "18005de62:\tff 15 00 63 01 00    \tcall   *0x16300(%rip)        # 0x180074168"
+      },
+      {
+        "line": 109511,
+        "target_va": "0x180074168",
+        "instruction": "18005f8d5:\tff 15 8d 48 01 00    \tcall   *0x1488d(%rip)        # 0x180074168"
+      }
+    ],
+    "GetCurrentProcessId": [
+      {
+        "line": 29004,
+        "target_va": "0x1800740e0",
+        "instruction": "18001a63d:\tff 15 9d 9a 05 00    \tcall   *0x59a9d(%rip)        # 0x1800740e0"
+      },
+      {
+        "line": 37203,
+        "target_va": "0x1800740e0",
+        "instruction": "180021e62:\tff 15 78 22 05 00    \tcall   *0x52278(%rip)        # 0x1800740e0"
+      },
+      {
+        "line": 97665,
+        "target_va": "0x1800740e0",
+        "instruction": "180055ada:\tff 15 00 e6 01 00    \tcall   *0x1e600(%rip)        # 0x1800740e0"
+      }
+    ],
+    "GetCurrentThreadId": [
+      {
+        "line": 29006,
+        "target_va": "0x1800740d8",
+        "instruction": "18001a645:\tff 15 8d 9a 05 00    \tcall   *0x59a8d(%rip)        # 0x1800740d8"
+      },
+      {
+        "line": 37205,
+        "target_va": "0x1800740d8",
+        "instruction": "180021e6a:\tff 15 68 22 05 00    \tcall   *0x52268(%rip)        # 0x1800740d8"
+      },
+      {
+        "line": 97662,
+        "target_va": "0x1800740d8",
+        "instruction": "180055ace:\tff 15 04 e6 01 00    \tcall   *0x1e604(%rip)        # 0x1800740d8"
+      }
+    ],
+    "GetEnvironmentStringsW": [
+      {
+        "line": 125702,
+        "target_va": "0x180074018",
+        "instruction": "18006d249:\tff 15 c9 6d 00 00    \tcall   *0x6dc9(%rip)        # 0x180074018"
+      }
+    ],
+    "GetFileSizeEx": [
+      {
+        "line": 25191,
+        "target_va": "0x180074048",
+        "instruction": "18001715f:\tff 15 e3 ce 05 00    \tcall   *0x5cee3(%rip)        # 0x180074048"
+      },
+      {
+        "line": 37888,
+        "target_va": "0x180074048",
+        "instruction": "18002284c:\tff 15 f6 17 05 00    \tcall   *0x517f6(%rip)        # 0x180074048"
+      },
+      {
+        "line": 123944,
+        "target_va": "0x180074048",
+        "instruction": "18006ba2e:\tff 15 14 86 00 00    \tcall   *0x8614(%rip)        # 0x180074048"
+      }
+    ],
+    "GetFileType": [
+      {
+        "line": 109023,
+        "target_va": "0x180074290",
+        "instruction": "18005f282:\tff 15 08 50 01 00    \tcall   *0x15008(%rip)        # 0x180074290"
+      },
+      {
+        "line": 120214,
+        "target_va": "0x180074290",
+        "instruction": "180068767:\tff 15 23 bb 00 00    \tcall   *0xbb23(%rip)        # 0x180074290"
+      },
+      {
+        "line": 120285,
+        "target_va": "0x180074290",
+        "instruction": "18006885b:\tff 15 2f ba 00 00    \tcall   *0xba2f(%rip)        # 0x180074290"
+      }
+    ],
+    "GetLastError": [
+      {
+        "line": 26916,
+        "target_va": "0x180074108",
+        "instruction": "180018988:\tff 15 7a b7 05 00    \tcall   *0x5b77a(%rip)        # 0x180074108"
+      },
+      {
+        "line": 27427,
+        "target_va": "0x180074108",
+        "instruction": "1800190dc:\tff 15 26 b0 05 00    \tcall   *0x5b026(%rip)        # 0x180074108"
+      },
+      {
+        "line": 27539,
+        "target_va": "0x180074108",
+        "instruction": "1800192ec:\tff 15 16 ae 05 00    \tcall   *0x5ae16(%rip)        # 0x180074108"
+      },
+      {
+        "line": 27726,
+        "target_va": "0x180074108",
+        "instruction": "1800195f9:\tff 15 09 ab 05 00    \tcall   *0x5ab09(%rip)        # 0x180074108"
+      },
+      {
+        "line": 27757,
+        "target_va": "0x180074108",
+        "instruction": "18001968b:\tff 15 77 aa 05 00    \tcall   *0x5aa77(%rip)        # 0x180074108"
+      },
+      {
+        "line": 29233,
+        "target_va": "0x180074108",
+        "instruction": "18001a926:\tff 15 dc 97 05 00    \tcall   *0x597dc(%rip)        # 0x180074108"
+      },
+      {
+        "line": 29440,
+        "target_va": "0x180074108",
+        "instruction": "18001ac32:\tff 15 d0 94 05 00    \tcall   *0x594d0(%rip)        # 0x180074108"
+      },
+      {
+        "line": 29443,
+        "target_va": "0x180074108",
+        "instruction": "18001ac3d:\tff 15 c5 94 05 00    \tcall   *0x594c5(%rip)        # 0x180074108"
+      },
+      {
+        "line": 29473,
+        "target_va": "0x180074108",
+        "instruction": "18001acc3:\tff 15 3f 94 05 00    \tcall   *0x5943f(%rip)        # 0x180074108"
+      },
+      {
+        "line": 29512,
+        "target_va": "0x180074108",
+        "instruction": "18001ad5f:\tff 15 a3 93 05 00    \tcall   *0x593a3(%rip)        # 0x180074108"
+      },
+      {
+        "line": 36421,
+        "target_va": "0x180074108",
+        "instruction": "1800213f3:\tff 15 0f 2d 05 00    \tcall   *0x52d0f(%rip)        # 0x180074108"
+      },
+      {
+        "line": 36496,
+        "target_va": "0x180074108",
+        "instruction": "18002152e:\tff 15 d4 2b 05 00    \tcall   *0x52bd4(%rip)        # 0x180074108"
+      },
+      {
+        "line": 37879,
+        "target_va": "0x180074108",
+        "instruction": "180022826:\tff 15 dc 18 05 00    \tcall   *0x518dc(%rip)        # 0x180074108"
+      },
+      {
+        "line": 38063,
+        "target_va": "0x180074108",
+        "instruction": "180022aeb:\tff 15 17 16 05 00    \tcall   *0x51617(%rip)        # 0x180074108"
+      },
+      {
+        "line": 39176,
+        "target_va": "0x180074108",
+        "instruction": "1800238b2:\tff 15 50 08 05 00    \tcall   *0x50850(%rip)        # 0x180074108"
+      },
+      {
+        "line": 39239,
+        "target_va": "0x180074108",
+        "instruction": "180023996:\tff 15 6c 07 05 00    \tcall   *0x5076c(%rip)        # 0x180074108"
+      },
+      {
+        "line": 98054,
+        "target_va": "0x180074108",
+        "instruction": "180056061:\tff 15 a1 e0 01 00    \tcall   *0x1e0a1(%rip)        # 0x180074108"
+      },
+      {
+        "line": 99730,
+        "target_va": "0x180074108",
+        "instruction": "1800575a7:\tff 15 5b cb 01 00    \tcall   *0x1cb5b(%rip)        # 0x180074108"
+      },
+      {
+        "line": 101548,
+        "target_va": "0x180074108",
+        "instruction": "180058e15:\tff 15 ed b2 01 00    \tcall   *0x1b2ed(%rip)        # 0x180074108"
+      },
+      {
+        "line": 117944,
+        "target_va": "0x180074108",
+        "instruction": "1800668e4:\tff 15 1e d8 00 00    \tcall   *0xd81e(%rip)        # 0x180074108"
+      },
+      {
+        "line": 118241,
+        "target_va": "0x180074108",
+        "instruction": "180066cc5:\tff 15 3d d4 00 00    \tcall   *0xd43d(%rip)        # 0x180074108"
+      },
+      {
+        "line": 118796,
+        "target_va": "0x180074108",
+        "instruction": "18006740b:\tff 15 f7 cc 00 00    \tcall   *0xccf7(%rip)        # 0x180074108"
+      },
+      {
+        "line": 118909,
+        "target_va": "0x180074108",
+        "instruction": "180067587:\tff 15 7b cb 00 00    \tcall   *0xcb7b(%rip)        # 0x180074108"
+      },
+      {
+        "line": 120819,
+        "target_va": "0x180074108",
+        "instruction": "180068f30:\tff 15 d2 b1 00 00    \tcall   *0xb1d2(%rip)        # 0x180074108"
+      },
+      {
+        "line": 120873,
+        "target_va": "0x180074108",
+        "instruction": "180068fee:\tff 15 14 b1 00 00    \tcall   *0xb114(%rip)        # 0x180074108"
+      },
+      {
+        "line": 121907,
+        "target_va": "0x180074108",
+        "instruction": "180069e04:\tff 15 fe a2 00 00    \tcall   *0xa2fe(%rip)        # 0x180074108"
+      },
+      {
+        "line": 122182,
+        "target_va": "0x180074108",
+        "instruction": "18006a17d:\tff 15 85 9f 00 00    \tcall   *0x9f85(%rip)        # 0x180074108"
+      },
+      {
+        "line": 122844,
+        "target_va": "0x180074108",
+        "instruction": "18006ab1a:\tff 15 e8 95 00 00    \tcall   *0x95e8(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123227,
+        "target_va": "0x180074108",
+        "instruction": "18006b08f:\tff 15 73 90 00 00    \tcall   *0x9073(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123231,
+        "target_va": "0x180074108",
+        "instruction": "18006b0a1:\tff 15 61 90 00 00    \tcall   *0x9061(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123299,
+        "target_va": "0x180074108",
+        "instruction": "18006b183:\tff 15 7f 8f 00 00    \tcall   *0x8f7f(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123382,
+        "target_va": "0x180074108",
+        "instruction": "18006b29e:\tff 15 64 8e 00 00    \tcall   *0x8e64(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123490,
+        "target_va": "0x180074108",
+        "instruction": "18006b40d:\tff 15 f5 8c 00 00    \tcall   *0x8cf5(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123681,
+        "target_va": "0x180074108",
+        "instruction": "18006b6b0:\tff 15 52 8a 00 00    \tcall   *0x8a52(%rip)        # 0x180074108"
+      },
+      {
+        "line": 123733,
+        "target_va": "0x180074108",
+        "instruction": "18006b766:\tff 15 9c 89 00 00    \tcall   *0x899c(%rip)        # 0x180074108"
+      },
+      {
+        "line": 124244,
+        "target_va": "0x180074108",
+        "instruction": "18006be2e:\tff 15 d4 82 00 00    \tcall   *0x82d4(%rip)        # 0x180074108"
+      },
+      {
+        "line": 124359,
+        "target_va": "0x180074108",
+        "instruction": "18006bfaf:\tff 15 53 81 00 00    \tcall   *0x8153(%rip)        # 0x180074108"
+      },
+      {
+        "line": 128942,
+        "target_va": "0x180074108",
+        "instruction": "18006ffde:\tff 15 24 41 00 00    \tcall   *0x4124(%rip)        # 0x180074108"
+      },
+      {
+        "line": 130910,
+        "target_va": "0x180074108",
+        "instruction": "180071a59:\tff 15 a9 26 00 00    \tcall   *0x26a9(%rip)        # 0x180074108"
+      }
+    ],
+    "GetLocalTime": [
+      {
+        "line": 23272,
+        "target_va": "0x1800740a8",
+        "instruction": "180015658:\tff 15 4a ea 05 00    \tcall   *0x5ea4a(%rip)        # 0x1800740a8"
+      },
+      {
+        "line": 23903,
+        "target_va": "0x1800740a8",
+        "instruction": "18001603b:\tff 15 67 e0 05 00    \tcall   *0x5e067(%rip)        # 0x1800740a8"
+      },
+      {
+        "line": 29012,
+        "target_va": "0x1800740a8",
+        "instruction": "18001a65e:\tff 15 44 9a 05 00    \tcall   *0x59a44(%rip)        # 0x1800740a8"
+      },
+      {
+        "line": 37211,
+        "target_va": "0x1800740a8",
+        "instruction": "180021e83:\tff 15 1f 22 05 00    \tcall   *0x5221f(%rip)        # 0x1800740a8"
+      }
+    ],
+    "GetModuleFileNameW": [
+      {
+        "line": 25035,
+        "target_va": "0x180074050",
+        "instruction": "180016f00:\tff 15 4a d1 05 00    \tcall   *0x5d14a(%rip)        # 0x180074050"
+      },
+      {
+        "line": 108716,
+        "target_va": "0x180074050",
+        "instruction": "18005edf0:\tff 15 5a 52 01 00    \tcall   *0x1525a(%rip)        # 0x180074050"
+      },
+      {
+        "line": 120870,
+        "target_va": "0x180074050",
+        "instruction": "180068fe4:\tff 15 66 b0 00 00    \tcall   *0xb066(%rip)        # 0x180074050"
+      }
+    ],
+    "GetModuleHandleExW": [
+      {
+        "line": 108708,
+        "target_va": "0x180074298",
+        "instruction": "18005edce:\tff 15 c4 54 01 00    \tcall   *0x154c4(%rip)        # 0x180074298"
+      },
+      {
+        "line": 109529,
+        "target_va": "0x180074298",
+        "instruction": "18005f914:\tff 15 7e 49 01 00    \tcall   *0x1497e(%rip)        # 0x180074298"
+      }
+    ],
+    "GetModuleHandleW": [
+      {
+        "line": 25030,
+        "target_va": "0x180074058",
+        "instruction": "180016ee9:\tff 15 69 d1 05 00    \tcall   *0x5d169(%rip)        # 0x180074058"
+      },
+      {
+        "line": 96902,
+        "target_va": "0x180074058",
+        "instruction": "18005505f:\tff 15 f3 ef 01 00    \tcall   *0x1eff3(%rip)        # 0x180074058"
+      },
+      {
+        "line": 96908,
+        "target_va": "0x180074058",
+        "instruction": "180055075:\tff 15 dd ef 01 00    \tcall   *0x1efdd(%rip)        # 0x180074058"
+      },
+      {
+        "line": 109456,
+        "target_va": "0x180074058",
+        "instruction": "18005f80f:\tff 15 43 48 01 00    \tcall   *0x14843(%rip)        # 0x180074058"
+      }
+    ],
+    "GetOEMCP": [
+      {
+        "line": 125053,
+        "target_va": "0x180074038",
+        "instruction": "18006c8fe:\tff 15 34 77 00 00    \tcall   *0x7734(%rip)        # 0x180074038"
+      }
+    ],
+    "GetProcAddress": [
+      {
+        "line": 96915,
+        "target_va": "0x1800741c8",
+        "instruction": "180055092:\tff 15 30 f1 01 00    \tcall   *0x1f130(%rip)        # 0x1800741c8"
+      },
+      {
+        "line": 96920,
+        "target_va": "0x1800741c8",
+        "instruction": "1800550a6:\tff 15 1c f1 01 00    \tcall   *0x1f11c(%rip)        # 0x1800741c8"
+      },
+      {
+        "line": 96925,
+        "target_va": "0x1800741c8",
+        "instruction": "1800550ba:\tff 15 08 f1 01 00    \tcall   *0x1f108(%rip)        # 0x1800741c8"
+      },
+      {
+        "line": 101596,
+        "target_va": "0x1800741c8",
+        "instruction": "180058ebc:\tff 15 06 b3 01 00    \tcall   *0x1b306(%rip)        # 0x1800741c8"
+      },
+      {
+        "line": 109534,
+        "target_va": "0x1800741c8",
+        "instruction": "18005f92a:\tff 15 98 48 01 00    \tcall   *0x14898(%rip)        # 0x1800741c8"
+      },
+      {
+        "line": 122230,
+        "target_va": "0x1800741c8",
+        "instruction": "18006a224:\tff 15 9e 9f 00 00    \tcall   *0x9f9e(%rip)        # 0x1800741c8"
+      }
+    ],
+    "GetProcessHeap": [
+      {
+        "line": 29454,
+        "target_va": "0x180074130",
+        "instruction": "18001ac73:\tff 15 b7 94 05 00    \tcall   *0x594b7(%rip)        # 0x180074130"
+      },
+      {
+        "line": 29506,
+        "target_va": "0x180074130",
+        "instruction": "18001ad49:\tff 15 e1 93 05 00    \tcall   *0x593e1(%rip)        # 0x180074130"
+      },
+      {
+        "line": 125773,
+        "target_va": "0x180074130",
+        "instruction": "18006d338:\tff 15 f2 6d 00 00    \tcall   *0x6df2(%rip)        # 0x180074130"
+      }
+    ],
+    "GetStartupInfoW": [
+      {
+        "line": 120185,
+        "target_va": "0x180074228",
+        "instruction": "1800686fc:\tff 15 26 bb 00 00    \tcall   *0xbb26(%rip)        # 0x180074228"
+      }
+    ],
+    "GetStdHandle": [
+      {
+        "line": 109017,
+        "target_va": "0x180074288",
+        "instruction": "18005f26c:\tff 15 16 50 01 00    \tcall   *0x15016(%rip)        # 0x180074288"
+      },
+      {
+        "line": 120279,
+        "target_va": "0x180074288",
+        "instruction": "180068845:\tff 15 3d ba 00 00    \tcall   *0xba3d(%rip)        # 0x180074288"
+      }
+    ],
+    "GetStringTypeW": [
+      {
+        "line": 128275,
+        "target_va": "0x180074008",
+        "instruction": "18006f6da:\tff 15 28 49 00 00    \tcall   *0x4928(%rip)        # 0x180074008"
+      },
+      {
+        "line": 128533,
+        "target_va": "0x180074008",
+        "instruction": "18006fa5c:\t48 ff 25 a5 45 00 00 \trex.W jmp *0x45a5(%rip)        # 0x180074008"
+      }
+    ],
+    "GetSystemTimeAsFileTime": [
+      {
+        "line": 97659,
+        "target_va": "0x180074210",
+        "instruction": "180055ac0:\tff 15 4a e7 01 00    \tcall   *0x1e74a(%rip)        # 0x180074210"
+      }
+    ],
+    "GetTickCount": [
+      {
+        "line": 22309,
+        "target_va": "0x180074160",
+        "instruction": "1800149ee:\tff 15 6c f7 05 00    \tcall   *0x5f76c(%rip)        # 0x180074160"
+      },
+      {
+        "line": 30247,
+        "target_va": "0x180074160",
+        "instruction": "18001b907:\tff 15 53 88 05 00    \tcall   *0x58853(%rip)        # 0x180074160"
+      },
+      {
+        "line": 32036,
+        "target_va": "0x180074160",
+        "instruction": "18001d351:\tff 15 09 6e 05 00    \tcall   *0x56e09(%rip)        # 0x180074160"
+      },
+      {
+        "line": 32398,
+        "target_va": "0x180074160",
+        "instruction": "18001d87a:\tff 15 e0 68 05 00    \tcall   *0x568e0(%rip)        # 0x180074160"
+      },
+      {
+        "line": 32461,
+        "target_va": "0x180074160",
+        "instruction": "18001d99c:\tff 15 be 67 05 00    \tcall   *0x567be(%rip)        # 0x180074160"
+      },
+      {
+        "line": 32596,
+        "target_va": "0x180074160",
+        "instruction": "18001dc12:\tff 15 48 65 05 00    \tcall   *0x56548(%rip)        # 0x180074160"
+      },
+      {
+        "line": 32622,
+        "target_va": "0x180074160",
+        "instruction": "18001dc8f:\tff 15 cb 64 05 00    \tcall   *0x564cb(%rip)        # 0x180074160"
+      }
+    ],
+    "HeapAlloc": [
+      {
+        "line": 29458,
+        "target_va": "0x180074128",
+        "instruction": "18001ac84:\tff 15 9e 94 05 00    \tcall   *0x5949e(%rip)        # 0x180074128"
+      },
+      {
+        "line": 117973,
+        "target_va": "0x180074128",
+        "instruction": "18006693a:\tff 15 e8 d7 00 00    \tcall   *0xd7e8(%rip)        # 0x180074128"
+      },
+      {
+        "line": 121353,
+        "target_va": "0x180074128",
+        "instruction": "180069681:\tff 15 a1 aa 00 00    \tcall   *0xaaa1(%rip)        # 0x180074128"
+      }
+    ],
+    "HeapFree": [
+      {
+        "line": 29510,
+        "target_va": "0x180074118",
+        "instruction": "18001ad57:\tff 15 bb 93 05 00    \tcall   *0x593bb(%rip)        # 0x180074118"
+      },
+      {
+        "line": 117939,
+        "target_va": "0x180074118",
+        "instruction": "1800668d2:\tff 15 40 d8 00 00    \tcall   *0xd840(%rip)        # 0x180074118"
+      }
+    ],
+    "HeapReAlloc": [
+      {
+        "line": 125925,
+        "target_va": "0x180074148",
+        "instruction": "18006d519:\tff 15 29 6c 00 00    \tcall   *0x6c29(%rip)        # 0x180074148"
+      }
+    ],
+    "HeapSize": [
+      {
+        "line": 125887,
+        "target_va": "0x180074140",
+        "instruction": "18006d4a2:\t48 ff 25 97 6c 00 00 \trex.W jmp *0x6c97(%rip)        # 0x180074140"
+      }
+    ],
+    "InitializeCriticalSection": [
+      {
+        "line": 23240,
+        "target_va": "0x1800740c8",
+        "instruction": "1800155d2:\tff 15 f0 ea 05 00    \tcall   *0x5eaf0(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 23258,
+        "target_va": "0x1800740c8",
+        "instruction": "18001561a:\tff 15 a8 ea 05 00    \tcall   *0x5eaa8(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 23454,
+        "target_va": "0x1800740c8",
+        "instruction": "180015999:\tff 15 29 e7 05 00    \tcall   *0x5e729(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 23457,
+        "target_va": "0x1800740c8",
+        "instruction": "1800159ad:\tff 15 15 e7 05 00    \tcall   *0x5e715(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 23987,
+        "target_va": "0x1800740c8",
+        "instruction": "18001619e:\tff 15 24 df 05 00    \tcall   *0x5df24(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 29589,
+        "target_va": "0x1800740c8",
+        "instruction": "18001ae5c:\tff 15 66 92 05 00    \tcall   *0x59266(%rip)        # 0x1800740c8"
+      },
+      {
+        "line": 29597,
+        "target_va": "0x1800740c8",
+        "instruction": "18001ae88:\tff 15 3a 92 05 00    \tcall   *0x5923a(%rip)        # 0x1800740c8"
+      }
+    ],
+    "InitializeCriticalSectionAndSpinCount": [
+      {
+        "line": 96899,
+        "target_va": "0x1800741b8",
+        "instruction": "180055051:\tff 15 61 f1 01 00    \tcall   *0x1f161(%rip)        # 0x1800741b8"
+      },
+      {
+        "line": 101736,
+        "target_va": "0x1800741b8",
+        "instruction": "1800590b3:\tff 15 ff b0 01 00    \tcall   *0x1b0ff(%rip)        # 0x1800741b8"
+      },
+      {
+        "line": 122500,
+        "target_va": "0x1800741b8",
+        "instruction": "18006a623:\tff 15 8f 9b 00 00    \tcall   *0x9b8f(%rip)        # 0x1800741b8"
+      }
+    ],
+    "InitializeCriticalSectionEx": [
+      {
+        "line": 29544,
+        "target_va": "0x180074138",
+        "instruction": "18001adc0:\t48 ff 25 71 93 05 00 \trex.W jmp *0x59371(%rip)        # 0x180074138"
+      }
+    ],
+    "InitializeSListHead": [
+      {
+        "line": 97695,
+        "target_va": "0x180074218",
+        "instruction": "180055b4f:\t48 ff 25 c2 e6 01 00 \trex.W jmp *0x1e6c2(%rip)        # 0x180074218"
+      }
+    ],
+    "InterlockedFlushSList": [
+      {
+        "line": 99551,
+        "target_va": "0x180074238",
+        "instruction": "18005735e:\tff 15 d4 ce 01 00    \tcall   *0x1ced4(%rip)        # 0x180074238"
+      }
+    ],
+    "IsDebuggerPresent": [
+      {
+        "line": 97766,
+        "target_va": "0x180074220",
+        "instruction": "180055c87:\tff 15 93 e5 01 00    \tcall   *0x1e593(%rip)        # 0x180074220"
+      },
+      {
+        "line": 98061,
+        "target_va": "0x180074220",
+        "instruction": "180056079:\tff 15 a1 e1 01 00    \tcall   *0x1e1a1(%rip)        # 0x180074220"
+      },
+      {
+        "line": 107423,
+        "target_va": "0x180074220",
+        "instruction": "18005dcd5:\tff 15 45 65 01 00    \tcall   *0x16545(%rip)        # 0x180074220"
+      },
+      {
+        "line": 120935,
+        "target_va": "0x180074220",
+        "instruction": "1800690e5:\tff 15 35 b1 00 00    \tcall   *0xb135(%rip)        # 0x180074220"
+      }
+    ],
+    "IsProcessorFeaturePresent": [
+      {
+        "line": 107529,
+        "target_va": "0x180074200",
+        "instruction": "18005de3d:\tff 15 bd 63 01 00    \tcall   *0x163bd(%rip)        # 0x180074200"
+      },
+      {
+        "line": 117667,
+        "target_va": "0x180074200",
+        "instruction": "18006658e:\tff 15 6c dc 00 00    \tcall   *0xdc6c(%rip)        # 0x180074200"
+      },
+      {
+        "line": 131615,
+        "target_va": "0x180074200",
+        "instruction": "180072385:\tff 25 75 1e 00 00    \tjmp    *0x1e75(%rip)        # 0x180074200"
+      }
+    ],
+    "IsValidCodePage": [
+      {
+        "line": 125473,
+        "target_va": "0x1800741a0",
+        "instruction": "18006cf2b:\tff 15 6f 72 00 00    \tcall   *0x726f(%rip)        # 0x1800741a0"
+      }
+    ],
+    "LCMapStringW": [
+      {
+        "line": 122557,
+        "target_va": "0x1800741b0",
+        "instruction": "18006a6fd:\tff 15 ad 9a 00 00    \tcall   *0x9aad(%rip)        # 0x1800741b0"
+      }
+    ],
+    "LeaveCriticalSection": [
+      {
+        "line": 28951,
+        "target_va": "0x1800740c0",
+        "instruction": "18001a5b4:\t48 ff 25 05 9b 05 00 \trex.W jmp *0x59b05(%rip)        # 0x1800740c0"
+      },
+      {
+        "line": 109674,
+        "target_va": "0x1800740c0",
+        "instruction": "18005fb2c:\t48 ff 25 8d 45 01 00 \trex.W jmp *0x1458d(%rip)        # 0x1800740c0"
+      },
+      {
+        "line": 121485,
+        "target_va": "0x1800740c0",
+        "instruction": "180069846:\t48 ff 25 73 a8 00 00 \trex.W jmp *0xa873(%rip)        # 0x1800740c0"
+      },
+      {
+        "line": 128443,
+        "target_va": "0x1800740c0",
+        "instruction": "18006f920:\t48 ff 25 99 47 00 00 \trex.W jmp *0x4799(%rip)        # 0x1800740c0"
+      }
+    ],
+    "LoadLibraryExW": [
+      {
+        "line": 101544,
+        "target_va": "0x180074280",
+        "instruction": "180058e07:\tff 15 73 b4 01 00    \tcall   *0x1b473(%rip)        # 0x180074280"
+      },
+      {
+        "line": 101567,
+        "target_va": "0x180074280",
+        "instruction": "180058e57:\tff 15 23 b4 01 00    \tcall   *0x1b423(%rip)        # 0x180074280"
+      },
+      {
+        "line": 122178,
+        "target_va": "0x180074280",
+        "instruction": "18006a16f:\tff 15 0b a1 00 00    \tcall   *0xa10b(%rip)        # 0x180074280"
+      },
+      {
+        "line": 122201,
+        "target_va": "0x180074280",
+        "instruction": "18006a1bf:\tff 15 bb a0 00 00    \tcall   *0xa0bb(%rip)        # 0x180074280"
+      }
+    ],
+    "MultiByteToWideChar": [
+      {
+        "line": 36681,
+        "target_va": "0x180074158",
+        "instruction": "1800217bc:\tff 15 96 29 05 00    \tcall   *0x52996(%rip)        # 0x180074158"
+      },
+      {
+        "line": 36695,
+        "target_va": "0x180074158",
+        "instruction": "1800217f4:\tff 15 5e 29 05 00    \tcall   *0x5295e(%rip)        # 0x180074158"
+      },
+      {
+        "line": 121389,
+        "target_va": "0x180074158",
+        "instruction": "1800696f7:\t48 ff 25 5a aa 00 00 \trex.W jmp *0xaa5a(%rip)        # 0x180074158"
+      }
+    ],
+    "OutputDebugStringW": [
+      {
+        "line": 26847,
+        "target_va": "0x180074060",
+        "instruction": "180018860:\tff 15 fa b7 05 00    \tcall   *0x5b7fa(%rip)        # 0x180074060"
+      },
+      {
+        "line": 98065,
+        "target_va": "0x180074060",
+        "instruction": "18005608a:\tff 15 d0 df 01 00    \tcall   *0x1dfd0(%rip)        # 0x180074060"
+      },
+      {
+        "line": 120943,
+        "target_va": "0x180074060",
+        "instruction": "1800690fd:\tff 15 5d af 00 00    \tcall   *0xaf5d(%rip)        # 0x180074060"
+      }
+    ],
+    "QueryPerformanceCounter": [
+      {
+        "line": 97669,
+        "target_va": "0x180074208",
+        "instruction": "180055aea:\tff 15 18 e7 01 00    \tcall   *0x1e718(%rip)        # 0x180074208"
+      }
+    ],
+    "RaiseException": [
+      {
+        "line": 99667,
+        "target_va": "0x180074150",
+        "instruction": "1800574e3:\tff 15 67 cc 01 00    \tcall   *0x1cc67(%rip)        # 0x180074150"
+      },
+      {
+        "line": 100997,
+        "target_va": "0x180074150",
+        "instruction": "180058733:\tff 15 17 ba 01 00    \tcall   *0x1ba17(%rip)        # 0x180074150"
+      },
+      {
+        "line": 131479,
+        "target_va": "0x180074150",
+        "instruction": "1800721d8:\tff 15 72 1f 00 00    \tcall   *0x1f72(%rip)        # 0x180074150"
+      }
+    ],
+    "ReadFile": [
+      {
+        "line": 29230,
+        "target_va": "0x1800740e8",
+        "instruction": "18001a91c:\tff 15 c6 97 05 00    \tcall   *0x597c6(%rip)        # 0x1800740e8"
+      }
+    ],
+    "ResumeThread": [
+      {
+        "line": 23097,
+        "target_va": "0x180074078",
+        "instruction": "180015414:\tff 15 5e ec 05 00    \tcall   *0x5ec5e(%rip)        # 0x180074078"
+      },
+      {
+        "line": 23526,
+        "target_va": "0x180074078",
+        "instruction": "180015b07:\tff 15 6b e5 05 00    \tcall   *0x5e56b(%rip)        # 0x180074078"
+      },
+      {
+        "line": 27354,
+        "target_va": "0x180074078",
+        "instruction": "180018fdb:\tff 15 97 b0 05 00    \tcall   *0x5b097(%rip)        # 0x180074078"
+      }
+    ],
+    "RtlCaptureContext": [
+      {
+        "line": 97099,
+        "target_va": "0x1800741d0",
+        "instruction": "180055379:\tff 15 51 ee 01 00    \tcall   *0x1ee51(%rip)        # 0x1800741d0"
+      },
+      {
+        "line": 97130,
+        "target_va": "0x1800741d0",
+        "instruction": "1800553e7:\tff 15 e3 ed 01 00    \tcall   *0x1ede3(%rip)        # 0x1800741d0"
+      },
+      {
+        "line": 97731,
+        "target_va": "0x1800741d0",
+        "instruction": "180055bd8:\tff 15 f2 e5 01 00    \tcall   *0x1e5f2(%rip)        # 0x1800741d0"
+      },
+      {
+        "line": 107394,
+        "target_va": "0x1800741d0",
+        "instruction": "18005dc49:\tff 15 81 65 01 00    \tcall   *0x16581(%rip)        # 0x1800741d0"
+      }
+    ],
+    "RtlLookupFunctionEntry": [
+      {
+        "line": 97104,
+        "target_va": "0x1800741d8",
+        "instruction": "180055391:\tff 15 41 ee 01 00    \tcall   *0x1ee41(%rip)        # 0x1800741d8"
+      },
+      {
+        "line": 97136,
+        "target_va": "0x1800741d8",
+        "instruction": "180055401:\tff 15 d1 ed 01 00    \tcall   *0x1edd1(%rip)        # 0x1800741d8"
+      },
+      {
+        "line": 97736,
+        "target_va": "0x1800741d8",
+        "instruction": "180055bf2:\tff 15 e0 e5 01 00    \tcall   *0x1e5e0(%rip)        # 0x1800741d8"
+      },
+      {
+        "line": 98223,
+        "target_va": "0x1800741d8",
+        "instruction": "18005627a:\tff 15 58 df 01 00    \tcall   *0x1df58(%rip)        # 0x1800741d8"
+      },
+      {
+        "line": 107399,
+        "target_va": "0x1800741d8",
+        "instruction": "18005dc61:\tff 15 71 65 01 00    \tcall   *0x16571(%rip)        # 0x1800741d8"
+      }
+    ],
+    "RtlPcToFileHeader": [
+      {
+        "line": 99653,
+        "target_va": "0x180074240",
+        "instruction": "1800574b1:\tff 15 89 cd 01 00    \tcall   *0x1cd89(%rip)        # 0x180074240"
+      }
+    ],
+    "RtlUnwindEx": [
+      {
+        "line": 98423,
+        "target_va": "0x180074230",
+        "instruction": "180056543:\tff 15 e7 dc 01 00    \tcall   *0x1dce7(%rip)        # 0x180074230"
+      },
+      {
+        "line": 99404,
+        "target_va": "0x180074230",
+        "instruction": "1800571a7:\tff 15 83 d0 01 00    \tcall   *0x1d083(%rip)        # 0x180074230"
+      },
+      {
+        "line": 131616,
+        "target_va": "0x180074230",
+        "instruction": "18007238b:\tff 25 9f 1e 00 00    \tjmp    *0x1e9f(%rip)        # 0x180074230"
+      }
+    ],
+    "RtlVirtualUnwind": [
+      {
+        "line": 97117,
+        "target_va": "0x1800741e0",
+        "instruction": "1800553c8:\tff 15 12 ee 01 00    \tcall   *0x1ee12(%rip)        # 0x1800741e0"
+      },
+      {
+        "line": 97149,
+        "target_va": "0x1800741e0",
+        "instruction": "180055438:\tff 15 a2 ed 01 00    \tcall   *0x1eda2(%rip)        # 0x1800741e0"
+      },
+      {
+        "line": 97750,
+        "target_va": "0x1800741e0",
+        "instruction": "180055c33:\tff 15 a7 e5 01 00    \tcall   *0x1e5a7(%rip)        # 0x1800741e0"
+      },
+      {
+        "line": 107413,
+        "target_va": "0x1800741e0",
+        "instruction": "18005dc9c:\tff 15 3e 65 01 00    \tcall   *0x1653e(%rip)        # 0x1800741e0"
+      }
+    ],
+    "SetEnvironmentVariableW": [
+      {
+        "line": 128626,
+        "target_va": "0x1800742b8",
+        "instruction": "18006fbb2:\tff 15 00 47 00 00    \tcall   *0x4700(%rip)        # 0x1800742b8"
+      }
+    ],
+    "SetFilePointer": [
+      {
+        "line": 37877,
+        "target_va": "0x1800740f8",
+        "instruction": "18002281e:\tff 15 d4 18 05 00    \tcall   *0x518d4(%rip)        # 0x1800740f8"
+      },
+      {
+        "line": 38061,
+        "target_va": "0x1800740f8",
+        "instruction": "180022ae3:\tff 15 0f 16 05 00    \tcall   *0x5160f(%rip)        # 0x1800740f8"
+      }
+    ],
+    "SetFilePointerEx": [
+      {
+        "line": 123939,
+        "target_va": "0x180074190",
+        "instruction": "18006ba1c:\tff 15 6e 87 00 00    \tcall   *0x876e(%rip)        # 0x180074190"
+      },
+      {
+        "line": 128939,
+        "target_va": "0x180074190",
+        "instruction": "18006ffd4:\tff 15 b6 41 00 00    \tcall   *0x41b6(%rip)        # 0x180074190"
+      }
+    ],
+    "SetLastError": [
+      {
+        "line": 99770,
+        "target_va": "0x180074248",
+        "instruction": "18005763a:\tff 15 08 cc 01 00    \tcall   *0x1cc08(%rip)        # 0x180074248"
+      },
+      {
+        "line": 118842,
+        "target_va": "0x180074248",
+        "instruction": "1800674a9:\tff 15 99 cd 00 00    \tcall   *0xcd99(%rip)        # 0x180074248"
+      },
+      {
+        "line": 118955,
+        "target_va": "0x180074248",
+        "instruction": "180067625:\tff 15 1d cc 00 00    \tcall   *0xcc1d(%rip)        # 0x180074248"
+      }
+    ],
+    "SetStdHandle": [
+      {
+        "line": 128481,
+        "target_va": "0x180074000",
+        "instruction": "18006f9a2:\tff 15 58 46 00 00    \tcall   *0x4658(%rip)        # 0x180074000"
+      }
+    ],
+    "SetUnhandledExceptionFilter": [
+      {
+        "line": 97001,
+        "target_va": "0x1800741f0",
+        "instruction": "1800551bf:\tff 15 2b f0 01 00    \tcall   *0x1f02b(%rip)        # 0x1800741f0"
+      },
+      {
+        "line": 97774,
+        "target_va": "0x1800741f0",
+        "instruction": "180055ca8:\tff 15 42 e5 01 00    \tcall   *0x1e542(%rip)        # 0x1800741f0"
+      },
+      {
+        "line": 107426,
+        "target_va": "0x1800741f0",
+        "instruction": "18005dcdf:\tff 15 0b 65 01 00    \tcall   *0x1650b(%rip)        # 0x1800741f0"
+      }
+    ],
+    "Sleep": [
+      {
+        "line": 26804,
+        "target_va": "0x180074080",
+        "instruction": "1800187d4:\tff 15 a6 b8 05 00    \tcall   *0x5b8a6(%rip)        # 0x180074080"
+      },
+      {
+        "line": 29657,
+        "target_va": "0x180074080",
+        "instruction": "18001afb8:\tff 15 c2 90 05 00    \tcall   *0x590c2(%rip)        # 0x180074080"
+      },
+      {
+        "line": 29875,
+        "target_va": "0x180074080",
+        "instruction": "18001b2dd:\tff 15 9d 8d 05 00    \tcall   *0x58d9d(%rip)        # 0x180074080"
+      },
+      {
+        "line": 29979,
+        "target_va": "0x180074080",
+        "instruction": "18001b47d:\tff 15 fd 8b 05 00    \tcall   *0x58bfd(%rip)        # 0x180074080"
+      },
+      {
+        "line": 30035,
+        "target_va": "0x180074080",
+        "instruction": "18001b58b:\tff 15 ef 8a 05 00    \tcall   *0x58aef(%rip)        # 0x180074080"
+      },
+      {
+        "line": 30256,
+        "target_va": "0x180074080",
+        "instruction": "18001b92e:\tff 15 4c 87 05 00    \tcall   *0x5874c(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32041,
+        "target_va": "0x180074080",
+        "instruction": "18001d364:\tff 15 16 6d 05 00    \tcall   *0x56d16(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32056,
+        "target_va": "0x180074080",
+        "instruction": "18001d3a6:\tff 15 d4 6c 05 00    \tcall   *0x56cd4(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32129,
+        "target_va": "0x180074080",
+        "instruction": "18001d4d2:\tff 15 a8 6b 05 00    \tcall   *0x56ba8(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32135,
+        "target_va": "0x180074080",
+        "instruction": "18001d4ed:\tff 15 8d 6b 05 00    \tcall   *0x56b8d(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32381,
+        "target_va": "0x180074080",
+        "instruction": "18001d824:\tff 15 56 68 05 00    \tcall   *0x56856(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32387,
+        "target_va": "0x180074080",
+        "instruction": "18001d842:\tff 15 38 68 05 00    \tcall   *0x56838(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32423,
+        "target_va": "0x180074080",
+        "instruction": "18001d8dd:\tff 15 9d 67 05 00    \tcall   *0x5679d(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32502,
+        "target_va": "0x180074080",
+        "instruction": "18001da6b:\tff 15 0f 66 05 00    \tcall   *0x5660f(%rip)        # 0x180074080"
+      },
+      {
+        "line": 32692,
+        "target_va": "0x180074080",
+        "instruction": "18001dd83:\tff 15 f7 62 05 00    \tcall   *0x562f7(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34607,
+        "target_va": "0x180074080",
+        "instruction": "18001f97a:\tff 15 00 47 05 00    \tcall   *0x54700(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34722,
+        "target_va": "0x180074080",
+        "instruction": "18001fb30:\tff 15 4a 45 05 00    \tcall   *0x5454a(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34739,
+        "target_va": "0x180074080",
+        "instruction": "18001fb78:\tff 15 02 45 05 00    \tcall   *0x54502(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34758,
+        "target_va": "0x180074080",
+        "instruction": "18001fbc0:\tff 15 ba 44 05 00    \tcall   *0x544ba(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34775,
+        "target_va": "0x180074080",
+        "instruction": "18001fc00:\tff 15 7a 44 05 00    \tcall   *0x5447a(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34924,
+        "target_va": "0x180074080",
+        "instruction": "18001fe39:\tff 15 41 42 05 00    \tcall   *0x54241(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34940,
+        "target_va": "0x180074080",
+        "instruction": "18001fe79:\tff 15 01 42 05 00    \tcall   *0x54201(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34959,
+        "target_va": "0x180074080",
+        "instruction": "18001fec1:\tff 15 b9 41 05 00    \tcall   *0x541b9(%rip)        # 0x180074080"
+      },
+      {
+        "line": 34976,
+        "target_va": "0x180074080",
+        "instruction": "18001ff01:\tff 15 79 41 05 00    \tcall   *0x54179(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35116,
+        "target_va": "0x180074080",
+        "instruction": "180020128:\tff 15 52 3f 05 00    \tcall   *0x53f52(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35132,
+        "target_va": "0x180074080",
+        "instruction": "180020169:\tff 15 11 3f 05 00    \tcall   *0x53f11(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35151,
+        "target_va": "0x180074080",
+        "instruction": "1800201b1:\tff 15 c9 3e 05 00    \tcall   *0x53ec9(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35168,
+        "target_va": "0x180074080",
+        "instruction": "1800201f1:\tff 15 89 3e 05 00    \tcall   *0x53e89(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35289,
+        "target_va": "0x180074080",
+        "instruction": "1800203cc:\tff 15 ae 3c 05 00    \tcall   *0x53cae(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35304,
+        "target_va": "0x180074080",
+        "instruction": "18002040a:\tff 15 70 3c 05 00    \tcall   *0x53c70(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35323,
+        "target_va": "0x180074080",
+        "instruction": "180020451:\tff 15 29 3c 05 00    \tcall   *0x53c29(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35340,
+        "target_va": "0x180074080",
+        "instruction": "180020491:\tff 15 e9 3b 05 00    \tcall   *0x53be9(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35461,
+        "target_va": "0x180074080",
+        "instruction": "180020659:\tff 15 21 3a 05 00    \tcall   *0x53a21(%rip)        # 0x180074080"
+      },
+      {
+        "line": 35473,
+        "target_va": "0x180074080",
+        "instruction": "180020680:\tff 15 fa 39 05 00    \tcall   *0x539fa(%rip)        # 0x180074080"
+      }
+    ],
+    "SuspendThread": [
+      {
+        "line": 23039,
+        "target_va": "0x180074070",
+        "instruction": "180015354:\tff 15 16 ed 05 00    \tcall   *0x5ed16(%rip)        # 0x180074070"
+      }
+    ],
+    "SystemTimeToFileTime": [
+      {
+        "line": 23275,
+        "target_va": "0x1800740b0",
+        "instruction": "180015668:\tff 15 42 ea 05 00    \tcall   *0x5ea42(%rip)        # 0x1800740b0"
+      },
+      {
+        "line": 23906,
+        "target_va": "0x1800740b0",
+        "instruction": "180016049:\tff 15 61 e0 05 00    \tcall   *0x5e061(%rip)        # 0x1800740b0"
+      },
+      {
+        "line": 29015,
+        "target_va": "0x1800740b0",
+        "instruction": "18001a66e:\tff 15 3c 9a 05 00    \tcall   *0x59a3c(%rip)        # 0x1800740b0"
+      },
+      {
+        "line": 37214,
+        "target_va": "0x1800740b0",
+        "instruction": "180021e93:\tff 15 17 22 05 00    \tcall   *0x52217(%rip)        # 0x1800740b0"
+      }
+    ],
+    "TerminateProcess": [
+      {
+        "line": 97009,
+        "target_va": "0x1800741f8",
+        "instruction": "1800551e1:\t48 ff 25 10 f0 01 00 \trex.W jmp *0x1f010(%rip)        # 0x1800741f8"
+      },
+      {
+        "line": 107542,
+        "target_va": "0x1800741f8",
+        "instruction": "18005de74:\t48 ff 25 7d 63 01 00 \trex.W jmp *0x1637d(%rip)        # 0x1800741f8"
+      },
+      {
+        "line": 109514,
+        "target_va": "0x1800741f8",
+        "instruction": "18005f8e0:\tff 15 12 49 01 00    \tcall   *0x14912(%rip)        # 0x1800741f8"
+      }
+    ],
+    "TlsAlloc": [
+      {
+        "line": 101651,
+        "target_va": "0x180074258",
+        "instruction": "180058f7a:\t48 ff 25 d7 b2 01 00 \trex.W jmp *0x1b2d7(%rip)        # 0x180074258"
+      },
+      {
+        "line": 122418,
+        "target_va": "0x180074258",
+        "instruction": "18006a4ed:\t48 ff 25 64 9d 00 00 \trex.W jmp *0x9d64(%rip)        # 0x180074258"
+      }
+    ],
+    "TlsFree": [
+      {
+        "line": 101671,
+        "target_va": "0x180074270",
+        "instruction": "180058fc3:\t48 ff 25 a6 b2 01 00 \trex.W jmp *0x1b2a6(%rip)        # 0x180074270"
+      },
+      {
+        "line": 122435,
+        "target_va": "0x180074270",
+        "instruction": "18006a533:\t48 ff 25 36 9d 00 00 \trex.W jmp *0x9d36(%rip)        # 0x180074270"
+      }
+    ],
+    "TlsGetValue": [
+      {
+        "line": 101690,
+        "target_va": "0x180074260",
+        "instruction": "18005900b:\t48 ff 25 4e b2 01 00 \trex.W jmp *0x1b24e(%rip)        # 0x180074260"
+      },
+      {
+        "line": 122454,
+        "target_va": "0x180074260",
+        "instruction": "18006a57b:\t48 ff 25 de 9c 00 00 \trex.W jmp *0x9cde(%rip)        # 0x180074260"
+      }
+    ],
+    "TlsSetValue": [
+      {
+        "line": 101709,
+        "target_va": "0x180074268",
+        "instruction": "180059054:\tff 15 0e b2 01 00    \tcall   *0x1b20e(%rip)        # 0x180074268"
+      },
+      {
+        "line": 122473,
+        "target_va": "0x180074268",
+        "instruction": "18006a5c4:\tff 15 9e 9c 00 00    \tcall   *0x9c9e(%rip)        # 0x180074268"
+      }
+    ],
+    "UnhandledExceptionFilter": [
+      {
+        "line": 97003,
+        "target_va": "0x1800741e8",
+        "instruction": "1800551c8:\tff 15 1a f0 01 00    \tcall   *0x1f01a(%rip)        # 0x1800741e8"
+      },
+      {
+        "line": 97776,
+        "target_va": "0x1800741e8",
+        "instruction": "180055cb3:\tff 15 2f e5 01 00    \tcall   *0x1e52f(%rip)        # 0x1800741e8"
+      },
+      {
+        "line": 107428,
+        "target_va": "0x1800741e8",
+        "instruction": "18005dcea:\tff 15 f8 64 01 00    \tcall   *0x164f8(%rip)        # 0x1800741e8"
+      }
+    ],
+    "WaitForSingleObject": [
+      {
+        "line": 22119,
+        "target_va": "0x180074068",
+        "instruction": "18001474f:\tff 15 13 f9 05 00    \tcall   *0x5f913(%rip)        # 0x180074068"
+      },
+      {
+        "line": 26554,
+        "target_va": "0x180074068",
+        "instruction": "1800183ce:\tff 15 94 bc 05 00    \tcall   *0x5bc94(%rip)        # 0x180074068"
+      },
+      {
+        "line": 29819,
+        "target_va": "0x180074068",
+        "instruction": "18001b1fa:\tff 15 68 8e 05 00    \tcall   *0x58e68(%rip)        # 0x180074068"
+      }
+    ],
+    "WideCharToMultiByte": [
+      {
+        "line": 121430,
+        "target_va": "0x1800742b0",
+        "instruction": "18006978f:\t48 ff 25 1a ab 00 00 \trex.W jmp *0xab1a(%rip)        # 0x1800742b0"
+      }
+    ],
+    "WriteConsoleW": [
+      {
+        "line": 109047,
+        "target_va": "0x1800742a0",
+        "instruction": "18005f2e1:\tff 15 b9 4f 01 00    \tcall   *0x14fb9(%rip)        # 0x1800742a0"
+      },
+      {
+        "line": 130906,
+        "target_va": "0x1800742a0",
+        "instruction": "180071a4d:\tff 15 4d 28 00 00    \tcall   *0x284d(%rip)        # 0x1800742a0"
+      },
+      {
+        "line": 130931,
+        "target_va": "0x1800742a0",
+        "instruction": "180071abb:\tff 15 df 27 00 00    \tcall   *0x27df(%rip)        # 0x1800742a0"
+      }
+    ],
+    "WriteFile": [
+      {
+        "line": 29362,
+        "target_va": "0x1800740f0",
+        "instruction": "18001ab0c:\tff 15 de 95 05 00    \tcall   *0x595de(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123113,
+        "target_va": "0x1800740f0",
+        "instruction": "18006aef6:\tff 15 f4 91 00 00    \tcall   *0x91f4(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123133,
+        "target_va": "0x1800740f0",
+        "instruction": "18006af48:\tff 15 a2 91 00 00    \tcall   *0x91a2(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123289,
+        "target_va": "0x1800740f0",
+        "instruction": "18006b167:\tff 15 83 8f 00 00    \tcall   *0x8f83(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123372,
+        "target_va": "0x1800740f0",
+        "instruction": "18006b282:\tff 15 68 8e 00 00    \tcall   *0x8e68(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123479,
+        "target_va": "0x1800740f0",
+        "instruction": "18006b3eb:\tff 15 ff 8c 00 00    \tcall   *0x8cff(%rip)        # 0x1800740f0"
+      },
+      {
+        "line": 123730,
+        "target_va": "0x1800740f0",
+        "instruction": "18006b75c:\tff 15 8e 89 00 00    \tcall   *0x898e(%rip)        # 0x1800740f0"
+      }
+    ]
+  },
+  "SETUPAPI.dll": {
+    "SetupDiDestroyDeviceInfoList": [
+      {
+        "line": 29522,
+        "target_va": "0x1800742e0",
+        "instruction": "18001ad8e:\tff 15 4c 95 05 00    \tcall   *0x5954c(%rip)        # 0x1800742e0"
+      }
+    ],
+    "SetupDiEnumDeviceInterfaces": [
+      {
+        "line": 29429,
+        "target_va": "0x1800742d8",
+        "instruction": "18001ac01:\tff 15 d1 96 05 00    \tcall   *0x596d1(%rip)        # 0x1800742d8"
+      }
+    ],
+    "SetupDiGetClassDevsW": [
+      {
+        "line": 29415,
+        "target_va": "0x1800742e8",
+        "instruction": "18001abca:\tff 15 18 97 05 00    \tcall   *0x59718(%rip)        # 0x1800742e8"
+      }
+    ],
+    "SetupDiGetDeviceInterfaceDetailW": [
+      {
+        "line": 29439,
+        "target_va": "0x1800742f0",
+        "instruction": "18001ac2c:\tff 15 be 96 05 00    \tcall   *0x596be(%rip)        # 0x1800742f0"
+      },
+      {
+        "line": 29470,
+        "target_va": "0x1800742f0",
+        "instruction": "18001acb9:\tff 15 31 96 05 00    \tcall   *0x59631(%rip)        # 0x1800742f0"
+      }
+    ]
+  },
+  "SHELL32.dll": {
+    "SHGetSpecialFolderPathW": [
+      {
+        "line": 23788,
+        "target_va": "0x180074300",
+        "instruction": "180015eb3:\tff 15 47 e4 05 00    \tcall   *0x5e447(%rip)        # 0x180074300"
+      },
+      {
+        "line": 25881,
+        "target_va": "0x180074300",
+        "instruction": "180017b73:\tff 15 87 c7 05 00    \tcall   *0x5c787(%rip)        # 0x180074300"
+      }
+    ]
+  },
+  "libusb0.dll": {
+    "usb_bulk_write": [
+      {
+        "line": 32544,
+        "target_va": "0x180074340",
+        "instruction": "18001db34:\tff 15 06 68 05 00    \tcall   *0x56806(%rip)        # 0x180074340"
+      },
+      {
+        "line": 32571,
+        "target_va": "0x180074340",
+        "instruction": "18001dba0:\tff 15 9a 67 05 00    \tcall   *0x5679a(%rip)        # 0x180074340"
+      }
+    ],
+    "usb_claim_interface": [
+      {
+        "line": 29949,
+        "target_va": "0x180074318",
+        "instruction": "18001b3ed:\tff 15 25 8f 05 00    \tcall   *0x58f25(%rip)        # 0x180074318"
+      }
+    ],
+    "usb_close": [
+      {
+        "line": 29851,
+        "target_va": "0x180074320",
+        "instruction": "18001b284:\tff 15 96 90 05 00    \tcall   *0x59096(%rip)        # 0x180074320"
+      }
+    ],
+    "usb_control_msg": [
+      {
+        "line": 27133,
+        "target_va": "0x180074328",
+        "instruction": "180018c9e:\tff 15 84 b6 05 00    \tcall   *0x5b684(%rip)        # 0x180074328"
+      },
+      {
+        "line": 32791,
+        "target_va": "0x180074328",
+        "instruction": "18001dedd:\tff 15 45 64 05 00    \tcall   *0x56445(%rip)        # 0x180074328"
+      },
+      {
+        "line": 32820,
+        "target_va": "0x180074328",
+        "instruction": "18001df5d:\tff 15 c5 63 05 00    \tcall   *0x563c5(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33103,
+        "target_va": "0x180074328",
+        "instruction": "18001e36a:\tff 15 b8 5f 05 00    \tcall   *0x55fb8(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33132,
+        "target_va": "0x180074328",
+        "instruction": "18001e3e0:\tff 15 42 5f 05 00    \tcall   *0x55f42(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33248,
+        "target_va": "0x180074328",
+        "instruction": "18001e589:\tff 15 99 5d 05 00    \tcall   *0x55d99(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33372,
+        "target_va": "0x180074328",
+        "instruction": "18001e73d:\tff 15 e5 5b 05 00    \tcall   *0x55be5(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33401,
+        "target_va": "0x180074328",
+        "instruction": "18001e7bd:\tff 15 65 5b 05 00    \tcall   *0x55b65(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33550,
+        "target_va": "0x180074328",
+        "instruction": "18001e9db:\tff 15 47 59 05 00    \tcall   *0x55947(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33706,
+        "target_va": "0x180074328",
+        "instruction": "18001ec10:\tff 15 12 57 05 00    \tcall   *0x55712(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33735,
+        "target_va": "0x180074328",
+        "instruction": "18001ec86:\tff 15 9c 56 05 00    \tcall   *0x5569c(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33864,
+        "target_va": "0x180074328",
+        "instruction": "18001ee5f:\tff 15 c3 54 05 00    \tcall   *0x554c3(%rip)        # 0x180074328"
+      },
+      {
+        "line": 33893,
+        "target_va": "0x180074328",
+        "instruction": "18001eedf:\tff 15 43 54 05 00    \tcall   *0x55443(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34029,
+        "target_va": "0x180074328",
+        "instruction": "18001f0dc:\tff 15 46 52 05 00    \tcall   *0x55246(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34147,
+        "target_va": "0x180074328",
+        "instruction": "18001f28b:\tff 15 97 50 05 00    \tcall   *0x55097(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34319,
+        "target_va": "0x180074328",
+        "instruction": "18001f50f:\tff 15 13 4e 05 00    \tcall   *0x54e13(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34447,
+        "target_va": "0x180074328",
+        "instruction": "18001f700:\tff 15 22 4c 05 00    \tcall   *0x54c22(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34567,
+        "target_va": "0x180074328",
+        "instruction": "18001f8cd:\tff 15 55 4a 05 00    \tcall   *0x54a55(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34688,
+        "target_va": "0x180074328",
+        "instruction": "18001fa9f:\tff 15 83 48 05 00    \tcall   *0x54883(%rip)        # 0x180074328"
+      },
+      {
+        "line": 34874,
+        "target_va": "0x180074328",
+        "instruction": "18001fd55:\tff 15 cd 45 05 00    \tcall   *0x545cd(%rip)        # 0x180074328"
+      },
+      {
+        "line": 35068,
+        "target_va": "0x180074328",
+        "instruction": "18002004a:\tff 15 d8 42 05 00    \tcall   *0x542d8(%rip)        # 0x180074328"
+      },
+      {
+        "line": 35249,
+        "target_va": "0x180074328",
+        "instruction": "18002031c:\tff 15 06 40 05 00    \tcall   *0x54006(%rip)        # 0x180074328"
+      },
+      {
+        "line": 35423,
+        "target_va": "0x180074328",
+        "instruction": "1800205b3:\tff 15 6f 3d 05 00    \tcall   *0x53d6f(%rip)        # 0x180074328"
+      }
+    ],
+    "usb_find_busses": [
+      {
+        "line": 27206,
+        "target_va": "0x180074358",
+        "instruction": "180018d8d:\tff 15 c5 b5 05 00    \tcall   *0x5b5c5(%rip)        # 0x180074358"
+      }
+    ],
+    "usb_find_devices": [
+      {
+        "line": 27207,
+        "target_va": "0x180074350",
+        "instruction": "180018d93:\tff 15 b7 b5 05 00    \tcall   *0x5b5b7(%rip)        # 0x180074350"
+      }
+    ],
+    "usb_get_busses": [
+      {
+        "line": 27208,
+        "target_va": "0x180074310",
+        "instruction": "180018d99:\tff 15 71 b5 05 00    \tcall   *0x5b571(%rip)        # 0x180074310"
+      }
+    ],
+    "usb_init": [
+      {
+        "line": 26694,
+        "target_va": "0x180074348",
+        "instruction": "1800185dd:\tff 15 65 bd 05 00    \tcall   *0x5bd65(%rip)        # 0x180074348"
+      }
+    ],
+    "usb_open": [
+      {
+        "line": 29647,
+        "target_va": "0x180074338",
+        "instruction": "18001af8a:\tff 15 a8 93 05 00    \tcall   *0x593a8(%rip)        # 0x180074338"
+      }
+    ],
+    "usb_release_interface": [
+      {
+        "line": 29844,
+        "target_va": "0x180074330",
+        "instruction": "18001b262:\tff 15 c8 90 05 00    \tcall   *0x590c8(%rip)        # 0x180074330"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "usb_open": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_claim_interface": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_control_msg": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_bulk_write": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_init": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_find_busses": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_find_devices": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_get_busses": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_close": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "usb_release_interface": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "SetupDiGetClassDevsW": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "SetupDiEnumDeviceInterfaces": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "SetupDiGetDeviceInterfaceDetailW": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "CreateFileW": {
+    "call_count": 0,
+    "call_sites": []
+  },
+  "DeviceIoControl": {
+    "call_count": 0,
+    "call_sites": []
+  }
+}

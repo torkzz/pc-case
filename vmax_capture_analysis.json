@@ -1,0 +1,11 @@
+{
+  "pcap_file": "/home/tor/pc-case-lcd/vmax_startup.pcapng",
+  "usb_device": "33c3:f101",
+  "control_transfers": [],
+  "bulk_out_frames": [],
+  "bulk_in_frames": [],
+  "jpeg_streams_found": 0,
+  "summary": {
+    "status": "FILE_NOT_FOUND"
+  }
+}

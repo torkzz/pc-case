@@ -1,0 +1,15 @@
+{
+  "start_time": "Sun Aug 23 11:29:12 2026",
+  "end_time": "Sun Aug 23 11:30:12 2026",
+  "duration_s": 60.05,
+  "timeline_events": [
+    {
+      "timestamp": "11:29:12.101",
+      "rel_s": 0.0,
+      "usb_connected": true,
+      "tty_present": true
+    }
+  ],
+  "final_classification": "DISPLAY_APPLICATION_SHUTDOWN (CASE A: USB & TTY stay alive)",
+  "dmesg_sample": []
+}

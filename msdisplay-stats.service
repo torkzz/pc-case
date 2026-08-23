@@ -1,0 +1,15 @@
+[Unit]
+Description=MSDisplay 640x1920 Native PC-Case LCD System Stats Monitor
+After=sys-subsystem-net-devices-1--9.device
+Wants=sys-subsystem-net-devices-1--9.device
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/sudo sh -c 'echo "1-9:1.1" > /sys/bus/usb/drivers/cdc_acm/unbind 2>/dev/null || true'
+ExecStart=/home/tor/pc-case-lcd/.venv/bin/python /home/tor/pc-case-lcd/msdisplay_system_stats.py --interval 1.0
+WorkingDirectory=/home/tor/pc-case-lcd
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

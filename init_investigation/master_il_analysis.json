@@ -1,0 +1,308 @@
+{
+  "protocol_surface": [
+    {
+      "class_name": "auto",
+      "request_cmd": "0x0090",
+      "request_cmd_dec": 144,
+      "expected_response_cmd": "0x00D0 (208)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "bool '<NeedReply>k__BackingField'",
+        "unsigned int8 '<FunctionCode>k__BackingField'",
+        "unsigned int8 '<RegisterCount>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "DownloadCompleteRequest",
+      "request_cmd": "0x008F",
+      "request_cmd_dec": 143,
+      "expected_response_cmd": "0x00CF (207)",
+      "safety_classification": "STATE-CHANGING / DOWNLOAD",
+      "fields": []
+    },
+    {
+      "class_name": "DownloadCompleteResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<Res>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "GetDownloadStatusRequest",
+      "request_cmd": "0x0085",
+      "request_cmd_dec": 133,
+      "expected_response_cmd": "0x00C5 (197)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "ChangeStatusRequest",
+      "request_cmd": "0x0071",
+      "request_cmd_dec": 113,
+      "expected_response_cmd": "0x00B1 (177)",
+      "safety_classification": "STATE TRANSITION",
+      "fields": [
+        "unsigned int8 '<Status>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "RestartRequest",
+      "request_cmd": "0x0070",
+      "request_cmd_dec": 112,
+      "expected_response_cmd": "0x00B0 (176)",
+      "safety_classification": "DEVICE RESTART",
+      "fields": []
+    },
+    {
+      "class_name": "GetGifInfoRequest",
+      "request_cmd": "0x0061",
+      "request_cmd_dec": 97,
+      "expected_response_cmd": "0x00A1 (161)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "GetFlashInfoRequest",
+      "request_cmd": "0x0062",
+      "request_cmd_dec": 98,
+      "expected_response_cmd": "0x00A2 (162)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "ConnectDeviceRequest",
+      "request_cmd": "0x0062",
+      "request_cmd_dec": 98,
+      "expected_response_cmd": "0x00A2 (162)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "ExitRunningRequest",
+      "request_cmd": "0x0063",
+      "request_cmd_dec": 99,
+      "expected_response_cmd": "0x00A2 (162)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "ChangeStatusResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<Res>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "RestartResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<Res>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "GetGifInfoResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int16 '<Num>k__BackingField'",
+        "class [mscorlib]System.Collections.Generic.List`1<string> '<Names>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "GetFlashInfoResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<FreeSpace>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "GenericFrameResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "BaseRegisterResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int8 '<Status>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "HandshakeRequest",
+      "request_cmd": "0x0080",
+      "request_cmd_dec": 128,
+      "expected_response_cmd": "0x00C0 (192)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "HandshakeResponse",
+      "request_cmd": "0x00C0",
+      "request_cmd_dec": 192,
+      "expected_response_cmd": "0x00C0 (192)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<MaxPackageSize>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "GetHardwareInfoRequest",
+      "request_cmd": "0x0072",
+      "request_cmd_dec": 114,
+      "expected_response_cmd": "0x00B2 (178)",
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": []
+    },
+    {
+      "class_name": "GetHardwareInfoResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "string '<IcId>k__BackingField'",
+        "unsigned int16 '<MaxAcfSize>k__BackingField'",
+        "unsigned int16 '<DisplayHeight>k__BackingField'",
+        "unsigned int16 '<DisplayWidth>k__BackingField'",
+        "string '<ProductId>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "RequestDownloadRequest",
+      "request_cmd": "0x0081",
+      "request_cmd_dec": 129,
+      "expected_response_cmd": "0x00C1 (193)",
+      "safety_classification": "STATE-CHANGING / DOWNLOAD",
+      "fields": [
+        "unsigned int32 '<Addr>k__BackingField'",
+        "unsigned int32 '<FileSize>k__BackingField'",
+        "unsigned int8[] '<FileId>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "RequestDownloadResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<MaxPackageSize>k__BackingField'",
+        "unsigned int32 '<Res>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "DownloadDataRequest",
+      "request_cmd": "0x0082",
+      "request_cmd_dec": 130,
+      "expected_response_cmd": "0x00C2 (194)",
+      "safety_classification": "STATE-CHANGING / DOWNLOAD",
+      "fields": [
+        "unsigned int32 '<Offset>k__BackingField'",
+        "unsigned int8[] '<Data>k__BackingField'"
+      ]
+    },
+    {
+      "class_name": "DownloadDataResponse",
+      "request_cmd": null,
+      "request_cmd_dec": null,
+      "expected_response_cmd": null,
+      "safety_classification": "SAFE READ-ONLY / QUERY",
+      "fields": [
+        "unsigned int32 '<Res>k__BackingField'"
+      ]
+    }
+  ],
+  "device_communicator_public_methods": [
+    "",
+    "Connect",
+    "Disconnect",
+    "Dispose",
+    "EnableDebugLogging",
+    "SendFrame",
+    "add_DataReceived",
+    "add_ErrorOccurred",
+    "get_IsConnected",
+    "remove_DataReceived",
+    "remove_ErrorOccurred"
+  ],
+  "vmax_il_summary": {
+    "classes_count": 0,
+    "extern_assemblies": [
+      "CMSMTCInstaller",
+      "DeviceCommunicationLibrary",
+      "DryIoc",
+      "FFmpegRecorder",
+      "GameInformation",
+      "HandyControl",
+      "HidLibrary",
+      "HidSharp",
+      "HtmlAgilityPack",
+      "ICSharpCode.SharpZipLib",
+      "InTheHand.Net.Personal",
+      "LiveCharts",
+      "LiveCharts.Wpf",
+      "Lyricify.Lyrics.Helper",
+      "ManagedNativeWifi",
+      "Microsoft.CSharp",
+      "Microsoft.Win32.TaskScheduler",
+      "Microsoft.WindowsAPICodePack",
+      "Microsoft.Xaml.Behaviors",
+      "NAudio.Core",
+      "NAudio.Wasapi",
+      "NLog",
+      "Newtonsoft.Json",
+      "OpenCvSharp",
+      "OpenCvSharp.Extensions",
+      "OpenCvSharp.WpfExtensions",
+      "PresentationCore",
+      "PresentationFramework",
+      "Prism",
+      "Prism.DryIoc.Wpf",
+      "Prism.Wpf",
+      "SkiaSharp",
+      "SkiaSharp.Views.Desktop.Common",
+      "SkiaSharp.Views.WPF",
+      "System",
+      "System.Core",
+      "System.Drawing",
+      "System.Management",
+      "System.Memory",
+      "System.Net.Http",
+      "System.Numerics.Vectors",
+      "System.Runtime.WindowsRuntime",
+      "System.Text.Json",
+      "System.Web",
+      "System.Web.Extensions",
+      "System.Windows.Forms",
+      "System.Xaml",
+      "Windows.Foundation.FoundationContract",
+      "Windows.Foundation.UniversalApiContract",
+      "WindowsBase",
+      "WindowsMediaController",
+      "common",
+      "mscorlib"
+    ],
+    "ldstr_sample": [],
+    "byte_strings_count": 0
+  }
+}

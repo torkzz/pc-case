@@ -1,0 +1,17 @@
+{
+  "search_terms_checked": [
+    "ControlTransfer", "ControlTransferAsync", "ControlRequest", "SetupPacket",
+    "UsbControl", "UsbRequest", "bmRequestType", "bRequest", "wValue", "wIndex", "wLength",
+    "WinUSB", "LibUsb", "libusb", "USBDevice", "UsbDevice",
+    "ClaimInterface", "SetConfiguration", "SetInterface", "ResetDevice",
+    "0x20", "0x21", "0x22", "0x23", "0x40", "0x41", "0x80", "0x81", "0xC0", "0xC1"
+  ],
+  "files_searched": ["DeviceCommunicationLibrary.il", "Vmax.il"],
+  "control_transfers_found": [],
+  "conclusion": "CONFIRMED: No USB control transfer operations exist in the vendor IL. The vendor application communicates exclusively through System.IO.Ports.SerialPort, which on Windows translates to the CDC ACM serial driver. No vendor-specific USB control transfers are required beyond what the OS CDC ACM driver issues automatically during enumeration (SET_LINE_CODING, SET_CONTROL_LINE_STATE).",
+  "transport": "CDC ACM (System.IO.Ports.SerialPort)",
+  "no_winusb": true,
+  "no_libusb": true,
+  "no_direct_endpoints": true,
+  "no_vendor_control_requests": true
+}

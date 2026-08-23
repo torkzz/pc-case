@@ -1,0 +1,83 @@
+{
+  "call_graph": [
+    {
+      "step": 1,
+      "caller": "Vmax.exe / DeviceViewModel or equivalent",
+      "callee": "DeviceCommunicator.Connect",
+      "call_order": 1,
+      "arguments": {"portName": "<from enumeration>", "baudRate": 115200},
+      "return_value": "bool (true=success)",
+      "serial_operations": ["new SerialPort(portName, 115200, Parity.None, 8, StopBits.One)", "port.add_DataReceived(handler)", "port.add_ErrorReceived(handler)", "port.Open()"],
+      "dtr_rts": "NOT SET — vendor does not call set_DtrEnable or set_RtsEnable",
+      "delays": "NONE",
+      "flush": "NONE",
+      "control_transfers": "NONE — pure SerialPort.Open()",
+      "state_modified": "_serialPort field initialized and opened"
+    },
+    {
+      "step": 2,
+      "caller": "Vmax.exe startup",
+      "callee": "DeviceCommunicator.HandshakeAsync",
+      "call_order": 2,
+      "arguments": {"timeoutMs": "default (not specified in IL — CancellationTokenSource constructed with timeoutMs)"},
+      "return_value": "Task<HandshakeResponse>",
+      "device_command_generated": {
+        "class": "HandshakeRequest",
+        "CMD": "0x0080",
+        "Content": "[] (empty)",
+        "frame_bytes": "41 48 00 02 00 80 00 00 4D 49"
+      },
+      "expected_response_CMD": "0x00C0 (192)",
+      "serial_operations": ["SerialPort.Write(frame_bytes)"],
+      "delays": "NONE before send",
+      "control_transfers": "NONE"
+    },
+    {
+      "step": 3,
+      "caller": "Vmax.exe startup",
+      "callee": "DeviceCommunicator.GetHardwareInfoAsync",
+      "call_order": 3,
+      "arguments": {"timeoutMs": "default"},
+      "return_value": "Task<GetHardwareInfoResponse>",
+      "device_command_generated": {
+        "class": "GetHardwareInfoRequest",
+        "CMD": "0x0072",
+        "Content": "[] (empty)",
+        "frame_bytes": "41 48 00 02 00 72 00 00 4D 49"
+      },
+      "expected_response_CMD": "0x00B2 (178)",
+      "serial_operations": ["SerialPort.Write(frame_bytes)"],
+      "delays": "NONE before send",
+      "control_transfers": "NONE"
+    },
+    {
+      "step": "optional_4",
+      "caller": "application",
+      "callee": "DeviceCommunicator.ConnectDeviceAsync",
+      "call_order": 4,
+      "device_command_generated": {
+        "class": "ConnectDeviceRequest",
+        "CMD": "0x0062",
+        "Content": "[] (empty)",
+        "frame_bytes": "41 48 00 02 00 62 00 00 4D 49"
+      },
+      "expected_response_CMD": "0x00A2 (162)",
+      "note": "ConnectDeviceAsync sends same CMD as GetFlashInfoAsync (both use 0x0062)"
+    }
+  ],
+  "complete_opcode_table": {
+    "0x0080": {"name": "HandshakeRequest", "response": "0x00C0", "content": "empty"},
+    "0x0072": {"name": "GetHardwareInfoRequest", "response": "0x00B2", "content": "empty"},
+    "0x0071": {"name": "UNKNOWN_0x71", "response": "0x00B1", "content": "unknown"},
+    "0x0070": {"name": "RestartRequest", "response": "0x00B0", "content": "empty"},
+    "0x0062": {"name": "ConnectDeviceRequest/GetFlashInfoRequest", "response": "0x00A2", "content": "empty"},
+    "0x0063": {"name": "ExitRunningRequest", "response": "0x00A2", "content": "empty", "note": "uses SendFrameWithRetry not SendRequestAsync"},
+    "0x0061": {"name": "GetGifInfoRequest", "response": "0x00A1", "content": "empty"},
+    "0x0090": {"name": "RegisterOperationRequest", "response": "0x00D0", "content": "register payload"},
+    "0x008F": {"name": "DownloadCompleteRequest", "response": "0x00CF", "content": "empty"},
+    "0x0085": {"name": "GetDownloadStatusRequest", "response": "0x00C5", "content": "empty"},
+    "0x0081": {"name": "UNKNOWN_0x81", "response": "0x00C1", "content": "unknown"},
+    "0x0082": {"name": "UNKNOWN_0x82", "response": "0x00C2", "content": "unknown"},
+    "0x0083": {"name": "UNKNOWN_0x83", "response": "0x00C3", "content": "unknown"}
+  }
+}

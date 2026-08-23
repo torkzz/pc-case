@@ -1,0 +1,887 @@
+{
+  "reconnect_log": {
+    "filepath": "/home/tor/pc-case-lcd/usbmon_reconnect.txt",
+    "control_transfers_count": 8,
+    "control_transfers_sample": [
+      {
+        "line": 48,
+        "text": "ffff8f286f565300 2938546680 S Co:1:003:0 s 01 0b 0002 0002 0000 0"
+      },
+      {
+        "line": 49,
+        "text": "ffff8f286f565300 2938547477 C Co:1:003:0 0 0"
+      },
+      {
+        "line": 50,
+        "text": "ffff8f286f565300 2938547515 S Co:1:003:0 s 22 01 0100 0002 0003 3 = 80bb00"
+      },
+      {
+        "line": 51,
+        "text": "ffff8f286f565300 2938550477 C Co:1:003:0 0 3 >"
+      },
+      {
+        "line": 52,
+        "text": "ffff8f286f565300 2938552007 S Ci:1:003:0 s a2 81 0100 0002 0003 3 <"
+      },
+      {
+        "line": 53,
+        "text": "ffff8f286f565300 2938554479 C Ci:1:003:0 0 3 = 80bb00"
+      },
+      {
+        "line": 96084,
+        "text": "ffff8f28a5b06000 3194275458 S Co:1:002:0 s 21 22 0003 0000 0000 0"
+      },
+      {
+        "line": 96087,
+        "text": "ffff8f28a5b06000 3194277974 C Co:1:002:0 0 0"
+      }
+    ],
+    "ep83_notifications_count": 161,
+    "ep83_notifications_sample": [
+      {
+        "line": 1,
+        "text": "ffff8f28b513f240 2870897489 C Ii:1:003:3 0:1 20 = 11ff0800 0d240300 00000000 00000000 00000000"
+      },
+      {
+        "line": 2,
+        "text": "ffff8f28b513f240 2870897502 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 7,
+        "text": "ffff8f28b513f240 2876881488 C Ii:1:003:3 0:1 20 = 11ff0800 0d250300 00000000 00000000 00000000"
+      },
+      {
+        "line": 8,
+        "text": "ffff8f28b513f240 2876881495 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 9,
+        "text": "ffff8f27e9de1a80 2878192005 C Ii:1:002:3 -2:512 0"
+      },
+      {
+        "line": 26,
+        "text": "ffff8f28b513f240 2882875481 C Ii:1:003:3 0:1 20 = 11ff0800 0d260300 00000000 00000000 00000000"
+      },
+      {
+        "line": 27,
+        "text": "ffff8f28b513f240 2882875486 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 28,
+        "text": "ffff8f28b513f240 2888882482 C Ii:1:003:3 0:1 20 = 11ff0800 0d280300 00000000 00000000 00000000"
+      },
+      {
+        "line": 29,
+        "text": "ffff8f28b513f240 2888882488 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 30,
+        "text": "ffff8f28b513f240 2894876481 C Ii:1:003:3 0:1 20 = 11ff0800 0d280300 00000000 00000000 00000000"
+      },
+      {
+        "line": 31,
+        "text": "ffff8f28b513f240 2894876487 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 32,
+        "text": "ffff8f28b513f240 2900887484 C Ii:1:003:3 0:1 20 = 11ff0800 0d290300 00000000 00000000 00000000"
+      },
+      {
+        "line": 33,
+        "text": "ffff8f28b513f240 2900887493 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 34,
+        "text": "ffff8f28b513f240 2906876484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2a0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 35,
+        "text": "ffff8f28b513f240 2906876491 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 36,
+        "text": "ffff8f28b513f240 2915885484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2c0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 37,
+        "text": "ffff8f28b513f240 2915885489 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 38,
+        "text": "ffff8f28b513f240 2915903484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2c0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 39,
+        "text": "ffff8f28b513f240 2915903490 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 40,
+        "text": "ffff8f28b513f240 2921874486 C Ii:1:003:3 0:1 20 = 11ff0800 0d2d0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 41,
+        "text": "ffff8f28b513f240 2921874493 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 42,
+        "text": "ffff8f28b513f240 2930873487 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 43,
+        "text": "ffff8f28b513f240 2930873494 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 44,
+        "text": "ffff8f28b513f240 2930891485 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 45,
+        "text": "ffff8f28b513f240 2930891489 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 46,
+        "text": "ffff8f28b513f240 2936871490 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000"
+      },
+      {
+        "line": 47,
+        "text": "ffff8f28b513f240 2936871497 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 1675,
+        "text": "ffff8f28b513f240 2942874641 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 1676,
+        "text": "ffff8f28b513f240 2942874648 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 1683,
+        "text": "ffff8f28b513f240 2942891628 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000"
+      },
+      {
+        "line": 1684,
+        "text": "ffff8f28b513f240 2942891631 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 3931,
+        "text": "ffff8f28b513f240 2948881632 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000"
+      },
+      {
+        "line": 3932,
+        "text": "ffff8f28b513f240 2948881637 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 3939,
+        "text": "ffff8f28b513f240 2948899631 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000"
+      },
+      {
+        "line": 3940,
+        "text": "ffff8f28b513f240 2948899635 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 7307,
+        "text": "ffff8f28b513f240 2957871654 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000"
+      },
+      {
+        "line": 7308,
+        "text": "ffff8f28b513f240 2957871662 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 7315,
+        "text": "ffff8f28b513f240 2957889637 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000"
+      },
+      {
+        "line": 7316,
+        "text": "ffff8f28b513f240 2957889642 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 9561,
+        "text": "ffff8f28b513f240 2963874630 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000"
+      },
+      {
+        "line": 9562,
+        "text": "ffff8f28b513f240 2963874636 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 9569,
+        "text": "ffff8f28b513f240 2963892624 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000"
+      },
+      {
+        "line": 9570,
+        "text": "ffff8f28b513f240 2963892629 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 11815,
+        "text": "ffff8f28b513f240 2969872629 C Ii:1:003:3 0:1 20 = 11ff0800 0d320300 00000000 00000000 00000000"
+      },
+      {
+        "line": 11816,
+        "text": "ffff8f28b513f240 2969872634 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 11823,
+        "text": "ffff8f28b513f240 2969890635 C Ii:1:003:3 0:1 20 = 11ff0800 0d320300 00000000 00000000 00000000"
+      },
+      {
+        "line": 11824,
+        "text": "ffff8f28b513f240 2969890656 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 14069,
+        "text": "ffff8f28b513f240 2975875630 C Ii:1:003:3 0:1 20 = 11ff0800 0d330300 00000000 00000000 00000000"
+      },
+      {
+        "line": 14070,
+        "text": "ffff8f28b513f240 2975875637 S Ii:1:003:3 -115:1 64 <"
+      },
+      {
+        "line": 14079,
+        "text": "ffff8f28b513f240 2975893648 C Ii:1:003:3 0:1 20 = 11ff0800 0d330300 00000000 00000000 00000000"
+      }
+    ],
+    "bulk_out_sample": [
+      {
+        "line": 3,
+        "text": "ffff8f27e9de19c0 2872190620 S Bo:1:002:2 -115 10 = 41480002 00620000 4d49"
+      },
+      {
+        "line": 4,
+        "text": "ffff8f27e9de19c0 2872190647 C Bo:1:002:2 0 10 >"
+      },
+      {
+        "line": 5,
+        "text": "ffff8f27e9de19c0 2875191695 S Bo:1:002:2 -115 10 = 41480002 00850000 4d49"
+      },
+      {
+        "line": 6,
+        "text": "ffff8f27e9de19c0 2875191713 C Bo:1:002:2 0 10 >"
+      },
+      {
+        "line": 96088,
+        "text": "ffff8f27e9de19c0 3194278095 S Bo:1:002:2 -115 10 = 41480002 00800000 4d49"
+      },
+      {
+        "line": 96089,
+        "text": "ffff8f27e9de19c0 3194278112 C Bo:1:002:2 0 10 >"
+      }
+    ],
+    "bulk_in_sample": [
+      {
+        "line": 10,
+        "text": "ffff8f27e9de1000 2878192320 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 11,
+        "text": "ffff8f27e9de16c0 2878192716 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 12,
+        "text": "ffff8f270275a180 2878193112 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 13,
+        "text": "ffff8f27d8e47d80 2878193508 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 14,
+        "text": "ffff8f26ec90e480 2878193903 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 15,
+        "text": "ffff8f26fc937600 2878194301 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 16,
+        "text": "ffff8f26cb234780 2878194696 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 17,
+        "text": "ffff8f26d8398c00 2878195092 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 18,
+        "text": "ffff8f26feb02d80 2878195488 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 19,
+        "text": "ffff8f2701231a80 2878195885 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 20,
+        "text": "ffff8f270382af00 2878196281 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 21,
+        "text": "ffff8f27038309c0 2878196676 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 22,
+        "text": "ffff8f26ea044000 2878197072 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 23,
+        "text": "ffff8f26ecf05300 2878197469 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 24,
+        "text": "ffff8f26f58adb40 2878197865 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 25,
+        "text": "ffff8f2703f50180 2878198260 C Bi:1:002:1 -2 0"
+      },
+      {
+        "line": 96068,
+        "text": "ffff8f27e9de1000 3194275417 S Bi:1:002:1 -115 1024 <"
+      },
+      {
+        "line": 96069,
+        "text": "ffff8f27e9de16c0 3194275420 S Bi:1:002:1 -115 1024 <"
+      },
+      {
+        "line": 96070,
+        "text": "ffff8f270275a180 3194275422 S Bi:1:002:1 -115 1024 <"
+      },
+      {
+        "line": 96071,
+        "text": "ffff8f27d8e47d80 3194275424 S Bi:1:002:1 -115 1024 <"
+      }
+    ]
+  },
+  "handshake_log": {
+    "filepath": "/home/tor/pc-case-lcd/usbmon_handshake_test.txt",
+    "control_transfers_count": 0,
+    "control_transfers_sample": [],
+    "ep83_notifications_count": 0,
+    "ep83_notifications_sample": [],
+    "bulk_out_sample": [],
+    "bulk_in_sample": []
+  },
+  "ep83_decoded_sample": [
+    {
+      "line": 1,
+      "raw_line": "ffff8f28b513f240 2870897489 C Ii:1:003:3 0:1 20 = 11ff0800 0d240300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d240300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d24",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 7,
+      "raw_line": "ffff8f28b513f240 2876881488 C Ii:1:003:3 0:1 20 = 11ff0800 0d250300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d250300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d25",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 26,
+      "raw_line": "ffff8f28b513f240 2882875481 C Ii:1:003:3 0:1 20 = 11ff0800 0d260300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d260300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d26",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 28,
+      "raw_line": "ffff8f28b513f240 2888882482 C Ii:1:003:3 0:1 20 = 11ff0800 0d280300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d280300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d28",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 30,
+      "raw_line": "ffff8f28b513f240 2894876481 C Ii:1:003:3 0:1 20 = 11ff0800 0d280300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d280300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d28",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 32,
+      "raw_line": "ffff8f28b513f240 2900887484 C Ii:1:003:3 0:1 20 = 11ff0800 0d290300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d290300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d29",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 34,
+      "raw_line": "ffff8f28b513f240 2906876484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2a0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2a0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2a",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 36,
+      "raw_line": "ffff8f28b513f240 2915885484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2c0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2c0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2c",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 38,
+      "raw_line": "ffff8f28b513f240 2915903484 C Ii:1:003:3 0:1 20 = 11ff0800 0d2c0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2c0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2c",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 40,
+      "raw_line": "ffff8f28b513f240 2921874486 C Ii:1:003:3 0:1 20 = 11ff0800 0d2d0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2d0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2d",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 42,
+      "raw_line": "ffff8f28b513f240 2930873487 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2f0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2f",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 44,
+      "raw_line": "ffff8f28b513f240 2930891485 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2f0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2f",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 46,
+      "raw_line": "ffff8f28b513f240 2936871490 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d300300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d30",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 1675,
+      "raw_line": "ffff8f28b513f240 2942874641 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2f0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2f",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 1683,
+      "raw_line": "ffff8f28b513f240 2942891628 C Ii:1:003:3 0:1 20 = 11ff0800 0d2f0300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d2f0300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d2f",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 3931,
+      "raw_line": "ffff8f28b513f240 2948881632 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d300300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d30",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 3939,
+      "raw_line": "ffff8f28b513f240 2948899631 C Ii:1:003:3 0:1 20 = 11ff0800 0d300300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d300300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d30",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 7307,
+      "raw_line": "ffff8f28b513f240 2957871654 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d310300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d31",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 7315,
+      "raw_line": "ffff8f28b513f240 2957889637 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d310300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d31",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 9561,
+      "raw_line": "ffff8f28b513f240 2963874630 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d310300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d31",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 9569,
+      "raw_line": "ffff8f28b513f240 2963892624 C Ii:1:003:3 0:1 20 = 11ff0800 0d310300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d310300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d31",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 11815,
+      "raw_line": "ffff8f28b513f240 2969872629 C Ii:1:003:3 0:1 20 = 11ff0800 0d320300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d320300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d32",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 11823,
+      "raw_line": "ffff8f28b513f240 2969890635 C Ii:1:003:3 0:1 20 = 11ff0800 0d320300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d320300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d32",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 14069,
+      "raw_line": "ffff8f28b513f240 2975875630 C Ii:1:003:3 0:1 20 = 11ff0800 0d330300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d330300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d33",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    },
+    {
+      "line": 14079,
+      "raw_line": "ffff8f28b513f240 2975893648 C Ii:1:003:3 0:1 20 = 11ff0800 0d330300 00000000 00000000 00000000",
+      "decoded": {
+        "raw_hex": "11ff0800 0d330300 00000000 00000000 00000000",
+        "req_type": "11",
+        "notification": "ff",
+        "w_value": "0800",
+        "w_index": "0d33",
+        "w_len": "0300",
+        "is_serial_state": false,
+        "state_payload_hex": "0000",
+        "dcd": false,
+        "dsr": false,
+        "break": false,
+        "ring": false,
+        "framing_error": false,
+        "parity_error": false,
+        "overrun_error": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,2591 @@
+{
+  "inf_data": {
+    "hardware_ids": [],
+    "guids": [
+      "{FB781AAF-9C70-4523-A5DF-642A87ECA567}",
+      "{e3fc78a8-c15c-4955-accd-a73f3eba1639}"
+    ],
+    "services": [
+      "ServiceBinary = %12%\\libusb0.sys"
+    ]
+  },
+  "dll_analysis": {
+    "MSDISPLAYSDKWRRAPER.dll": {
+      "path": "/home/tor/vmax_bundle/dll/x64/MSDISPLAYSDKWRRAPER.dll",
+      "exports": [
+        "Wrraper_MSDisplayCheckDeviceScreenCapability",
+        "Wrraper_MSDisplayEnableSDKScreenProcessor",
+        "Wrraper_MSDisplayFlashErase",
+        "Wrraper_MSDisplayGetDeviceInfo",
+        "Wrraper_MSDisplayGetDeviceList",
+        "Wrraper_MSDisplayGetDriverVersion",
+        "Wrraper_MSDisplayGetSDKVersion",
+        "Wrraper_MSDisplayInitFlashGpio",
+        "Wrraper_MSDisplayPause",
+        "Wrraper_MSDisplayReadEEPROM",
+        "Wrraper_MSDisplayReadFlash",
+        "Wrraper_MSDisplayReadSN",
+        "Wrraper_MSDisplayReadXdata",
+        "Wrraper_MSDisplayRegisterCallback",
+        "Wrraper_MSDisplayResume",
+        "Wrraper_MSDisplaySendPicture",
+        "Wrraper_MSDisplaySetVideoParam",
+        "Wrraper_MSDisplayStart",
+        "Wrraper_MSDisplayStop",
+        "Wrraper_MSDisplayWriteEEPROM",
+        "Wrraper_MSDisplayWriteFlash",
+        "Wrraper_MSDisplayWriteXdata"
+      ],
+      "imported_dlls": [
+        "KERNEL32.dll",
+        "SETUPAPI.dll",
+        "SHELL32.dll",
+        "libusb0.dll"
+      ],
+      "relevant_strings_count": 227,
+      "relevant_strings": [
+        {
+          "offset": "0x2d699",
+          "type": "ascii",
+          "str": "snA;"
+        },
+        {
+          "offset": "0x72a20",
+          "type": "ascii",
+          "str": "tjDecodeYUVPlanes"
+        },
+        {
+          "offset": "0x72a38",
+          "type": "ascii",
+          "str": "tj3DecodeYUV8"
+        },
+        {
+          "offset": "0x72a48",
+          "type": "ascii",
+          "str": "tjDecodeYUV"
+        },
+        {
+          "offset": "0x72b18",
+          "type": "ascii",
+          "str": "tj3JPEGBufSize"
+        },
+        {
+          "offset": "0x72b48",
+          "type": "ascii",
+          "str": "tj3YUVBufSize"
+        },
+        {
+          "offset": "0x72b58",
+          "type": "ascii",
+          "str": "tj3YUVPlaneSize"
+        },
+        {
+          "offset": "0x72b68",
+          "type": "ascii",
+          "str": "tj3YUVPlaneWidth"
+        },
+        {
+          "offset": "0x72b80",
+          "type": "ascii",
+          "str": "tj3YUVPlaneHeight"
+        },
+        {
+          "offset": "0x72c68",
+          "type": "ascii",
+          "str": "tj3CompressFromYUVPlanes8"
+        },
+        {
+          "offset": "0x72c88",
+          "type": "ascii",
+          "str": "tjCompressFromYUVPlanes"
+        },
+        {
+          "offset": "0x72ca0",
+          "type": "ascii",
+          "str": "tj3CompressFromYUV8"
+        },
+        {
+          "offset": "0x72cb8",
+          "type": "ascii",
+          "str": "tjCompressFromYUV"
+        },
+        {
+          "offset": "0x72cd0",
+          "type": "ascii",
+          "str": "tj3EncodeYUVPlanes8"
+        },
+        {
+          "offset": "0x72ce8",
+          "type": "ascii",
+          "str": "tjEncodeYUVPlanes"
+        },
+        {
+          "offset": "0x72d00",
+          "type": "ascii",
+          "str": "tj3EncodeYUV8"
+        },
+        {
+          "offset": "0x72d10",
+          "type": "ascii",
+          "str": "tjEncodeYUV3"
+        },
+        {
+          "offset": "0x72da8",
+          "type": "ascii",
+          "str": "tj3DecompressToYUVPlanes8"
+        },
+        {
+          "offset": "0x72dc8",
+          "type": "ascii",
+          "str": "tjDecompressToYUVPlanes"
+        },
+        {
+          "offset": "0x72de0",
+          "type": "ascii",
+          "str": "tj3DecompressToYUV8"
+        },
+        {
+          "offset": "0x72df8",
+          "type": "ascii",
+          "str": "tjDecompressToYUV2"
+        },
+        {
+          "offset": "0x72e10",
+          "type": "ascii",
+          "str": "tj3DecodeYUVPlanes8"
+        },
+        {
+          "offset": "0x72f80",
+          "type": "ascii",
+          "str": "BMP output must be grayscale or RGB"
+        },
+        {
+          "offset": "0x730f0",
+          "type": "ascii",
+          "str": "GIF output must be grayscale or RGB"
+        },
+        {
+          "offset": "0x73278",
+          "type": "ascii",
+          "str": "PPM output must be grayscale or RGB"
+        },
+        {
+          "offset": "0x73410",
+          "type": "ascii",
+          "str": "Targa output must be grayscale or RGB"
+        },
+        {
+          "offset": "0x73450",
+          "type": "ascii",
+          "str": "%ux%u grayscale Targa image"
+        },
+        {
+          "offset": "0x735f8",
+          "type": "ascii",
+          "str": "Parameter value out of range"
+        },
+        {
+          "offset": "0x73620",
+          "type": "ascii",
+          "str": "TJPARAM_NOREALLOC is not applicable to decompression instances."
+        },
+        {
+          "offset": "0x73660",
+          "type": "ascii",
+          "str": "TJPARAM_QUALITY is not applicable to decompression instances."
+        },
+        {
+          "offset": "0x736a0",
+          "type": "ascii",
+          "str": "TJPARAM_JPEGWIDTH is not applicable to compression instances."
+        },
+        {
+          "offset": "0x736e0",
+          "type": "ascii",
+          "str": "TJPARAM_JPEGWIDTH is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73720",
+          "type": "ascii",
+          "str": "TJPARAM_JPEGHEIGHT is not applicable to compression instances."
+        },
+        {
+          "offset": "0x73760",
+          "type": "ascii",
+          "str": "TJPARAM_JPEGHEIGHT is read-only in decompression instances."
+        },
+        {
+          "offset": "0x737a0",
+          "type": "ascii",
+          "str": "TJPARAM_PRECISION is not applicable to compression instances."
+        },
+        {
+          "offset": "0x737e0",
+          "type": "ascii",
+          "str": "TJPARAM_PRECISION is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73820",
+          "type": "ascii",
+          "str": "TJPARAM_COLORSPACE is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73860",
+          "type": "ascii",
+          "str": "TJPARAM_FASTUPSAMPLE is not applicable to compression instances."
+        },
+        {
+          "offset": "0x738a8",
+          "type": "ascii",
+          "str": "TJPARAM_OPTIMIZE is not applicable to decompression instances."
+        },
+        {
+          "offset": "0x738e8",
+          "type": "ascii",
+          "str": "TJPARAM_PROGRESSIVE is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73928",
+          "type": "ascii",
+          "str": "TJPARAM_SCANLIMIT is not applicable to compression instances."
+        },
+        {
+          "offset": "0x73968",
+          "type": "ascii",
+          "str": "TJPARAM_ARITHMETIC is read-only in decompression instances."
+        },
+        {
+          "offset": "0x739a8",
+          "type": "ascii",
+          "str": "TJPARAM_LOSSLESS is read-only in decompression instances."
+        },
+        {
+          "offset": "0x739e8",
+          "type": "ascii",
+          "str": "TJPARAM_LOSSLESSPSV is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73a28",
+          "type": "ascii",
+          "str": "TJPARAM_LOSSLESSPT is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73a70",
+          "type": "ascii",
+          "str": "TJPARAM_RESTARTBLOCKS is not applicable to decompression instances."
+        },
+        {
+          "offset": "0x73ac0",
+          "type": "ascii",
+          "str": "TJPARAM_RESTARTROWS is not applicable to decompression instances."
+        },
+        {
+          "offset": "0x73b08",
+          "type": "ascii",
+          "str": "TJPARAM_XDENSITY is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73b48",
+          "type": "ascii",
+          "str": "TJPARAM_YDENSITY is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73b88",
+          "type": "ascii",
+          "str": "TJPARAM_DENSITYUNITS is read-only in decompression instances."
+        },
+        {
+          "offset": "0x73bc8",
+          "type": "ascii",
+          "str": "Invalid parameter"
+        },
+        {
+          "offset": "0x73c30",
+          "type": "ascii",
+          "str": "TJPARAM_QUALITY must be specified"
+        },
+        {
+          "offset": "0x73c58",
+          "type": "ascii",
+          "str": "TJPARAM_SUBSAMP must be specified"
+        },
+        {
+          "offset": "0x74218",
+          "type": "ascii",
+          "str": "Bogus JPEG colorspace"
+        },
+        {
+          "offset": "0x74248",
+          "type": "ascii",
+          "str": "Wrong JPEG library version: library is %d, caller expects %d"
+        },
+        {
+          "offset": "0x742d8",
+          "type": "ascii",
+          "str": "Unsupported JPEG data precision %d"
+        },
+        {
+          "offset": "0x74300",
+          "type": "ascii",
+          "str": "Invalid progressive/lossless parameters Ss=%d Se=%d Ah=%d Al=%d"
+        },
+        {
+          "offset": "0x74340",
+          "type": "ascii",
+          "str": "Invalid progressive/lossless parameters at scan script entry %d"
+        },
+        {
+          "offset": "0x743b8",
+          "type": "ascii",
+          "str": "Improper call to JPEG library in state %d"
+        },
+        {
+          "offset": "0x743f0",
+          "type": "ascii",
+          "str": "JPEG parameter struct mismatch: library thinks size is %u, caller expects %u"
+        },
+        {
+          "offset": "0x74460",
+          "type": "ascii",
+          "str": "Buffer passed to JPEG library is too small"
+        },
+        {
+          "offset": "0x74588",
+          "type": "ascii",
+          "str": "Empty JPEG image (DNL not supported)"
+        },
+        {
+          "offset": "0x745b0",
+          "type": "ascii",
+          "str": "Read from EMS failed"
+        },
+        {
+          "offset": "0x745c8",
+          "type": "ascii",
+          "str": "Write to EMS failed"
+        },
+        {
+          "offset": "0x74858",
+          "type": "ascii",
+          "str": "JPEG datastream contains no image"
+        },
+        {
+          "offset": "0x748b0",
+          "type": "ascii",
+          "str": "Not a JPEG file: starts with 0x%02x 0x%02x"
+        },
+        {
+          "offset": "0x74980",
+          "type": "ascii",
+          "str": "Invalid JPEG file structure: two SOF markers"
+        },
+        {
+          "offset": "0x749b0",
+          "type": "ascii",
+          "str": "Invalid JPEG file structure: missing SOS marker"
+        },
+        {
+          "offset": "0x749e0",
+          "type": "ascii",
+          "str": "Unsupported JPEG process: SOF type 0x%02x"
+        },
+        {
+          "offset": "0x74a10",
+          "type": "ascii",
+          "str": "Invalid JPEG file structure: two SOI markers"
+        },
+        {
+          "offset": "0x74a40",
+          "type": "ascii",
+          "str": "Invalid JPEG file structure: SOS before SOF"
+        },
+        {
+          "offset": "0x74bb0",
+          "type": "ascii",
+          "str": "Read from XMS failed"
+        },
+        {
+          "offset": "0x74bc8",
+          "type": "ascii",
+          "str": "Write to XMS failed"
+        },
+        {
+          "offset": "0x74be0",
+          "type": "ascii",
+          "str": "Copyright (C) 1991-2024 The libjpeg-turbo Project and many others"
+        },
+        {
+          "offset": "0x74c38",
+          "type": "ascii",
+          "str": "Caution: quantization tables are too coarse for baseline JPEG"
+        },
+        {
+          "offset": "0x74dc0",
+          "type": "ascii",
+          "str": "Freed EMS handle %u"
+        },
+        {
+          "offset": "0x74dd8",
+          "type": "ascii",
+          "str": "Obtained EMS handle %u"
+        },
+        {
+          "offset": "0x75150",
+          "type": "ascii",
+          "str": "JFIF extension marker: JPEG-compressed thumbnail image, length %u"
+        },
+        {
+          "offset": "0x75260",
+          "type": "ascii",
+          "str": "Freed XMS handle %u"
+        },
+        {
+          "offset": "0x75278",
+          "type": "ascii",
+          "str": "Obtained XMS handle %u"
+        },
+        {
+          "offset": "0x75308",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: %u extraneous bytes before marker 0x%02x"
+        },
+        {
+          "offset": "0x75348",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: premature end of data segment"
+        },
+        {
+          "offset": "0x75380",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: bad Huffman code"
+        },
+        {
+          "offset": "0x753d8",
+          "type": "ascii",
+          "str": "Premature end of JPEG file"
+        },
+        {
+          "offset": "0x753f8",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: found marker 0x%02x instead of RST%d"
+        },
+        {
+          "offset": "0x75430",
+          "type": "ascii",
+          "str": "Invalid SOS parameters for sequential JPEG"
+        },
+        {
+          "offset": "0x754d0",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: bad arithmetic code"
+        },
+        {
+          "offset": "0x754f8",
+          "type": "ascii",
+          "str": "Corrupt JPEG data: bad ICC marker"
+        },
+        {
+          "offset": "0x75bd8",
+          "type": "ascii",
+          "str": "libjpeg-turbo version 3.0.5 (build 20241113)"
+        },
+        {
+          "offset": "0x76948",
+          "type": "ascii",
+          "str": "JPEGMEM"
+        },
+        {
+          "offset": "0x92798",
+          "type": "ascii",
+          "str": "SNAN)"
+        },
+        {
+          "offset": "0x927a0",
+          "type": "ascii",
+          "str": "snan)"
+        },
+        {
+          "offset": "0x929a0",
+          "type": "ascii",
+          "str": "NAN(SNAN)"
+        },
+        {
+          "offset": "0x929b0",
+          "type": "ascii",
+          "str": "nan(snan)"
+        },
+        {
+          "offset": "0x940ac",
+          "type": "ascii",
+          "str": "1#SNAN"
+        },
+        {
+          "offset": "0x99148",
+          "type": "ascii",
+          "str": "SCREEN_INTER"
+        },
+        {
+          "offset": "0x9e22c",
+          "type": "ascii",
+          "str": "D:\\project\\MSDisplaySDK\\MSDisplaySDKPackage\\lib\\sdk_lib64\\Release\\MSDISPLAYSDKWRRAPER.pdb"
+        },
+        {
+          "offset": "0x9e528",
+          "type": "ascii",
+          "str": ".xdata"
+        },
+        {
+          "offset": "0x9e538",
+          "type": "ascii",
+          "str": ".xdata$x"
+        },
+        {
+          "offset": "0xa3574",
+          "type": "ascii",
+          "str": "MSDISPLAYSDKWRRAPER.dll"
+        },
+        {
+          "offset": "0xa358c",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayCheckDeviceScreenCapability"
+        },
+        {
+          "offset": "0xa35b9",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayEnableSDKScreenProcessor"
+        },
+        {
+          "offset": "0xa35e3",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayFlashErase"
+        },
+        {
+          "offset": "0xa35ff",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayGetDeviceInfo"
+        },
+        {
+          "offset": "0xa361e",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayGetDeviceList"
+        },
+        {
+          "offset": "0xa363d",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayGetDriverVersion"
+        },
+        {
+          "offset": "0xa365f",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayGetSDKVersion"
+        },
+        {
+          "offset": "0xa367e",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayInitFlashGpio"
+        },
+        {
+          "offset": "0xa369d",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayPause"
+        },
+        {
+          "offset": "0xa36b4",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayReadEEPROM"
+        },
+        {
+          "offset": "0xa36d0",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayReadFlash"
+        },
+        {
+          "offset": "0xa36eb",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayReadSN"
+        },
+        {
+          "offset": "0xa3703",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayReadXdata"
+        },
+        {
+          "offset": "0xa371e",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayRegisterCallback"
+        },
+        {
+          "offset": "0xa3740",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayResume"
+        },
+        {
+          "offset": "0xa3758",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplaySendPicture"
+        },
+        {
+          "offset": "0xa3775",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplaySetVideoParam"
+        },
+        {
+          "offset": "0xa3794",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayStart"
+        },
+        {
+          "offset": "0xa37ab",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayStop"
+        },
+        {
+          "offset": "0xa37c1",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayWriteEEPROM"
+        },
+        {
+          "offset": "0xa37de",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayWriteFlash"
+        },
+        {
+          "offset": "0xa37fa",
+          "type": "ascii",
+          "str": "Wrraper_MSDisplayWriteXdata"
+        },
+        {
+          "offset": "0xa3c3a",
+          "type": "ascii",
+          "str": "usb_bulk_write"
+        },
+        {
+          "offset": "0xa3c70",
+          "type": "ascii",
+          "str": "usb_control_msg"
+        },
+        {
+          "offset": "0xa3e64",
+          "type": "ascii",
+          "str": "CreateFileW"
+        },
+        {
+          "offset": "0xa3ea2",
+          "type": "ascii",
+          "str": "DeviceIoControl"
+        },
+        {
+          "offset": "0xa3fcc",
+          "type": "ascii",
+          "str": "SetupDiDestroyDeviceInfoList"
+        },
+        {
+          "offset": "0xa3fec",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInterfaces"
+        },
+        {
+          "offset": "0xa400a",
+          "type": "ascii",
+          "str": "SetupDiGetClassDevsW"
+        },
+        {
+          "offset": "0xa4022",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInterfaceDetailW"
+        },
+        {
+          "offset": "0xa5211",
+          "type": "ascii",
+          "str": "MSUSBDISPLAY"
+        },
+        {
+          "offset": "0xa52ff",
+          "type": "ascii",
+          "str": "MSUSBDISPLAY"
+        },
+        {
+          "offset": "0xa537f",
+          "type": "ascii",
+          "str": "MSUSBDISPLAY"
+        },
+        {
+          "offset": "0xa5510",
+          "type": "ascii",
+          "str": ".?AVDisplayManager@@"
+        },
+        {
+          "offset": "0xa56c8",
+          "type": "ascii",
+          "str": ".?AVUsbDisplayDevice@@"
+        },
+        {
+          "offset": "0x90810",
+          "type": "utf16",
+          "str": "api-ms-win-core-synch-l1-2-0.dll"
+        },
+        {
+          "offset": "0x90b60",
+          "type": "utf16",
+          "str": "api-ms-win-core-fibers-l1-1-1"
+        },
+        {
+          "offset": "0x90ba0",
+          "type": "utf16",
+          "str": "api-ms-win-core-synch-l1-2-0"
+        },
+        {
+          "offset": "0x90bf8",
+          "type": "utf16",
+          "str": "api-ms-"
+        },
+        {
+          "offset": "0x90c08",
+          "type": "utf16",
+          "str": "ext-ms-"
+        },
+        {
+          "offset": "0x91b98",
+          "type": "utf16",
+          "str": "mscoree.dll"
+        },
+        {
+          "offset": "0x93920",
+          "type": "utf16",
+          "str": "api-ms-win-core-datetime-l1-1-1"
+        },
+        {
+          "offset": "0x93960",
+          "type": "utf16",
+          "str": "api-ms-win-core-fibers-l1-1-1"
+        },
+        {
+          "offset": "0x939a0",
+          "type": "utf16",
+          "str": "api-ms-win-core-file-l1-2-2"
+        },
+        {
+          "offset": "0x939e0",
+          "type": "utf16",
+          "str": "api-ms-win-core-localization-l1-2-1"
+        },
+        {
+          "offset": "0x93a30",
+          "type": "utf16",
+          "str": "api-ms-win-core-localization-obsolete-l1-2-0"
+        },
+        {
+          "offset": "0x93a90",
+          "type": "utf16",
+          "str": "api-ms-win-core-processthreads-l1-1-2"
+        },
+        {
+          "offset": "0x93ae0",
+          "type": "utf16",
+          "str": "api-ms-win-core-string-l1-1-0"
+        },
+        {
+          "offset": "0x93b20",
+          "type": "utf16",
+          "str": "api-ms-win-core-synch-l1-2-0"
+        },
+        {
+          "offset": "0x93b60",
+          "type": "utf16",
+          "str": "api-ms-win-core-sysinfo-l1-2-1"
+        },
+        {
+          "offset": "0x93ba0",
+          "type": "utf16",
+          "str": "api-ms-win-core-winrt-l1-1-0"
+        },
+        {
+          "offset": "0x93be0",
+          "type": "utf16",
+          "str": "api-ms-win-core-xstate-l2-1-0"
+        },
+        {
+          "offset": "0x93c20",
+          "type": "utf16",
+          "str": "api-ms-win-rtcore-ntuser-window-l1-1-0"
+        },
+        {
+          "offset": "0x93c70",
+          "type": "utf16",
+          "str": "api-ms-win-security-systemfunctions-l1-1-0"
+        },
+        {
+          "offset": "0x93cd0",
+          "type": "utf16",
+          "str": "ext-ms-win-ntuser-dialogbox-l1-1-0"
+        },
+        {
+          "offset": "0x93d20",
+          "type": "utf16",
+          "str": "ext-ms-win-ntuser-windowstation-l1-1-0"
+        },
+        {
+          "offset": "0x93db0",
+          "type": "utf16",
+          "str": "api-ms-win-appmodel-runtime-l1-1-2"
+        },
+        {
+          "offset": "0x93e08",
+          "type": "utf16",
+          "str": "api-ms-"
+        },
+        {
+          "offset": "0x93e18",
+          "type": "utf16",
+          "str": "ext-ms-"
+        },
+        {
+          "offset": "0x95430",
+          "type": "utf16",
+          "str": "ms-MY"
+        },
+        {
+          "offset": "0x95698",
+          "type": "utf16",
+          "str": "ms-BN"
+        },
+        {
+          "offset": "0x95960",
+          "type": "utf16",
+          "str": "sms-FI"
+        },
+        {
+          "offset": "0x96ff8",
+          "type": "utf16",
+          "str": "ms-bn"
+        },
+        {
+          "offset": "0x97008",
+          "type": "utf16",
+          "str": "ms-my"
+        },
+        {
+          "offset": "0x971b8",
+          "type": "utf16",
+          "str": "sms-fi"
+        },
+        {
+          "offset": "0x98e80",
+          "type": "utf16",
+          "str": "MSDisplayStart V%d.%d.%d.%d @ state %d!"
+        },
+        {
+          "offset": "0x98ed0",
+          "type": "utf16",
+          "str": "MSDisplayStart OK!"
+        },
+        {
+          "offset": "0x98ef8",
+          "type": "utf16",
+          "str": "MSDisplayStop OK!"
+        },
+        {
+          "offset": "0x98f20",
+          "type": "utf16",
+          "str": "add_display with resolution count %d"
+        },
+        {
+          "offset": "0x98f90",
+          "type": "utf16",
+          "str": "Display %X added"
+        },
+        {
+          "offset": "0x98fb8",
+          "type": "utf16",
+          "str": "remove_display %X"
+        },
+        {
+          "offset": "0x98fe0",
+          "type": "utf16",
+          "str": "%s\\WinUsbDisplay\\"
+        },
+        {
+          "offset": "0x99010",
+          "type": "utf16",
+          "str": "winusbdisplay %04d-%02d-%02d %02d.%02d.%02d"
+        },
+        {
+          "offset": "0x99198",
+          "type": "utf16",
+          "str": "%s\\MSUsbDisplay\\"
+        },
+        {
+          "offset": "0x99210",
+          "type": "utf16",
+          "str": "DisplayManager mode = %d, append_count = %d"
+        },
+        {
+          "offset": "0x99268",
+          "type": "utf16",
+          "str": "Bye Display Manager!"
+        },
+        {
+          "offset": "0x99298",
+          "type": "utf16",
+          "str": "start display manager!"
+        },
+        {
+          "offset": "0x993c0",
+          "type": "utf16",
+          "str": "display_send_picture"
+        },
+        {
+          "offset": "0x995a0",
+          "type": "utf16",
+          "str": "ExtDisplayDevice update_state failed, index %d"
+        },
+        {
+          "offset": "0x99600",
+          "type": "utf16",
+          "str": "IddIoctlInit error %d"
+        },
+        {
+          "offset": "0x99630",
+          "type": "utf16",
+          "str": "msUsbDisplayDriver version : %d.%d.%d.%d"
+        },
+        {
+          "offset": "0x9a9f0",
+          "type": "utf16",
+          "str": "IddUsb device: SetupDiGetDeviceInterfaceDetail failed, last error 0x%x"
+        },
+        {
+          "offset": "0x9aa80",
+          "type": "utf16",
+          "str": "IddUsb device: HeapAlloc failed, last error 0x%x"
+        },
+        {
+          "offset": "0x9aba0",
+          "type": "utf16",
+          "str": "CreateFile Error[%d]"
+        },
+        {
+          "offset": "0x9abd0",
+          "type": "utf16",
+          "str": "IddGetDriverInfo DeviceIoControl Error[%d]"
+        },
+        {
+          "offset": "0x9ac30",
+          "type": "utf16",
+          "str": "IddGetDriverInfo ioctltlvout.type Error %d"
+        },
+        {
+          "offset": "0x9ac90",
+          "type": "utf16",
+          "str": "IddGetTopology DeviceIoControl Error[%d]"
+        },
+        {
+          "offset": "0x9acf0",
+          "type": "utf16",
+          "str": "IddGetTopology ioctltlvout.type Error %d"
+        },
+        {
+          "offset": "0x9ad50",
+          "type": "utf16",
+          "str": "IddGetDeviceInfo DeviceIoControl Error[%d]"
+        },
+        {
+          "offset": "0x9adb0",
+          "type": "utf16",
+          "str": "IddGetDeviceInfo ioctltlvout.type Error %d"
+        },
+        {
+          "offset": "0x9ae10",
+          "type": "utf16",
+          "str": "IddGetDeviceStatus DeviceIoControl Error[%d]"
+        },
+        {
+          "offset": "0x9ae70",
+          "type": "utf16",
+          "str": "IddGetDeviceStatus ioctltlvout.type Error %d"
+        },
+        {
+          "offset": "0x9aed0",
+          "type": "utf16",
+          "str": "IddSendPicture DeviceIoControl Error[%d]"
+        },
+        {
+          "offset": "0x9afb8",
+          "type": "utf16",
+          "str": "display device terminated"
+        },
+        {
+          "offset": "0x9b210",
+          "type": "utf16",
+          "str": "chip_id %04x, hid9 %d, jpeg %d"
+        },
+        {
+          "offset": "0x9b250",
+          "type": "utf16",
+          "str": "read video port failed %d"
+        },
+        {
+          "offset": "0x9b288",
+          "type": "utf16",
+          "str": "Video Port = %d"
+        },
+        {
+          "offset": "0x9b388",
+          "type": "utf16",
+          "str": "set_video_on(0) failed %d"
+        },
+        {
+          "offset": "0x9b3c0",
+          "type": "utf16",
+          "str": "set_screen_on(0) failed %d"
+        },
+        {
+          "offset": "0x9b438",
+          "type": "utf16",
+          "str": "init_flash_gpio failed %d"
+        },
+        {
+          "offset": "0x9b850",
+          "type": "utf16",
+          "str": "Use default CVBS edid for CVBS video port!"
+        },
+        {
+          "offset": "0x9bab8",
+          "type": "utf16",
+          "str": "HPD lost, remove the display"
+        },
+        {
+          "offset": "0x9bc40",
+          "type": "utf16",
+          "str": "msdisplay_bulk_transfer timeout happen"
+        },
+        {
+          "offset": "0x9bc90",
+          "type": "utf16",
+          "str": "start screen for data size %d"
+        },
+        {
+          "offset": "0x9be40",
+          "type": "utf16",
+          "str": "[usb] eeprom_write: 0x%x = 0x%x "
+        },
+        {
+          "offset": "0x9be90",
+          "type": "utf16",
+          "str": "[usb] xdata_write: 0x%x = 0x%x "
+        },
+        {
+          "offset": "0x9bed0",
+          "type": "utf16",
+          "str": "[usb] flash_write_length len error "
+        },
+        {
+          "offset": "0x9bf20",
+          "type": "utf16",
+          "str": "[usb] flash_write: 0x%x = 0x%x "
+        },
+        {
+          "offset": "0x9bff0",
+          "type": "utf16",
+          "str": "[usb] set_video_in: %dx%d, color=0x%x, colSel=0x%x "
+        },
+        {
+          "offset": "0x9c060",
+          "type": "utf16",
+          "str": "[usb] set_video_out: vic=%d, color=0x%x, %dx%d "
+        },
+        {
+          "offset": "0x9c0c0",
+          "type": "utf16",
+          "str": "[usb] set_video_on"
+        },
+        {
+          "offset": "0x9c0e8",
+          "type": "utf16",
+          "str": "[usb] set_video_off"
+        },
+        {
+          "offset": "0x9c138",
+          "type": "utf16",
+          "str": "screen on"
+        },
+        {
+          "offset": "0x9c150",
+          "type": "utf16",
+          "str": "screen off"
+        },
+        {
+          "offset": "0x9c1e0",
+          "type": "utf16",
+          "str": "wait for command done timeout 0x%x"
+        },
+        {
+          "offset": "0x9c230",
+          "type": "utf16",
+          "str": "libusb_bulk_transfer: ret = %d, len = %d, size = %d"
+        },
+        {
+          "offset": "0x9c2a0",
+          "type": "utf16",
+          "str": "chip_id at 0xff00 %02x%02x%02x @ 8 bytes"
+        },
+        {
+          "offset": "0x9c300",
+          "type": "utf16",
+          "str": "chip_id at 0xf000 %02x%02x%02x @ 8 bytes"
+        },
+        {
+          "offset": "0x9c360",
+          "type": "utf16",
+          "str": "chip_id at 0xff00 %02x%02x%02x @ 9 bytes"
+        },
+        {
+          "offset": "0x9c3c0",
+          "type": "utf16",
+          "str": "chip_id at 0xf000 %02x%02x%02x @ 9 bytes"
+        },
+        {
+          "offset": "0x9c530",
+          "type": "utf16",
+          "str": "creating TurboJPEG instance"
+        },
+        {
+          "offset": "0x9c570",
+          "type": "utf16",
+          "str": "setting TJPARAM_SUBSAMP failed"
+        },
+        {
+          "offset": "0x9c5b0",
+          "type": "utf16",
+          "str": "setting TJPARAM_QUALITY failed"
+        },
+        {
+          "offset": "0x9c5f0",
+          "type": "utf16",
+          "str": "setting TJPARAM_FASTDCT failed"
+        },
+        {
+          "offset": "0x9c630",
+          "type": "utf16",
+          "str": "setting TJPARAM_RESTARTBLOCKS failed"
+        },
+        {
+          "offset": "0x9cb20",
+          "type": "utf16",
+          "str": "d:\\project\\msdisplaysdk\\ms_usbdisplay_sdk\\windows\\libyuv\\source\\scale_argb.cc"
+        },
+        {
+          "offset": "0x9cc80",
+          "type": "utf16",
+          "str": "d:\\project\\msdisplaysdk\\ms_usbdisplay_sdk\\windows\\libyuv\\source\\scale_common.cc"
+        }
+      ]
+    },
+    "libstack.dll": {
+      "path": "/home/tor/vmax_bundle/bin/Release/libstack.dll",
+      "exports": [
+        "?$TSS0@?1??instance@SavManager@stack@@SAAEAV23@XZ@4HA",
+        "??0Message@stack@@QEAA@$$QEAU01@@Z",
+        "??0Message@stack@@QEAA@AEBU01@@Z",
+        "??0Message@stack@@QEAA@XZ",
+        "??0SavApp@stack@@QEAA@XZ",
+        "??0SavManager@stack@@AEAA@XZ",
+        "??0SavNotice@stack@@AEAA@XZ",
+        "??1Message@stack@@QEAA@XZ",
+        "??1SavApp@stack@@QEAA@XZ",
+        "??1SavManager@stack@@AEAA@XZ",
+        "??1SavNotice@stack@@AEAA@XZ",
+        "??4Message@stack@@QEAAAEAU01@$$QEAU01@@Z",
+        "??4Message@stack@@QEAAAEAU01@AEBU01@@Z",
+        "??4SavLog@stack@@QEAAAEAV01@$$QEAV01@@Z",
+        "??4SavLog@stack@@QEAAAEAV01@AEBV01@@Z",
+        "?_callback@SavLog@stack@@0V?$function@$$A6AXW4LogLevel@stack@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@A",
+        "?_level@SavLog@stack@@0W4LogLevel@2@A",
+        "?async_action@SavApp@stack@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0EAEBV?$vector@EV?$allocator@E@std@@@4@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@EV?$allocator@E@std@@@2@@Z@4@@Z",
+        "?async_action@SavManager@stack@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0EAEBV?$vector@EV?$allocator@E@std@@@4@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@EV?$allocator@E@std@@@2@@Z@4@@Z",
+        "?dispatch@SavNotice@stack@@QEAAXAEBUMessage@2@@Z",
+        "?dispatch@SavNotice@stack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_JN_NV?$vector@EV?$allocator@E@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_JN_NV?$vector@EV?$allocator@E@std@@@2@@2@@std@@@2@@4@@Z",
+        "?get_app@SavManager@stack@@QEAA?AV?$shared_ptr@VSavApp@stack@@@std@@XZ",
+        "?get_build_time@stack@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?get_version@stack@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?handle_ccp_report@SavApp@stack@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@@Z",
+        "?init@SavApp@stack@@QEAAXXZ",
+        "?init@SavManager@stack@@QEAAXXZ",
+        "?instance@?1??0SavManager@stack@@SAAEAV12@XZ@4V12@A",
+        "?instance@SavManager@stack@@SAAEAV12@XZ",
+        "?instance@SavNotice@stack@@SAAEAV12@XZ",
+        "?log@SavLog@stack@@SAXW4LogLevel@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+        "?register_listener@SavManager@stack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUMessage@stack@@@Z@4@@Z",
+        "?register_listener@SavNotice@stack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUMessage@stack@@@Z@4@@Z",
+        "?register_model@SavApp@stack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VIModel@SavApp@stack@@@4@@Z",
+        "?set_callback@SavLog@stack@@SAXV?$function@$$A6AXW4LogLevel@stack@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z",
+        "?set_level@SavLog@stack@@SAXW4LogLevel@2@@Z",
+        "?set_log_callback@SavManager@stack@@QEAAXV?$function@$$A6AXW4LogLevel@stack@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z",
+        "?set_log_level@SavManager@stack@@QEAAXW4LogLevel@2@@Z",
+        "?set_target_devices@SavApp@stack@@QEAAXAEBV?$vector@UDeviceConfig@SavApp@stack@@V?$allocator@UDeviceConfig@SavApp@stack@@@std@@@std@@@Z",
+        "?should_log@SavLog@stack@@SA_NW4LogLevel@2@@Z",
+        "?stop@SavManager@stack@@QEAAXXZ",
+        "?unregister_listener@SavNotice@stack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+        "app_async_action",
+        "app_register_model",
+        "app_set_target_devices",
+        "stack_get_app",
+        "stack_get_build_time",
+        "stack_get_version",
+        "stack_init",
+        "stack_register_device_callback",
+        "stack_set_log_callback",
+        "stack_set_log_level",
+        "stack_stop"
+      ],
+      "imported_dlls": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "OLEAUT32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "ole32.dll"
+      ],
+      "relevant_strings_count": 174,
+      "relevant_strings": [
+        {
+          "offset": "0x286e0",
+          "type": "ascii",
+          "str": "[CompositeDevice] Read SN: "
+        },
+        {
+          "offset": "0x28710",
+          "type": "ascii",
+          "str": "[CompositeDevice] No suitable bulk IN/OUT interface found for device "
+        },
+        {
+          "offset": "0x287a0",
+          "type": "ascii",
+          "str": "[CompositeDevice] Failed to read SN descriptor."
+        },
+        {
+          "offset": "0x28978",
+          "type": "ascii",
+          "str": "[CompositeDevice] Parsed packet for SN: "
+        },
+        {
+          "offset": "0x28c4c",
+          "type": "ascii",
+          "str": " (SN: "
+        },
+        {
+          "offset": "0x28ee0",
+          "type": "ascii",
+          "str": "A cancellation for an in-flight transfer hasn't completed but closing the device handle"
+        },
+        {
+          "offset": "0x28f40",
+          "type": "ascii",
+          "str": "A cancellation hasn't even been scheduled on the transfer for which the device is closing"
+        },
+        {
+          "offset": "0x29308",
+          "type": "ascii",
+          "str": "LIBUSB_ERROR_INVALID_PARAM"
+        },
+        {
+          "offset": "0x29388",
+          "type": "ascii",
+          "str": "LIBUSB_ERROR_TIMEOUT"
+        },
+        {
+          "offset": "0x29a48",
+          "type": "ascii",
+          "str": "using timer for timeouts"
+        },
+        {
+          "offset": "0x29a78",
+          "type": "ascii",
+          "str": "timer not available for timeouts"
+        },
+        {
+          "offset": "0x29ac8",
+          "type": "ascii",
+          "str": "next timeout originally %ums"
+        },
+        {
+          "offset": "0x29ae8",
+          "type": "ascii",
+          "str": "arm_timer_for_next_timeout"
+        },
+        {
+          "offset": "0x29b08",
+          "type": "ascii",
+          "str": "no timeouts, disarming timer"
+        },
+        {
+          "offset": "0x29b28",
+          "type": "ascii",
+          "str": "arm timer for timeout in %ums (first in line)"
+        },
+        {
+          "offset": "0x29bc0",
+          "type": "ascii",
+          "str": "failed to set timer for next timeout"
+        },
+        {
+          "offset": "0x29c50",
+          "type": "ascii",
+          "str": "detected timeout cancellation"
+        },
+        {
+          "offset": "0x29d10",
+          "type": "ascii",
+          "str": "handle_timeout"
+        },
+        {
+          "offset": "0x29ec8",
+          "type": "ascii",
+          "str": "libusb_handle_events_timeout_completed"
+        },
+        {
+          "offset": "0x29f50",
+          "type": "ascii",
+          "str": "no URBs, no timeout!"
+        },
+        {
+          "offset": "0x29f68",
+          "type": "ascii",
+          "str": "libusb_get_next_timeout"
+        },
+        {
+          "offset": "0x29f80",
+          "type": "ascii",
+          "str": "no URB with timeout or all handled by OS; no timeout!"
+        },
+        {
+          "offset": "0x29fb8",
+          "type": "ascii",
+          "str": "first timeout already expired"
+        },
+        {
+          "offset": "0x29fd8",
+          "type": "ascii",
+          "str": "next timeout in %ld.%06lds"
+        },
+        {
+          "offset": "0x2a270",
+          "type": "ascii",
+          "str": "WaitForMultipleObjects() for %lu HANDLEs with timeout in %dms"
+        },
+        {
+          "offset": "0x2aab0",
+          "type": "ascii",
+          "str": "bulk stream transfers are not yet supported on this platform"
+        },
+        {
+          "offset": "0x2ac80",
+          "type": "ascii",
+          "str": "detected semaphore timeout"
+        },
+        {
+          "offset": "0x2b378",
+          "type": "ascii",
+          "str": "usbdk_do_bulk_transfer"
+        },
+        {
+          "offset": "0x2b888",
+          "type": "ascii",
+          "str": "WinUSB"
+        },
+        {
+          "offset": "0x2b8d0",
+          "type": "ascii",
+          "str": "WinUSB-like APIs"
+        },
+        {
+          "offset": "0x2ba58",
+          "type": "ascii",
+          "str": "SetupDiGetClassDevsA"
+        },
+        {
+          "offset": "0x2ba70",
+          "type": "ascii",
+          "str": "SetupDiGetClassDevsAA"
+        },
+        {
+          "offset": "0x2ba88",
+          "type": "ascii",
+          "str": "SetupDiGetClassDevsAW"
+        },
+        {
+          "offset": "0x2baa0",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInfo"
+        },
+        {
+          "offset": "0x2bab8",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInfoA"
+        },
+        {
+          "offset": "0x2bad0",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInfoW"
+        },
+        {
+          "offset": "0x2bae8",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInterfaces"
+        },
+        {
+          "offset": "0x2bb08",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInterfacesA"
+        },
+        {
+          "offset": "0x2bb28",
+          "type": "ascii",
+          "str": "SetupDiEnumDeviceInterfacesW"
+        },
+        {
+          "offset": "0x2bb48",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInstanceIdA"
+        },
+        {
+          "offset": "0x2bb68",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInstanceIdAA"
+        },
+        {
+          "offset": "0x2bb88",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInstanceIdAW"
+        },
+        {
+          "offset": "0x2bba8",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInterfaceDetailA"
+        },
+        {
+          "offset": "0x2bbd0",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInterfaceDetailAA"
+        },
+        {
+          "offset": "0x2bbf8",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceInterfaceDetailAW"
+        },
+        {
+          "offset": "0x2bc20",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceRegistryPropertyA"
+        },
+        {
+          "offset": "0x2bc48",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceRegistryPropertyAA"
+        },
+        {
+          "offset": "0x2bc70",
+          "type": "ascii",
+          "str": "SetupDiGetDeviceRegistryPropertyAW"
+        },
+        {
+          "offset": "0x2bc98",
+          "type": "ascii",
+          "str": "SetupDiDestroyDeviceInfoList"
+        },
+        {
+          "offset": "0x2bcb8",
+          "type": "ascii",
+          "str": "SetupDiDestroyDeviceInfoListA"
+        },
+        {
+          "offset": "0x2bcd8",
+          "type": "ascii",
+          "str": "SetupDiDestroyDeviceInfoListW"
+        },
+        {
+          "offset": "0x2bcf8",
+          "type": "ascii",
+          "str": "SetupDiOpenDevRegKey"
+        },
+        {
+          "offset": "0x2bd10",
+          "type": "ascii",
+          "str": "SetupDiOpenDevRegKeyA"
+        },
+        {
+          "offset": "0x2bd28",
+          "type": "ascii",
+          "str": "SetupDiOpenDevRegKeyW"
+        },
+        {
+          "offset": "0x2bd40",
+          "type": "ascii",
+          "str": "SetupDiOpenDeviceInterfaceRegKey"
+        },
+        {
+          "offset": "0x2bd68",
+          "type": "ascii",
+          "str": "SetupDiOpenDeviceInterfaceRegKeyA"
+        },
+        {
+          "offset": "0x2bd90",
+          "type": "ascii",
+          "str": "SetupDiOpenDeviceInterfaceRegKeyW"
+        },
+        {
+          "offset": "0x2bf20",
+          "type": "ascii",
+          "str": "program assertion failed - http://msdn.microsoft.com/en-us/library/ms792901.aspx is wrong"
+        },
+        {
+          "offset": "0x2c498",
+          "type": "ascii",
+          "str": "winusb_init"
+        },
+        {
+          "offset": "0x2ca50",
+          "type": "ascii",
+          "str": "0x%x:0x%x found %u configurations but device isn't configured, forcing current configuration to 1"
+        },
+        {
+          "offset": "0x2cf20",
+          "type": "ascii",
+          "str": "winusb_get_device_list"
+        },
+        {
+          "offset": "0x2d528",
+          "type": "ascii",
+          "str": "winusb_open"
+        },
+        {
+          "offset": "0x2d548",
+          "type": "ascii",
+          "str": "winusb_claim_interface"
+        },
+        {
+          "offset": "0x2d580",
+          "type": "ascii",
+          "str": "winusb_set_interface_altsetting"
+        },
+        {
+          "offset": "0x2d5b8",
+          "type": "ascii",
+          "str": "winusb_release_interface"
+        },
+        {
+          "offset": "0x2d5e8",
+          "type": "ascii",
+          "str": "winusb_clear_halt"
+        },
+        {
+          "offset": "0x2d610",
+          "type": "ascii",
+          "str": "winusb_reset_device"
+        },
+        {
+          "offset": "0x2d628",
+          "type": "ascii",
+          "str": "failed to unregister WinUSB isoch buffer: %s"
+        },
+        {
+          "offset": "0x2d658",
+          "type": "ascii",
+          "str": "winusb_clear_transfer_priv"
+        },
+        {
+          "offset": "0x2d678",
+          "type": "ascii",
+          "str": "winusb_submit_transfer"
+        },
+        {
+          "offset": "0x2d6e0",
+          "type": "ascii",
+          "str": "winusb_cancel_transfer"
+        },
+        {
+          "offset": "0x2d738",
+          "type": "ascii",
+          "str": "winusb_copy_transfer_data"
+        },
+        {
+          "offset": "0x2d758",
+          "type": "ascii",
+          "str": "WinUsb_AbortPipe"
+        },
+        {
+          "offset": "0x2d780",
+          "type": "ascii",
+          "str": "GetProcAddress() failed for WinUsb_%s"
+        },
+        {
+          "offset": "0x2d7a8",
+          "type": "ascii",
+          "str": "winusbx_init"
+        },
+        {
+          "offset": "0x2d7b8",
+          "type": "ascii",
+          "str": "WinUsb_ControlTransfer"
+        },
+        {
+          "offset": "0x2d7e0",
+          "type": "ascii",
+          "str": "WinUsb_FlushPipe"
+        },
+        {
+          "offset": "0x2d808",
+          "type": "ascii",
+          "str": "WinUsb_Free"
+        },
+        {
+          "offset": "0x2d820",
+          "type": "ascii",
+          "str": "WinUsb_GetAssociatedInterface"
+        },
+        {
+          "offset": "0x2d858",
+          "type": "ascii",
+          "str": "WinUsb_Initialize"
+        },
+        {
+          "offset": "0x2d880",
+          "type": "ascii",
+          "str": "WinUsb_ReadPipe"
+        },
+        {
+          "offset": "0x2d8a0",
+          "type": "ascii",
+          "str": "WinUsb_ResetPipe"
+        },
+        {
+          "offset": "0x2d8c8",
+          "type": "ascii",
+          "str": "WinUsb_SetCurrentAlternateSetting"
+        },
+        {
+          "offset": "0x2d910",
+          "type": "ascii",
+          "str": "WinUsb_SetPipePolicy"
+        },
+        {
+          "offset": "0x2d938",
+          "type": "ascii",
+          "str": "WinUsb_WritePipe"
+        },
+        {
+          "offset": "0x2d960",
+          "type": "ascii",
+          "str": "WinUsb_ReadIsochPipeAsap"
+        },
+        {
+          "offset": "0x2d980",
+          "type": "ascii",
+          "str": "WinUsb_QueryPipeEx"
+        },
+        {
+          "offset": "0x2d9a8",
+          "type": "ascii",
+          "str": "WinUsb_RegisterIsochBuffer"
+        },
+        {
+          "offset": "0x2d9e0",
+          "type": "ascii",
+          "str": "WinUsb_UnregisterIsochBuffer"
+        },
+        {
+          "offset": "0x2da18",
+          "type": "ascii",
+          "str": "WinUsb_WriteIsochPipeAsap"
+        },
+        {
+          "offset": "0x2da60",
+          "type": "ascii",
+          "str": "WinUSB DLL available (%s isoch support)"
+        },
+        {
+          "offset": "0x2da88",
+          "type": "ascii",
+          "str": "failed to initialize WinUSB"
+        },
+        {
+          "offset": "0x2daa8",
+          "type": "ascii",
+          "str": "WinUSB DLL is not available"
+        },
+        {
+          "offset": "0x2dbf0",
+          "type": "ascii",
+          "str": "neither WinUSB nor libusbK DLLs were found, you will not be able to access devices outside of enumeration"
+        },
+        {
+          "offset": "0x2dc90",
+          "type": "ascii",
+          "str": "winusbx_open"
+        },
+        {
+          "offset": "0x2dca0",
+          "type": "ascii",
+          "str": "failed to set PIPE_TRANSFER_TIMEOUT for control endpoint %02X"
+        },
+        {
+          "offset": "0x2dce0",
+          "type": "ascii",
+          "str": "winusbx_configure_endpoints"
+        },
+        {
+          "offset": "0x2de70",
+          "type": "ascii",
+          "str": "winusbx_claim_interface"
+        },
+        {
+          "offset": "0x2ded8",
+          "type": "ascii",
+          "str": "auto-claimed interface 0 (required to claim %u with WinUSB)"
+        },
+        {
+          "offset": "0x2df20",
+          "type": "ascii",
+          "str": "failed to auto-claim interface 0 (required to claim %u with WinUSB): %s"
+        },
+        {
+          "offset": "0x2dff0",
+          "type": "ascii",
+          "str": "winusbx_submit_control_transfer"
+        },
+        {
+          "offset": "0x2e068",
+          "type": "ascii",
+          "str": "winusbx_set_interface_altsetting"
+        },
+        {
+          "offset": "0x2e108",
+          "type": "ascii",
+          "str": "winusbx_submit_iso_transfer"
+        },
+        {
+          "offset": "0x2e1d8",
+          "type": "ascii",
+          "str": "WinUSB DLL does not support isoch transfers"
+        },
+        {
+          "offset": "0x2e2e0",
+          "type": "ascii",
+          "str": "isoch packets for OUT transfer with WinUSB must be contiguous in memory"
+        },
+        {
+          "offset": "0x2e328",
+          "type": "ascii",
+          "str": "failed to register WinUSB isoch buffer: %s"
+        },
+        {
+          "offset": "0x2e388",
+          "type": "ascii",
+          "str": "winusbx_submit_bulk_transfer"
+        },
+        {
+          "offset": "0x2e488",
+          "type": "ascii",
+          "str": "winusbx_clear_halt"
+        },
+        {
+          "offset": "0x2e4a0",
+          "type": "ascii",
+          "str": "winusbx_cancel_transfer"
+        },
+        {
+          "offset": "0x2e4e8",
+          "type": "ascii",
+          "str": "winusbx_reset_device"
+        },
+        {
+          "offset": "0x2e5a8",
+          "type": "ascii",
+          "str": "winusbx_copy_transfer_data"
+        },
+        {
+          "offset": "0x2e740",
+          "type": "ascii",
+          "str": "mismatched report ID (data is %02X, parameter is %02X)"
+        },
+        {
+          "offset": "0x2e7a8",
+          "type": "ascii",
+          "str": "HidD_GetAttributes"
+        },
+        {
+          "offset": "0x2e7c0",
+          "type": "ascii",
+          "str": "HidD_GetAttributesA"
+        },
+        {
+          "offset": "0x2e7d8",
+          "type": "ascii",
+          "str": "HidD_GetAttributesW"
+        },
+        {
+          "offset": "0x2e7f0",
+          "type": "ascii",
+          "str": "HidD_GetHidGuid"
+        },
+        {
+          "offset": "0x2e800",
+          "type": "ascii",
+          "str": "HidD_GetHidGuidA"
+        },
+        {
+          "offset": "0x2e818",
+          "type": "ascii",
+          "str": "HidD_GetHidGuidW"
+        },
+        {
+          "offset": "0x2e830",
+          "type": "ascii",
+          "str": "HidD_GetPreparsedData"
+        },
+        {
+          "offset": "0x2e848",
+          "type": "ascii",
+          "str": "HidD_GetPreparsedDataA"
+        },
+        {
+          "offset": "0x2e860",
+          "type": "ascii",
+          "str": "HidD_GetPreparsedDataW"
+        },
+        {
+          "offset": "0x2e878",
+          "type": "ascii",
+          "str": "HidD_FreePreparsedData"
+        },
+        {
+          "offset": "0x2e890",
+          "type": "ascii",
+          "str": "HidD_FreePreparsedDataA"
+        },
+        {
+          "offset": "0x2e8a8",
+          "type": "ascii",
+          "str": "HidD_FreePreparsedDataW"
+        },
+        {
+          "offset": "0x2e8c0",
+          "type": "ascii",
+          "str": "HidD_GetManufacturerString"
+        },
+        {
+          "offset": "0x2e8e0",
+          "type": "ascii",
+          "str": "HidD_GetManufacturerStringA"
+        },
+        {
+          "offset": "0x2e900",
+          "type": "ascii",
+          "str": "HidD_GetManufacturerStringW"
+        },
+        {
+          "offset": "0x2e920",
+          "type": "ascii",
+          "str": "HidD_GetProductString"
+        },
+        {
+          "offset": "0x2e938",
+          "type": "ascii",
+          "str": "HidD_GetProductStringA"
+        },
+        {
+          "offset": "0x2e950",
+          "type": "ascii",
+          "str": "HidD_GetProductStringW"
+        },
+        {
+          "offset": "0x2e968",
+          "type": "ascii",
+          "str": "HidD_GetSerialNumberString"
+        },
+        {
+          "offset": "0x2e988",
+          "type": "ascii",
+          "str": "HidD_GetSerialNumberStringA"
+        },
+        {
+          "offset": "0x2e9a8",
+          "type": "ascii",
+          "str": "HidD_GetSerialNumberStringW"
+        },
+        {
+          "offset": "0x2e9c8",
+          "type": "ascii",
+          "str": "HidD_GetIndexedString"
+        },
+        {
+          "offset": "0x2e9e0",
+          "type": "ascii",
+          "str": "HidD_GetIndexedStringA"
+        },
+        {
+          "offset": "0x2e9f8",
+          "type": "ascii",
+          "str": "HidD_GetIndexedStringW"
+        },
+        {
+          "offset": "0x2ea40",
+          "type": "ascii",
+          "str": "HidD_SetNumInputBuffers"
+        },
+        {
+          "offset": "0x2ea58",
+          "type": "ascii",
+          "str": "HidD_SetNumInputBuffersA"
+        },
+        {
+          "offset": "0x2ea78",
+          "type": "ascii",
+          "str": "HidD_SetNumInputBuffersW"
+        },
+        {
+          "offset": "0x2ea98",
+          "type": "ascii",
+          "str": "HidD_GetPhysicalDescriptor"
+        },
+        {
+          "offset": "0x2eab8",
+          "type": "ascii",
+          "str": "HidD_GetPhysicalDescriptorA"
+        },
+        {
+          "offset": "0x2ead8",
+          "type": "ascii",
+          "str": "HidD_GetPhysicalDescriptorW"
+        },
+        {
+          "offset": "0x2eaf8",
+          "type": "ascii",
+          "str": "HidD_FlushQueue"
+        },
+        {
+          "offset": "0x2eb08",
+          "type": "ascii",
+          "str": "HidD_FlushQueueA"
+        },
+        {
+          "offset": "0x2eb20",
+          "type": "ascii",
+          "str": "HidD_FlushQueueW"
+        },
+        {
+          "offset": "0x2ec50",
+          "type": "ascii",
+          "str": "could not gain access to HID top collection (HidD_GetAttributes)"
+        },
+        {
+          "offset": "0x2ecc0",
+          "type": "ascii",
+          "str": "could not read HID preparsed data (HidD_GetPreparsedData)"
+        },
+        {
+          "offset": "0x2ed00",
+          "type": "ascii",
+          "str": "could not parse HID capabilities (HidP_GetCaps)"
+        },
+        {
+          "offset": "0x2ee98",
+          "type": "ascii",
+          "str": "hid_submit_bulk_transfer"
+        },
+        {
+          "offset": "0x2f148",
+          "type": "ascii",
+          "str": "composite_submit_bulk_transfer"
+        },
+        {
+          "offset": "0x2f168",
+          "type": "ascii",
+          "str": "submit_bulk_transfer"
+        },
+        {
+          "offset": "0x2f558",
+          "type": "ascii",
+          "str": "Invalid parameter"
+        },
+        {
+          "offset": "0x2f880",
+          "type": "ascii",
+          "str": "Param"
+        },
+        {
+          "offset": "0x2fd2d",
+          "type": "ascii",
+          "str": "ltiger Parameter"
+        },
+        {
+          "offset": "0x2ff76",
+          "type": "ascii",
+          "str": "nytelen param"
+        },
+        {
+          "offset": "0x30198",
+          "type": "ascii",
+          "str": "do_sync_bulk_transfer"
+        },
+        {
+          "offset": "0x33f08",
+          "type": "ascii",
+          "str": ".xdata"
+        },
+        {
+          "offset": "0x33f18",
+          "type": "ascii",
+          "str": ".xdata$x"
+        },
+        {
+          "offset": "0x39a4a",
+          "type": "ascii",
+          "str": "CreateFileA"
+        },
+        {
+          "offset": "0x39a70",
+          "type": "ascii",
+          "str": "DeviceIoControl"
+        },
+        {
+          "offset": "0x3a962",
+          "type": "ascii",
+          "str": "MSVCP140.dll"
+        },
+        {
+          "offset": "0x3aa00",
+          "type": "ascii",
+          "str": "memset"
+        },
+        {
+          "offset": "0x3acd0",
+          "type": "ascii",
+          "str": "api-ms-win-crt-runtime-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3acf2",
+          "type": "ascii",
+          "str": "api-ms-win-crt-string-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3ad14",
+          "type": "ascii",
+          "str": "api-ms-win-crt-heap-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3ad34",
+          "type": "ascii",
+          "str": "api-ms-win-crt-stdio-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3ad54",
+          "type": "ascii",
+          "str": "api-ms-win-crt-convert-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3ad76",
+          "type": "ascii",
+          "str": "api-ms-win-crt-environment-l1-1-0.dll"
+        },
+        {
+          "offset": "0x3ef6d",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x3f59a",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x3fd22",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x4191e",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x41f4b",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x426d3",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        }
+      ]
+    },
+    "libcompositeScreenModel.dll": {
+      "path": "/home/tor/vmax_bundle/bin/Release/libcompositeScreenModel.dll",
+      "exports": [
+        "??0CompositeScreenModel@model@@QEAA@V?$shared_ptr@VSavApp@stack@@@std@@@Z",
+        "??1CompositeScreenModel@model@@UEAA@XZ",
+        "??_7CompositeScreenModel@model@@6B@",
+        "?_handle_ota_ack@CompositeScreenModel@model@@AEAAX_NAEBV?$vector@EV?$allocator@E@std@@@std@@@Z",
+        "?_handle_upload_ack@CompositeScreenModel@model@@AEAAX_NE@Z",
+        "?_notify_upload_status@CompositeScreenModel@model@@AEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H1@Z",
+        "?_ota_send_file@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z",
+        "?_ota_task@CompositeScreenModel@model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z",
+        "?_upload_task@CompositeScreenModel@model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MediaType@12@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@4@@Z",
+        "?_wait_for_ack@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@@Z",
+        "?async_delete_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@0V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_factory_reset@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_get_device_info@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUDeviceInfo@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_file_count@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUFileCountInfo@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_file_list@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@EEV?$function@$$A6AXAEBUFileListInfo@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_pip_rect@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUPipInfo@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_play_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4PlayMode@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_storage_info@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUStorageInfo@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_get_work_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4WorkMode@CompositeScreenModel@model@@@Z@4@@Z",
+        "?async_heartbeat@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+        "?async_ota_control@CompositeScreenModel@model@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EV?$function@$$A6AX_N@Z@4@@Z",
+        "?async_pause_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_play_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@0V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_reboot@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_rename_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@00V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_resume_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_send_stream_fragmented_frame@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUStreamFrameInfo@12@AEBV?$vector@EV?$allocator@E@std@@@4@V?$function@$$A6AXXZ@4@@Z",
+        "?async_set_pip_rect@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUPipRect@12@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_set_pip_switch@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NV?$function@$$A6AX_N@Z@4@@Z",
+        "?async_set_play_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayMode@12@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_set_time@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_set_work_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4WorkMode@12@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_start_ota@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z",
+        "?async_stop_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_stop_stream@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z",
+        "?async_upload_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MediaType@12@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@4@@Z",
+        "?get_build_time@model@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?get_version@model@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        "?handle_ccp_report@CompositeScreenModel@model@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@@Z",
+        "?sync_ota_send_data@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@I@Z",
+        "composite_model_async_delete_file",
+        "composite_model_async_factory_reset",
+        "composite_model_async_get_device_info",
+        "composite_model_async_get_file_count",
+        "composite_model_async_get_file_list",
+        "composite_model_async_get_pip_rect",
+        "composite_model_async_get_play_mode",
+        "composite_model_async_get_storage_info",
+        "composite_model_async_get_work_mode",
+        "composite_model_async_heartbeat",
+        "composite_model_async_pause_local_file",
+        "composite_model_async_play_local_file",
+        "composite_model_async_reboot",
+        "composite_model_async_rename_file",
+        "composite_model_async_resume_local_file",
+        "composite_model_async_send_stream_fragmented_frame",
+        "composite_model_async_set_pip_rect",
+        "composite_model_async_set_pip_switch",
+        "composite_model_async_set_play_mode",
+        "composite_model_async_set_time",
+        "composite_model_async_set_work_mode",
+        "composite_model_async_start_ota",
+        "composite_model_async_stop_local_file",
+        "composite_model_async_stop_stream",
+        "composite_model_async_upload_file",
+        "composite_model_create",
+        "composite_model_destroy",
+        "composite_model_get_build_time",
+        "composite_model_get_version"
+      ],
+      "imported_dlls": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "libstack.dll"
+      ],
+      "relevant_strings_count": 74,
+      "relevant_strings": [
+        {
+          "offset": "0x271c8",
+          "type": "ascii",
+          "str": ".xdata"
+        },
+        {
+          "offset": "0x271d8",
+          "type": "ascii",
+          "str": ".xdata$x"
+        },
+        {
+          "offset": "0x2a0da",
+          "type": "ascii",
+          "str": "libcompositeScreenModel.dll"
+        },
+        {
+          "offset": "0x2a0f6",
+          "type": "ascii",
+          "str": "??0CompositeScreenModel@model@@QEAA@V?$shared_ptr@VSavApp@stack@@@std@@@Z"
+        },
+        {
+          "offset": "0x2a140",
+          "type": "ascii",
+          "str": "??1CompositeScreenModel@model@@UEAA@XZ"
+        },
+        {
+          "offset": "0x2a167",
+          "type": "ascii",
+          "str": "??_7CompositeScreenModel@model@@6B@"
+        },
+        {
+          "offset": "0x2a18b",
+          "type": "ascii",
+          "str": "?_handle_ota_ack@CompositeScreenModel@model@@AEAAX_NAEBV?$vector@EV?$allocator@E@std@@@std@@@Z"
+        },
+        {
+          "offset": "0x2a1ea",
+          "type": "ascii",
+          "str": "?_handle_upload_ack@CompositeScreenModel@model@@AEAAX_NE@Z"
+        },
+        {
+          "offset": "0x2a225",
+          "type": "ascii",
+          "str": "?_notify_upload_status@CompositeScreenModel@model@@AEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H1@Z"
+        },
+        {
+          "offset": "0x2a2fd",
+          "type": "ascii",
+          "str": "?_ota_send_file@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z"
+        },
+        {
+          "offset": "0x2a375",
+          "type": "ascii",
+          "str": "?_ota_task@CompositeScreenModel@model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a463",
+          "type": "ascii",
+          "str": "?_upload_task@CompositeScreenModel@model@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MediaType@12@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a53d",
+          "type": "ascii",
+          "str": "?_wait_for_ack@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@@Z"
+        },
+        {
+          "offset": "0x2a5d8",
+          "type": "ascii",
+          "str": "?async_delete_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@0V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a679",
+          "type": "ascii",
+          "str": "?async_factory_reset@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a70c",
+          "type": "ascii",
+          "str": "?async_get_device_info@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUDeviceInfo@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a7ca",
+          "type": "ascii",
+          "str": "?async_get_file_count@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUFileCountInfo@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a88a",
+          "type": "ascii",
+          "str": "?async_get_file_list@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@EEV?$function@$$A6AXAEBUFileListInfo@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2a959",
+          "type": "ascii",
+          "str": "?async_get_pip_rect@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUPipInfo@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2aa11",
+          "type": "ascii",
+          "str": "?async_get_play_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4PlayMode@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2aac9",
+          "type": "ascii",
+          "str": "?async_get_storage_info@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEBUStorageInfo@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2ab89",
+          "type": "ascii",
+          "str": "?async_get_work_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4WorkMode@CompositeScreenModel@model@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2ac41",
+          "type": "ascii",
+          "str": "?async_heartbeat@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+        },
+        {
+          "offset": "0x2acb7",
+          "type": "ascii",
+          "str": "?async_ota_control@CompositeScreenModel@model@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EV?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2ad49",
+          "type": "ascii",
+          "str": "?async_pause_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2addf",
+          "type": "ascii",
+          "str": "?async_play_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@0V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2ae84",
+          "type": "ascii",
+          "str": "?async_reboot@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2af10",
+          "type": "ascii",
+          "str": "?async_rename_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MediaType@12@00V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2afb2",
+          "type": "ascii",
+          "str": "?async_resume_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b049",
+          "type": "ascii",
+          "str": "?async_send_stream_fragmented_frame@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUStreamFrameInfo@12@AEBV?$vector@EV?$allocator@E@std@@@4@V?$function@$$A6AXXZ@4@@Z"
+        },
+        {
+          "offset": "0x2b125",
+          "type": "ascii",
+          "str": "?async_set_pip_rect@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUPipRect@12@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b1c6",
+          "type": "ascii",
+          "str": "?async_set_pip_switch@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NV?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b25c",
+          "type": "ascii",
+          "str": "?async_set_play_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayMode@12@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b2fd",
+          "type": "ascii",
+          "str": "?async_set_time@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b38b",
+          "type": "ascii",
+          "str": "?async_set_work_mode@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4WorkMode@12@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b42c",
+          "type": "ascii",
+          "str": "?async_start_ota@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b523",
+          "type": "ascii",
+          "str": "?async_stop_local_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b5b8",
+          "type": "ascii",
+          "str": "?async_stop_stream@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AX_N@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b649",
+          "type": "ascii",
+          "str": "?async_upload_file@CompositeScreenModel@model@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MediaType@12@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0@Z@4@@Z"
+        },
+        {
+          "offset": "0x2b7e0",
+          "type": "ascii",
+          "str": "?handle_ccp_report@CompositeScreenModel@model@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@@Z"
+        },
+        {
+          "offset": "0x2b87e",
+          "type": "ascii",
+          "str": "?sync_ota_send_data@CompositeScreenModel@model@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EAEBV?$vector@EV?$allocator@E@std@@@4@I@Z"
+        },
+        {
+          "offset": "0x2d666",
+          "type": "ascii",
+          "str": "MSVCP140.dll"
+        },
+        {
+          "offset": "0x2d6fa",
+          "type": "ascii",
+          "str": "memset"
+        },
+        {
+          "offset": "0x2d9be",
+          "type": "ascii",
+          "str": "api-ms-win-crt-runtime-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2d9e0",
+          "type": "ascii",
+          "str": "api-ms-win-crt-heap-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2da00",
+          "type": "ascii",
+          "str": "api-ms-win-crt-stdio-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2da20",
+          "type": "ascii",
+          "str": "api-ms-win-crt-filesystem-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2da46",
+          "type": "ascii",
+          "str": "api-ms-win-crt-time-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2da66",
+          "type": "ascii",
+          "str": "api-ms-win-crt-string-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2da88",
+          "type": "ascii",
+          "str": "api-ms-win-crt-locale-l1-1-0.dll"
+        },
+        {
+          "offset": "0x2db5c",
+          "type": "ascii",
+          "str": "CreateFileW"
+        },
+        {
+          "offset": "0x2f178",
+          "type": "ascii",
+          "str": ".?AVCompositeScreenModel@model@@"
+        },
+        {
+          "offset": "0x30860",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@"
+        },
+        {
+          "offset": "0x30930",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XAEBUDeviceInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30990",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XAEBUStorageInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x309f0",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XW4WorkMode@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30a40",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XW4PlayMode@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30a90",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XAEBUPipInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30af0",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XAEBUFileListInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30b50",
+          "type": "ascii",
+          "str": ".?AV?$_Func_base@XAEBUFileCountInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30ca0",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_a7a5dd4c0d3a652a051ecda6cba7f77d>@@XAEBUDeviceInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30e50",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_bef8ff36a8b299255d8263734d5a5bf0>@@XAEBUStorageInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x30f40",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_3171ebf76a61e7ed4baa8ff47ab0e070>@@XW4WorkMode@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x31030",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_87b138df75280ac9a7559989a59b272a>@@XW4PlayMode@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x31180",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_6d211552d2b881fe4d816ed448357485>@@XAEBUPipInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x31460",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_f1c8f3b1c659533773aa67c1982bf0f6>@@XAEBUFileListInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x314f0",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_ce50b73a5c0d40f8d31a3f5a752595df>@@XAEBUFileCountInfo@CompositeScreenModel@model@@@std@@"
+        },
+        {
+          "offset": "0x316f0",
+          "type": "ascii",
+          "str": ".?AV?$_Func_impl_no_alloc@V<lambda_1cdb9a0b98292a6ab6d600c2e9103817>@@XW4OTAState@CompositeScreenModel@model@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@"
+        },
+        {
+          "offset": "0x3396d",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x33f9a",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x34722",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x3631d",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x3694a",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        },
+        {
+          "offset": "0x370d2",
+          "type": "ascii",
+          "str": "Asseco Data Systems S.A.1806"
+        }
+      ]
+    }
+  }
+}

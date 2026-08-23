@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+*.ppm
+dashboard_tmp/
+.DS_Store

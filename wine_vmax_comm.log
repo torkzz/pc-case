@@ -1,0 +1,32 @@
+libEGL warning: pci id for fd 36: 10de:2504, driver (null)
+
+pci id for fd 38: 10de:2504, driver (null)
+pci id for fd 39: 10de:2504, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 36: 10de:2504, driver (null)
+
+pci id for fd 38: 10de:2504, driver (null)
+pci id for fd 39: 10de:2504, driver (null)
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: pci id for fd 36: 10de:2504, driver (null)
+
+0024:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+0024:fixme:dwrite:opentype_ttf_analyzer COLR version 1, skipping font.
+* Assertion at /builds/mono/wine-mono/wine-mono-11.2.0/mono/mono/metadata/object.c:4679, condition `is_ok (error)' not met, function:prepare_run_main, (null) assembly:Z:\usr\share\wine\mono\wine-mono-11.2.0\lib\mono\4.5\mscorlib.dll type:TypeInitializationException member:(null)
+

@@ -1,0 +1,137 @@
+[
+  {
+    "test_idx": 1,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "HANDSHAKE_0x0080",
+    "cmd": "0x0080",
+    "tx_hex": "41 48 00 02 00 80 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0122
+    }
+  },
+  {
+    "test_idx": 2,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "HW_INFO_0x0072",
+    "cmd": "0x0072",
+    "tx_hex": "41 48 00 02 00 72 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0113
+    }
+  },
+  {
+    "test_idx": 3,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "GET_FLASH_INFO_0x0062",
+    "cmd": "0x0062",
+    "tx_hex": "41 48 00 02 00 62 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0122
+    }
+  },
+  {
+    "test_idx": 4,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "GET_GIF_INFO_0x0061",
+    "cmd": "0x0061",
+    "tx_hex": "41 48 00 02 00 61 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0121
+    }
+  },
+  {
+    "test_idx": 5,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "GET_DL_STATUS_0x0085",
+    "cmd": "0x0085",
+    "tx_hex": "41 48 00 02 00 85 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0113
+    }
+  },
+  {
+    "test_idx": 6,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "EXIT_RUNNING_0x0063",
+    "cmd": "0x0063",
+    "tx_hex": "41 48 00 02 00 63 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0122
+    }
+  },
+  {
+    "test_idx": 7,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "CHANGE_STATUS_AHMI_0x0071",
+    "cmd": "0x0071",
+    "tx_hex": "41 48 00 03 00 71 20 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0122
+    }
+  },
+  {
+    "test_idx": 8,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "CHANGE_STATUS_READY_0x0071",
+    "cmd": "0x0071",
+    "tx_hex": "41 48 00 03 00 71 10 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0122
+    }
+  },
+  {
+    "test_idx": 9,
+    "baud": 115200,
+    "dtr": false,
+    "rts": false,
+    "frame_name": "REGISTER_SET_VALUE_0x0090",
+    "cmd": "0x0090",
+    "tx_hex": "41 48 00 09 00 90 81 00 00 00 00 00 00 00 00 4D 49",
+    "result": {
+      "status": "NO_RESPONSE",
+      "rx_hex": "",
+      "rx_len": 0,
+      "elapsed_s": 2.0113
+    }
+  }
+]

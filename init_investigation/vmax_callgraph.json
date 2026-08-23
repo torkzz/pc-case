@@ -1,0 +1,48 @@
+{
+  "device_communicator_lifecycle": [
+    "1. Constructor: init _serialLock, _bufferLock, _eventLock, _receiveBuffer, _pendingRequests",
+    "2. Connect(portName, 115200): creates SerialPort, adds DataReceived handler, calls Open()",
+    "3. HandshakeAsync(timeoutMs): sends CMD 0x0080 -> awaits 0x00C0",
+    "4. GetHardwareInfoAsync(timeoutMs): sends CMD 0x0072 -> awaits 0x00B2",
+    "5. ChangeStatusAsync(0x20): sends CMD 0x0071 with payload [0x20] -> awaits 0x00B1",
+    "6. Disconnect(): calls CancelAllPendingRequests() and SerialPort.Close()"
+  ],
+  "flash_addresses": {
+    "cpu1.bin": {
+      "address": "0x08040000",
+      "size": 614400
+    },
+    "cpu0_config.bin": {
+      "address": "0x080F8000",
+      "size": 4096
+    },
+    "calibration.bin": {
+      "address": "0x080FB000",
+      "size": 4096
+    },
+    "EraseStoreSpace.bin": {
+      "address": "0x080FC000",
+      "size": 4096
+    },
+    "hwconfig.bin": {
+      "address": "0x080FE000",
+      "size": 4096
+    },
+    "product.bin": {
+      "address": "0x080FF000",
+      "size": 4096
+    },
+    "Texture.acf": {
+      "address": "0x08100000",
+      "size": 15728640
+    },
+    "upg_cfg.bin": {
+      "address": "0x080F7000",
+      "size": 4096
+    },
+    "bootloader.bin": {
+      "address": "0x08400000",
+      "size": 0
+    }
+  }
+}

@@ -1,0 +1,59 @@
+USB TOPOLOGY CAPTURE
+Generated: 2026-08-23
+Method: lsusb -t + sysfs inspection
+
+=== BUS TOPOLOGY ===
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/10p, 480M
+    |__ Port 009: Dev 002 (HL VMAX 33c3:f101)
+        If 0, Class=Communications, Driver=cdc_acm, 480M
+        If 1, Class=CDC Data, Driver=cdc_acm, 480M
+
+=== SYSFS DEVICE PATH ===
+/sys/devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-9/
+
+=== DEVICE NODE STATUS ===
+sysfs ttyACM0: EXISTS at /sys/class/tty/ttyACM0, major:minor = 166:0
+/dev/ttyACM0: NOT PRESENT (sandbox does not expose character device node)
+usbmon: NOT ACCESSIBLE (no /dev/usbmon*, /sys/kernel/debug/usb/ permission denied)
+Capabilities: ALL ZERO (CapEff=0000000000000000) — no CAP_SYS_ADMIN, no CAP_MKNOD
+
+=== INTERFACE 0 (CDC Communications) ===
+Path: /sys/bus/usb/devices/1-9:1.0/
+bInterfaceClass:    0x02 (Communications)
+bInterfaceSubClass: 0x02 (Abstract Control Model)
+bInterfaceProtocol: 0x01 (AT Commands v.25ter)
+Driver: cdc_acm (bound)
+Endpoints: ep_83 (Interrupt IN)
+
+=== INTERFACE 1 (CDC Data) ===
+Path: /sys/bus/usb/devices/1-9:1.1/
+bInterfaceClass:    0x0A (CDC Data)
+bInterfaceSubClass: 0x00
+bInterfaceProtocol: 0x00
+Driver: cdc_acm (bound)
+Endpoints: ep_02 (Bulk OUT), ep_81 (Bulk IN)
+
+=== ENDPOINT DETAILS ===
+EP 0x83 (IF0): Type=Interrupt, wMaxPacketSize=8, bInterval=0x0A (10ms descriptor, ~64ms actual)
+EP 0x02 (IF1): Type=Bulk OUT,   wMaxPacketSize=512
+EP 0x81 (IF1): Type=Bulk IN,    wMaxPacketSize=512
+
+=== CDC FUNCTIONAL DESCRIPTORS (from lsusb -v) ===
+CDC Header:          bcdCDC = 1.10
+CDC Call Management: bmCapabilities=0x00 (no call management), bDataInterface=1
+CDC ACM:             bmCapabilities=0x02 (line coding + serial state — SET_LINE_CODING, GET_LINE_CODING, SET_CONTROL_LINE_STATE supported)
+CDC Union:           bMasterInterface=0, bSlaveInterface=1
+
+NOTE: bmCapabilities=0x02 means the device claims to support:
+  - SET_LINE_CODING (0x20) — host tells device baud/parity/bits
+  - GET_LINE_CODING (0x21) — host queries current settings
+  - SET_CONTROL_LINE_STATE (0x22) — DTR/RTS
+  - SERIAL_STATE notifications (0x20 on interrupt EP)
+It does NOT claim: SEND_BREAK (bit 2)
+
+=== KEY OBSERVATIONS ===
+1. cdc_acm driver is bound to both interfaces
+2. ttyACM0 sysfs node exists — driver successfully enumerated
+3. /dev/ttyACM0 character node missing from container /dev
+4. Live testing requires: either proper /dev node, or running outside container
+5. No usbmon access — cannot capture live CDC control transfers
