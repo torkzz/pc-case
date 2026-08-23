@@ -127,20 +127,44 @@ class SystemMetricsCollector:
             pass
         return None
 
-    def get_storage_metrics(self):
+    def _get_mount_info(self, mount_point, label="ROOT"):
         try:
-            st = os.statvfs('/')
+            if not os.path.exists(mount_point):
+                return None
+            st = os.statvfs(mount_point)
             total_b = st.f_blocks * st.f_frsize
+            if total_b == 0:
+                return None
             avail_b = st.f_bavail * st.f_frsize
             used_b = total_b - avail_b
             pct = (used_b / float(total_b) * 100.0) if total_b > 0 else 0.0
             return {
+                'label': label,
+                'mount': mount_point,
+                'used_tb': round(used_b / (1024.0 ** 4), 2) if total_b > (1024.0 ** 4) else round(used_b / (1024.0 ** 3), 1),
+                'total_tb': round(total_b / (1024.0 ** 4), 2) if total_b > (1024.0 ** 4) else round(total_b / (1024.0 ** 3), 1),
                 'used_gb': round(used_b / (1024.0 ** 3), 1),
                 'total_gb': round(total_b / (1024.0 ** 3), 1),
+                'avail_gb': round(avail_b / (1024.0 ** 3), 1),
+                'unit': 'TB' if total_b > (1024.0 ** 4) else 'GB',
                 'pct': round(pct, 1)
             }
         except Exception:
-            return {'used_gb': 0.0, 'total_gb': 0.0, 'pct': 0.0}
+            return None
+
+    def get_storage_metrics(self):
+        root = self._get_mount_info('/', 'ROOT') or {'label': 'ROOT', 'mount': '/', 'used_gb': 0.0, 'total_gb': 0.0, 'avail_gb': 0.0, 'pct': 0.0, 'unit': 'GB'}
+        hdd1 = self._get_mount_info('/mnt/dd', 'HDD1 (/mnt/dd)')
+        hdd2 = self._get_mount_info('/mnt/dd2', 'HDD2 (/mnt/dd2)')
+        
+        return {
+            'root': root,
+            'hdd1': hdd1,
+            'hdd2': hdd2,
+            'pct': root['pct'],
+            'used_gb': root['used_gb'],
+            'total_gb': root['total_gb']
+        }
 
     def get_network_metrics(self):
         try:
@@ -176,7 +200,6 @@ class SystemMetricsCollector:
 
     def get_cpu_temp(self):
         try:
-            # Check hwmon / thermal_zone
             sys_path = '/sys/class/thermal'
             if os.path.exists(sys_path):
                 for zone in os.listdir(sys_path):
