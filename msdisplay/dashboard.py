@@ -1,10 +1,13 @@
 import sys
 import time
+import logging
 from .metrics import SystemMetricsCollector
 from .renderer import DashboardRenderer
 from .jpeg import encode_jpeg
 from .display import MSDisplayController
 from .usb import MSDisplayUSBDevice
+
+logger = logging.getLogger("msdisplay")
 
 DEFAULT_UPDATE_INTERVAL = 1.0
 DEFAULT_RECONNECT_INTERVAL = 2.0
@@ -65,7 +68,7 @@ class MSDisplayDashboard:
                     cpu_u = metrics_data['cpu']['utilization']
                     ram_u = metrics_data['ram']['pct']
                     gpu_u = metrics_data['gpu']['utilization'] if metrics_data['gpu'] else 0.0
-                    print(f"[{ts}] Frame #{frame_seq:04d} ({len(jpeg_bytes)}B JPG, {res}B Tx) -> CPU: {cpu_u:.1f}% | RAM: {ram_u:.1f}% | GPU: {gpu_u:.1f}% | OK")
+                    logger.debug(f"[{ts}] Frame #{frame_seq:04d} ({len(jpeg_bytes)}B JPG, {res}B Tx) -> CPU: {cpu_u:.1f}% | RAM: {ram_u:.1f}% | GPU: {gpu_u:.1f}% | OK")
                     frame_seq += 1
                     transmitted = True
                 except Exception as e:

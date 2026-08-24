@@ -39,6 +39,13 @@ class SystemMetricsCollector:
         self.history_net_tx = RingBuffer(maxlen=history_len)
         self.history_temp_cpu = RingBuffer(maxlen=history_len)
 
+        # Network statistics tracking
+        self.net_iface = None
+        self.net_start_bytes = None  # (rx_start, tx_start)
+        self.net_prev_bytes = None   # (rx_prev, tx_prev)
+        self.net_prev_time = None
+        self.tx_peak_rate_b = 0.0    # Peak upload rate in bytes/sec
+
     def get_cpu_metrics(self):
         try:
             with open('/proc/stat', 'r') as f:
@@ -171,37 +178,108 @@ class SystemMetricsCollector:
             'total_gb': root['total_gb']
         }
 
-    def get_network_metrics(self):
+    def detect_net_interface(self):
+        # 1. Check default route in /proc/net/route
         try:
-            rx_total, tx_total = 0, 0
-            with open('/proc/net/dev', 'r') as f:
-                lines = f.readlines()[2:]
-            for line in lines:
-                parts = line.split(':')
-                if len(parts) == 2:
-                    iface = parts[0].strip()
-                    if iface != 'lo' and not iface.startswith('docker') and not iface.startswith('veth'):
-                        cols = parts[1].split()
-                        rx_total += int(cols[0])
-                        tx_total += int(cols[8])
-            
-            now = time.monotonic()
-            rx_rate_mb, tx_rate_mb = 0.0, 0.0
-            if self.prev_net_time is not None:
-                dt = now - self.prev_net_time
-                if dt > 0:
-                    prev_rx, prev_tx = self.prev_net_bytes
-                    rx_rate_mb = max(0.0, (rx_total - prev_rx) / (1024.0 * 1024.0 * dt))
-                    tx_rate_mb = max(0.0, (tx_total - prev_tx) / (1024.0 * 1024.0 * dt))
-            
-            self.prev_net_time = now
-            self.prev_net_bytes = (rx_total, tx_total)
+            if os.path.exists('/proc/net/route'):
+                with open('/proc/net/route', 'r') as f:
+                    for line in f:
+                        parts = line.strip().split()
+                        if len(parts) >= 2 and parts[1] == '00000000':
+                            iface = parts[0]
+                            if os.path.exists(f'/sys/class/net/{iface}/statistics/rx_bytes'):
+                                return iface
+        except Exception:
+            pass
+
+        # 2. Fallback: non-loopback, non-virtual interface in /sys/class/net
+        try:
+            sys_net = '/sys/class/net'
+            if os.path.exists(sys_net):
+                for iface in sorted(os.listdir(sys_net)):
+                    if iface == 'lo' or iface.startswith(('docker', 'veth', 'br-', 'virbr', 'tun', 'tap')):
+                        continue
+                    if os.path.exists(f'{sys_net}/{iface}/statistics/rx_bytes'):
+                        return iface
+        except Exception:
+            pass
+
+        return None
+
+    def get_network_metrics(self):
+        iface = self.detect_net_interface()
+        if not iface:
             return {
-                'rx_mb_s': round(rx_rate_mb, 2),
-                'tx_mb_s': round(tx_rate_mb, 2)
+                'available': False,
+                'interface': None,
+                'rx_rate_b': None,
+                'tx_rate_b': None,
+                'tx_peak_b': None,
+                'rx_total_b': None,
+                'tx_total_b': None,
+                'rx_mb_s': 0.0,
+                'tx_mb_s': 0.0,
+            }
+
+        try:
+            rx_path = f'/sys/class/net/{iface}/statistics/rx_bytes'
+            tx_path = f'/sys/class/net/{iface}/statistics/tx_bytes'
+            with open(rx_path, 'r') as f:
+                rx_bytes = int(f.read().strip())
+            with open(tx_path, 'r') as f:
+                tx_bytes = int(f.read().strip())
+
+            now = time.monotonic()
+
+            if self.net_start_bytes is None or self.net_iface != iface:
+                self.net_iface = iface
+                self.net_start_bytes = (rx_bytes, tx_bytes)
+                self.tx_peak_rate_b = 0.0
+
+            rx_total_b = max(0, rx_bytes - self.net_start_bytes[0])
+            tx_total_b = max(0, tx_bytes - self.net_start_bytes[1])
+
+            rx_rate_b = 0.0
+            tx_rate_b = 0.0
+
+            if self.net_prev_time is not None and self.net_prev_bytes is not None:
+                dt = now - self.net_prev_time
+                if dt > 0:
+                    prev_rx, prev_tx = self.net_prev_bytes
+                    rx_rate_b = max(0.0, (rx_bytes - prev_rx) / dt)
+                    tx_rate_b = max(0.0, (tx_bytes - prev_tx) / dt)
+
+            self.tx_peak_rate_b = max(self.tx_peak_rate_b, tx_rate_b)
+
+            self.net_prev_time = now
+            self.net_prev_bytes = (rx_bytes, tx_bytes)
+
+            rx_mb_s = rx_rate_b / (1024.0 * 1024.0)
+            tx_mb_s = tx_rate_b / (1024.0 * 1024.0)
+
+            return {
+                'available': True,
+                'interface': iface,
+                'rx_rate_b': rx_rate_b,
+                'tx_rate_b': tx_rate_b,
+                'tx_peak_b': self.tx_peak_rate_b,
+                'rx_total_b': rx_total_b,
+                'tx_total_b': tx_total_b,
+                'rx_mb_s': round(rx_mb_s, 2),
+                'tx_mb_s': round(tx_mb_s, 2),
             }
         except Exception:
-            return {'rx_mb_s': 0.0, 'tx_mb_s': 0.0}
+            return {
+                'available': False,
+                'interface': None,
+                'rx_rate_b': None,
+                'tx_rate_b': None,
+                'tx_peak_b': None,
+                'rx_total_b': None,
+                'tx_total_b': None,
+                'rx_mb_s': 0.0,
+                'tx_mb_s': 0.0,
+            }
 
     def get_cpu_temp(self):
         # 1. Try hwmon (k10temp / coretemp / zen)

@@ -13,6 +13,7 @@ Production Architecture:
 
 import sys
 import argparse
+import logging
 from msdisplay.dashboard import MSDisplayDashboard
 
 def main():
@@ -20,7 +21,13 @@ def main():
     parser.add_argument('--interval', type=float, default=1.0, help="Metrics & Display refresh interval in seconds (default: 1.0)")
     parser.add_argument('--duration', type=float, default=None, help="Run duration in seconds (default: infinite / until Ctrl+C)")
     parser.add_argument('--quality', type=int, default=95, help="JPEG compression quality (default: 95)")
+    parser.add_argument('--debug', action='store_true', help="Enable debug logging")
     args = parser.parse_args()
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.debug else logging.INFO,
+        format='%(message)s'
+    )
 
     dashboard = MSDisplayDashboard(update_interval=args.interval, jpeg_quality=args.quality)
     try:

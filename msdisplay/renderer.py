@@ -20,17 +20,30 @@ def find_system_font(size=20, bold=True):
                 pass
     return ImageFont.load_default()
 
+def format_net_rate(mb_s):
+    if mb_s is None or mb_s <= 0:
+        return "0.0 KB/s"
+    b_s = mb_s * 1024.0 * 1024.0
+    if b_s >= 1024.0**3:
+        return f"{b_s / (1024.0**3):.1f} GB/s"
+    elif b_s >= 1024.0**2:
+        return f"{b_s / (1024.0**2):.1f} MB/s"
+    elif b_s >= 1024.0:
+        return f"{b_s / 1024.0:.1f} KB/s"
+    else:
+        return f"{b_s:.0f} B/s"
+
 class DashboardRenderer:
     def __init__(self, width=WIDTH, height=HEIGHT):
         self.width = width
         self.height = height
         
-        # Pre-load fonts
-        self.font_header = find_system_font(size=26, bold=True)
-        self.font_title  = find_system_font(size=22, bold=True)
-        self.font_val    = find_system_font(size=28, bold=True)
-        self.font_sub    = find_system_font(size=17, bold=False)
-        self.font_micro  = find_system_font(size=14, bold=False)
+        # Pre-load fonts (bumped sizes)
+        self.font_header = find_system_font(size=30, bold=True)
+        self.font_title  = find_system_font(size=26, bold=True)
+        self.font_val    = find_system_font(size=34, bold=True)
+        self.font_sub    = find_system_font(size=21, bold=False)
+        self.font_micro  = find_system_font(size=17, bold=False)
 
     def draw_progress_bar(self, draw, x, y, w, h, pct, fg_color=(255, 40, 60), bg_color=(45, 12, 18), border_color=None):
         draw.rectangle([x, y, x + w - 1, y + h - 1], fill=bg_color, outline=border_color, width=1)
@@ -38,8 +51,9 @@ class DashboardRenderer:
         if fill_w > 0:
             draw.rectangle([x, y, x + fill_w - 1, y + h - 1], fill=fg_color)
 
-    def draw_sparkline(self, draw, x, y, w, h, values, min_v=0.0, max_v=100.0, line_color=(255, 60, 80), fill_color=(100, 15, 25, 100)):
-        draw.rectangle([x, y, x + w - 1, y + h - 1], fill=(30, 10, 15), outline=(120, 25, 35), width=1)
+    def draw_sparkline(self, draw, x, y, w, h, values, min_v=0.0, max_v=100.0, line_color=(255, 60, 80), fill_color=(100, 15, 25, 100), bg_color=(30, 10, 15), border_color=(120, 25, 35)):
+        if bg_color:
+            draw.rectangle([x, y, x + w - 1, y + h - 1], fill=bg_color, outline=border_color, width=1)
         if not values or len(values) < 2:
             return
         
@@ -187,17 +201,28 @@ class DashboardRenderer:
         draw.rectangle([x0, 1515, x1, 1560], fill=RED_HEADER_BG)
         draw.text((28, 1525), "NETWORK TRAFFIC", fill=WHITE_TEXT, font=self.font_title)
         
-        draw.text((28, 1575), f"RX: {net['rx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
-        draw.text((250, 1575), f"TX: {net['tx_mb_s']} MB/s", fill=WHITE_TEXT, font=self.font_sub)
+        rx_str = format_net_rate(net.get('rx_mb_s', 0.0))
+        tx_str = format_net_rate(net.get('tx_mb_s', 0.0))
         
-        self.draw_sparkline(draw, inner_x, 1610, inner_w, 85, hist['net_rx'], min_v=0.0, max_v=max(5.0, max(hist['net_rx'] or [1.0])), line_color=(255, 70, 90), fill_color=(120, 15, 25, 100))
-        self.draw_sparkline(draw, inner_x, 1710, inner_w, 85, hist['net_tx'], min_v=0.0, max_v=max(5.0, max(hist['net_tx'] or [1.0])), line_color=(255, 120, 130), fill_color=(150, 20, 30, 100))
+        # Single dual sparkline graph box overlay (Download = Cyan/Blue, Upload = Bright Red)
+        draw.text((28, 1565), f"▼ {rx_str}", fill=(0, 220, 255), font=self.font_sub)
+        draw.text((250, 1565), f"▲ {tx_str}", fill=(255, 70, 90), font=self.font_sub)
+
+        graph_y, graph_h = 1605, 185
+        max_rx_graph = max(5.0, max(hist['net_rx'] or [1.0]))
+        max_tx_graph = max(5.0, max(hist['net_tx'] or [1.0]))
+        max_net_graph = max(max_rx_graph, max_tx_graph)
+
+        # Base box & Download graph (Cyan / Blue)
+        self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_rx'], min_v=0.0, max_v=max_net_graph, line_color=(0, 220, 255), fill_color=(0, 120, 180, 80), bg_color=(15, 20, 30), border_color=(40, 80, 120))
+        # Overlay Upload graph (Bright Red) into same box
+        self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_tx'], min_v=0.0, max_v=max_net_graph, line_color=(255, 60, 80), fill_color=(180, 20, 30, 60), bg_color=None, border_color=None)
 
         # ----------------------------------------------------
         # FOOTER BADGE (Y: 1825 - 1885)
         # ----------------------------------------------------
         draw.rectangle([x0, 1825, x1, 1885], fill=(24, 8, 10), outline=RED_BORDER, width=1)
-        draw.text((28, 1840), "VMAX LINUX DRIVER", fill=WHITE_TEXT, font=self.font_sub)
+        draw.text((28, 1840), "CYBERPUNK RIG STATS", fill=WHITE_TEXT, font=self.font_sub)
         draw.text((280, 1840), "460x1920 NATIVE", fill=RED_TEXT_MUTED, font=self.font_sub)
 
         return img
