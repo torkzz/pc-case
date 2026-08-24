@@ -325,10 +325,45 @@ class DashboardRenderer:
         self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_tx'], min_v=0.0, max_v=max_net_graph, line_color=NEON_PINK, fill_color=(200, 0, 100, 60), bg_color=None, border_color=None)
 
         # ----------------------------------------------------
-        # FOOTER BADGE (Y: 1825 - 1885)
+        # FOOTER BADGE (Y: 1825 - 1885) - Torkzz Cyberpunk Marquee
         # ----------------------------------------------------
         self.draw_cyberpunk_panel(draw, x0, 1825, x1, 1885)
-        draw.text((28, 1840), "CYBERPUNK RIG STATS", fill=(240, 250, 255), font=self.font_sub)
-        draw.text((280, 1840), "460x1920 NATIVE", fill=CYAN_TEXT, font=self.font_sub)
+
+        # Programmatic Glitch & Marquee state derived from live timestamp
+        t = time.time()
+        quantum = int(t * 12)
+        glitch_active = (quantum % 29 in (0, 1, 2))
+
+        dx = 0
+        dy = 0
+        if glitch_active:
+            dx = ((quantum * 7) % 9) - 4
+            dy = ((quantum * 3) % 3) - 1
+
+        # Subtle Hardware Scanlines
+        for sy in range(1831, 1880, 4):
+            draw.line([(x0 + 12, sy), (x1 - 12, sy)], fill=(12, 28, 42), width=1)
+
+        # Distortion line burst during glitch
+        if glitch_active:
+            slice_y = 1838 + ((quantum * 11) % 30)
+            draw.line([(x0 + 20, slice_y), (x1 - 20, slice_y)], fill=CYAN_ACCENT, width=1)
+
+        tx0 = x0 + 28 + dx
+        ty0 = 1839 + dy
+
+        # Chromatic Aberration offset (Cyan left / Magenta right) during glitch
+        if glitch_active:
+            draw.text((tx0 - 3, ty0), "Torkzz", fill=CYAN_ACCENT, font=self.font_title)
+            draw.text((tx0 + 3, ty0), "Torkzz", fill=NEON_PINK, font=self.font_title)
+
+        # Main Identity
+        main_color = NEON_PINK if (glitch_active and quantum % 2 == 0) else (245, 250, 255)
+        draw.text((tx0 + 1, ty0 + 1), "Torkzz", fill=GLOW_PINK, font=self.font_title)
+        draw.text((tx0, ty0), "Torkzz", fill=main_color, font=self.font_title)
+
+        # Hardware Status Tagline
+        tag_color = NEON_PINK if glitch_active else CYAN_TEXT
+        draw.text((x0 + 165, 1845), "// SYSTEM ONLINE", fill=tag_color, font=self.font_sub)
 
         return img
