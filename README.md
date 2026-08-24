@@ -1,44 +1,46 @@
-# HL VMAX PC-Case LCD Display — Linux Native Driver & System Monitor
+# HL VMAX PC-Case LCD Display — Cyberpunk HUD Linux Driver & Telemetry Monitor
 
-Native, high-performance Linux driver and real-time system stats telemetry monitor for **HL VMAX PC-Case LCD displays** (`33c3:f101`).
+Native, high-performance Linux driver, rendering engine, and real-time cyberpunk HUD telemetry monitor for **HL VMAX PC-Case LCD displays** (`33c3:f101`).
 
 ```
-┌────────────────────────────┐
-│       SYSTEM STATUS        │
-├────────────────────────────┤
-│ CPU UTILIZATION    24.5%   │
-│ [██████████░░░░░░]         │
-├────────────────────────────┤
-│ GPU GRAPHICS       48°C    │
-│ VRAM 4.2 / 12.0 GB         │
-├────────────────────────────┤
-│ RAM MEMORY         32.9%   │
-│ 10.5 / 32.0 GB             │
-├────────────────────────────┤
-│ ROOT STORAGE       45.2%   │
-│ 180.4 / 412.0 GB           │
-├────────────────────────────┤
-│ NETWORK TRAFFIC            │
-│ RX: 2.4 MB/s | TX: 0.8 MB/s│
-├────────────────────────────┤
-│ UPTIME: 3d 14h 22m         │
-└────────────────────────────┘
+┌─────────────────────────────────────────┐
+│ [CPU] NECTARINES       12:34:56        │
+│ UPTIME: 1d 4h | IP: 192.168.1.150       │
+├─────────────────────────────────────────┤
+│ [CPU] 45.2%                  TEMP: 54°C │
+│ LOAD: 1.25   0.98   0.84                │
+│ [████████████████░░░░░░░░░░░░░░░░░░░]   │
+│ [ ~~~ Live Oscilloscope Graph ~~~ ]     │
+├─────────────────────────────────────────┤
+│ [GPU] 68.4%                  TEMP: 65°C │
+│ VRAM: 4.2 / 12.0 GB (35.0%)             │
+│ [ ~~~ Live Oscilloscope Graph ~~~ ]     │
+├─────────────────────────────────────────┤
+│ [RAM] 42.8%           13.7 / 32.0 GB    │
+│ [ ::: 100-Dot Matrix Telemetry Grid :::]│
+├─────────────────────────────────────────┤
+│ [DISK] ROOT (/): 282.0 / 413.8 GB (68%) │
+├─────────────────────────────────────────┤
+│ [NET] ↓ 126.5 KB/s      ↑ 1.2 MB/s      │
+│ [ ~~~ Dual-Line RX/TX Telemetry ~~~ ]   │
+├─────────────────────────────────────────┤
+│ Torkzz                                  │
+└─────────────────────────────────────────┘
 ```
 
 ---
 
-## Features
-- **Zero Windows Dependencies**: Runs 100% natively on Linux via direct `usbfs` USB Bulk OUT transfers (`33c3:f101` Endpoint `0x02`).
-- **460 × 1920 Native Resolution**: 1:4 Portrait layout customized for tall PC-case LCD panels.
-- **Auto-Boot Service**: Systemd service auto-starts stats monitoring on system reboot.
-- **Auto-Reconnect**: Robust against USB disconnects or kernel driver re-attachments.
-- **Low Resource Overhead**: Uses fast in-memory PIL drawing (< 5% CPU usage).
+## 🔒 License & Usage Notice
+
+**PROPRIETARY SOFTWARE — NOT AUTHORIZED FOR DISTRIBUTION.**  
+Copyright (c) 2026. All Rights Reserved. See [LICENSE](LICENSE) for terms.  
+*Distribution, redistribution, publication, hosting, or sharing of this codebase or derivative works is strictly prohibited.*
 
 ---
 
 ## 🚀 Quick Setup (Automated)
 
-Clone the repository and run `setup.sh`:
+Clone the repository and execute `setup.sh`:
 
 ```bash
 git clone git@github.com:torkzz/pc-case.git pc-case-lcd
@@ -48,80 +50,114 @@ chmod +x setup.sh
 ```
 
 `setup.sh` automatically:
-1. Creates Python virtual environment (`.venv`) and installs dependencies.
-2. Configures udev rules (`/etc/udev/rules.d/99-vmax-lcd.rules`).
-3. Installs and enables systemd boot service (`msdisplay-stats.service`).
-4. Starts real-time system stats monitor immediately.
+1. Creates the Python virtual environment (`.venv`) and installs Pillow (`PIL`) dependencies.
+2. Configures udev permission rules (`/etc/udev/rules.d/99-vmax-lcd.rules`).
+3. Installs and registers the systemd service (`msdisplay-stats.service`).
+4. Launches the real-time cyberpunk telemetry dashboard daemon.
 
 ---
 
-## 🔬 Hardware & Wire Protocol Architecture
-
-- **Target USB Device:** VID `0x33c3` (`HL VMAX`), PID `0xf101` (`HL-VMAX-USB-Device`)
-- **USB Interface:** Interface `1` (`CDC Data`)
-- **Endpoint:** Endpoint `0x02` Bulk OUT (High Speed USB 2.0)
-- **Native Resolution:** `460 × 1920` (1:4 Portrait aspect ratio)
-- **Keep-Alive Requirement:** Periodic frame transmission every `<= 3.5s` (prevents firmware backlight auto-turnoff).
-
-### 12-Byte MSDisplay Header Format
+## 🛠️ Architecture & Core Components
 
 ```
-+------------------------------------------------------------------------------------+
-| Offset (Hex) | Size (Bytes) | Field Name             | Type       | Value          |
-+------------------------------------------------------------------------------------+
-| 0x00 - 0x03  | 4            | Magic Header Signature | uint32_le  | 0x0008100A     |
-| 0x04 - 0x05  | 2            | Frame Width            | uint16_le  | 460 (0x01CC)   |
-| 0x06 - 0x07  | 2            | Frame Height           | uint16_le  | 1920 (0x0780)  |
-| 0x08 - 0x09  | 2            | Frame Stride           | uint16_le  | 0 (0x0000)     |
-| 0x0A - 0x0B  | 2            | Quality / Flag         | uint16_le  | 1 (0x0001)     |
-| 0x0C - End   | N            | TurboJPEG Frame Data   | Bytes      | Starts 0xFFD8  |
-+------------------------------------------------------------------------------------+
+pc-case-lcd/
+├── msdisplay_system_stats.py   # Systemd entrypoint & CLI executable daemon
+├── msdisplay-stats.service     # Systemd boot service definition
+├── setup.sh                    # Automated installer & environment provisioner
+└── msdisplay/
+    ├── dashboard.py            # Main refresh loop & USB auto-reconnect coordinator
+    ├── metrics.py              # Real-time Linux telemetry collector (/proc & /sys)
+    ├── renderer.py             # PIL-based Cyberpunk HUD rendering engine
+    ├── display.py              # High-level LCD controller
+    ├── usb.py                  # Direct Linux usbfs bulk OUT transfer layer
+    ├── protocol.py             # MSDisplay 12-byte framing header packer
+    └── jpeg.py                 # TurboJPEG / PIL encoder pipeline
 ```
 
 ---
 
-## 🎮 CLI Manual Usage
+## 🎨 Customizing the Cyberpunk HUD Renderer (`msdisplay/renderer.py`)
 
-Run test patterns, solid colors, or custom images:
+All visual UI elements are rendered programmatically via `msdisplay/renderer.py` at `460 × 1920` native resolution.
+
+### 1. Modifying Theme Colors
+
+Color definitions are centralized in `DashboardRenderer.render()` inside `msdisplay/renderer.py`:
+
+```python
+# Color Palette Constants (RGB Tuples)
+CYAN_ACCENT = (0, 255, 240)    # Electric Cyan
+CYAN_TEXT   = (0, 220, 240)    # Primary Cyan Text
+CYAN_DIM    = (0, 140, 160)    # Dim Cyan Dividers & Borders
+NEON_PINK   = (255, 0, 128)    # Hot Magenta / Neon Pink Highlights
+GLOW_PINK   = (130, 0, 65)     # Glowing Text Backdrops
+```
+
+To adjust colors, edit `msdisplay/renderer.py` and restart the background daemon:
 
 ```bash
-# Display 460x1920 Grid Test Pattern (3 columns x 4 rows)
+sudo systemctl restart msdisplay-stats.service
+```
+
+### 2. Customizing Glitch Effects & Animation
+
+The `draw_glitch_text()` method in `msdisplay/renderer.py` controls the 12 FPS quantum glitch loop:
+
+* **Frequency**: `quantum % 37 in (0, 1)` (Triggers glitch every ~3 seconds).
+* **Displacement**: `dx, dy` offsets up to ±3 pixels.
+* **Glitch Palette**: Dynamically picks between Neon Purple `(220, 60, 255)`, Neon Green `(0, 255, 128)`, and Bright Green `(50, 255, 50)`.
+
+### 3. Customizing Footer Identity
+
+To change the footer marquee name (default: `"Torkzz"`), edit line ~377 in `msdisplay/renderer.py`:
+
+```python
+self.draw_glitch_text(draw, (x0 + 28, 1839), "YOUR_NAME", self.font_title, base_color=CYAN_TEXT, quantum_offset=33)
+```
+
+---
+
+## 🎮 Manual CLI Commands
+
+Run test patterns, custom colors, or specific display modes:
+
+```bash
+# Debug logging mode (prints frame size without flooding journald)
+python3 msdisplay_system_stats.py --debug --interval 1.0
+
+# Display 460x1920 test grid
 sudo .venv/bin/python -m msdisplay.cli test-grid --duration 5
 
-# Display Solid Color
+# Display solid color background
 sudo .venv/bin/python -m msdisplay.cli solid red --duration 5
-sudo .venv/bin/python -m msdisplay.cli solid 0 255 0 --duration 5
 
-# Display Custom Image
-sudo .venv/bin/python -m msdisplay.cli image /path/to/picture.jpg --preserve-aspect --duration 5
+# Display custom image file
+sudo .venv/bin/python -m msdisplay.cli image /path/to/image.png --preserve-aspect --duration 5
 ```
 
 ---
 
-## ⚙️ Managing the Background Service
+## ⚙️ Managing the Background Daemon
 
 ```bash
-# View service status
+# Check service status
 sudo systemctl status msdisplay-stats.service
 
-# View live telemetry logs
+# View live systemd logs (logging set to quiet debug)
 sudo journalctl -u msdisplay-stats.service -f
 
-# Stop background service
+# Restart daemon after editing renderer code
+sudo systemctl restart msdisplay-stats.service
+
+# Stop daemon
 sudo systemctl stop msdisplay-stats.service
-
-# Start background service
-sudo systemctl start msdisplay-stats.service
-
-# Disable auto-start on boot
-sudo systemctl disable msdisplay-stats.service
 ```
 
 ---
 
-## 🧪 Unit Tests
+## 🧪 Running Unit Tests
 
-Run offline test suite without requiring hardware:
+Run the test suite offline without requiring physical LCD hardware attached:
 
 ```bash
 .venv/bin/python -m unittest discover tests
@@ -129,5 +165,9 @@ Run offline test suite without requiring hardware:
 
 ---
 
-## 📜 License
-MIT License.
+## 🔬 Hardware Protocol Architecture
+
+* **Device Hardware:** VID `0x33c3` (`HL VMAX`), PID `0xf101`
+* **USB Interface:** CDC Data Pipe / Endpoint `0x02` Bulk OUT
+* **Native Resolution:** `460 × 1920` (1:4 Portrait aspect ratio)
+* **Keep-Alive Interval:** `<= 3.5s` required frame update rate to keep display active.
