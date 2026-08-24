@@ -42,48 +42,81 @@ class DashboardRenderer:
         self.font_header = find_system_font(size=30, bold=True)
         self.font_title  = find_system_font(size=26, bold=True)
         self.font_val    = find_system_font(size=34, bold=True)
+        self.font_large  = find_system_font(size=44, bold=True)
         self.font_sub    = find_system_font(size=21, bold=False)
         self.font_micro  = find_system_font(size=17, bold=False)
+        self.font_small_micro = find_system_font(size=11, bold=False)
 
-    def draw_cyberpunk_panel(self, draw, x0, y0, x1, y1, title=None, title_color=(0, 220, 240)):
+    def draw_cyberpunk_panel(self, draw, x0, y0, x1, y1, title=None, title_color=(255, 0, 128)):
         BLACK_HUD    = (6, 6, 12)
         NEON_MAGENTA = (255, 0, 128)
         GLOW_MAGENTA = (130, 0, 65)
         CYAN_ACCENT  = (0, 255, 240)
         CYAN_DIM     = (0, 140, 160)
 
-        poly_pts = [
-            (x0 + 12, y0),
-            (x1 - 12, y0),
-            (x1, y0 + 12),
-            (x1, y1 - 12),
-            (x1 - 12, y1),
-            (x0 + 12, y1),
-            (x0, y1 - 12),
-            (x0, y0 + 12)
-        ]
+        if title:
+            tab_width = min(270, max(160, len(title) * 11 + 40))
+            tab_x_end = x0 + tab_width
+            poly_pts = [
+                (x0, y0 + 26),
+                (x0 + 16, y0 + 26),
+                (x0 + 24, y0 + 5),
+                (tab_x_end - 10, y0 + 5),
+                (tab_x_end, y0 + 26),
+                (x1 - 12, y0 + 26),
+                (x1, y0 + 38),
+                (x1, y1 - 12),
+                (x1 - 12, y1),
+                (x0 + 12, y1),
+                (x0, y1 - 12)
+            ]
+            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_MAGENTA)
 
-        draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_MAGENTA)
+            glow_pts = [
+                (x0 + 1, y0 + 27),
+                (x0 + 16, y0 + 27),
+                (x0 + 24, y0 + 6),
+                (tab_x_end - 10, y0 + 6),
+                (tab_x_end - 1, y0 + 27),
+                (x1 - 13, y0 + 27),
+                (x1 - 1, y0 + 38),
+                (x1 - 1, y1 - 13),
+                (x1 - 13, y1 - 1),
+                (x0 + 13, y1 - 1),
+                (x0 + 1, y1 - 13)
+            ]
+            draw.polygon(glow_pts, outline=GLOW_MAGENTA)
 
-        glow_pts = [
-            (x0 + 13, y0 + 1),
-            (x1 - 13, y0 + 1),
-            (x1 - 1, y0 + 13),
-            (x1 - 1, y1 - 13),
-            (x1 - 13, y1 - 1),
-            (x0 + 13, y1 - 1),
-            (x0 + 1, y1 - 13),
-            (x0 + 1, y0 + 13)
-        ]
-        draw.polygon(glow_pts, outline=GLOW_MAGENTA)
+            draw.line([(x0 + 24, y0 + 5), (tab_x_end - 10, y0 + 5)], fill=CYAN_ACCENT, width=2)
+            draw.line([(tab_x_end, y0 + 26), (x1 - 12, y0 + 26)], fill=CYAN_DIM, width=1)
+            draw.line([(x1 - 12, y0 + 24), (x1 - 12, y0 + 28)], fill=CYAN_ACCENT, width=2)
 
-        draw.line([(x0 + 18, y0 - 1), (x0 + 50, y0 - 1)], fill=CYAN_ACCENT, width=2)
-        draw.line([(x0 - 1, y0 + 18), (x0 - 1, y0 + 45)], fill=CYAN_ACCENT, width=2)
-        draw.rectangle([(x0 + 5, y0 + 5), (x0 + 8, y0 + 8)], fill=CYAN_ACCENT)
+            draw.text((x0 + 34, y0 + 8), title, fill=GLOW_MAGENTA, font=self.font_sub)
+            draw.text((x0 + 33, y0 + 7), title, fill=title_color, font=self.font_sub)
+        else:
+            poly_pts = [
+                (x0 + 12, y0),
+                (x1 - 12, y0),
+                (x1, y0 + 12),
+                (x1, y1 - 12),
+                (x1 - 12, y1),
+                (x0 + 12, y0 + 12) if False else (x0 + 12, y1),
+                (x0, y1 - 12),
+                (x0, y0 + 12)
+            ]
+            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_MAGENTA)
 
-        draw.line([(x1 - 50, y0 - 1), (x1 - 18, y0 - 1)], fill=CYAN_ACCENT, width=2)
-        draw.line([(x1 + 1, y0 + 18), (x1 + 1, y0 + 45)], fill=CYAN_ACCENT, width=2)
-        draw.rectangle([(x1 - 8, y0 + 5), (x1 - 5, y0 + 8)], fill=CYAN_ACCENT)
+            glow_pts = [
+                (x0 + 13, y0 + 1),
+                (x1 - 13, y0 + 1),
+                (x1 - 1, y0 + 13),
+                (x1 - 1, y1 - 13),
+                (x1 - 13, y1 - 1),
+                (x0 + 13, y1 - 1),
+                (x0 + 1, y1 - 13),
+                (x0 + 1, y0 + 13)
+            ]
+            draw.polygon(glow_pts, outline=GLOW_MAGENTA)
 
         draw.line([(x0 + 18, y1 + 1), (x0 + 45, y1 + 1)], fill=CYAN_ACCENT, width=2)
         draw.line([(x1 - 45, y1 + 1), (x1 - 18, y1 + 1)], fill=CYAN_ACCENT, width=2)
@@ -94,26 +127,37 @@ class DashboardRenderer:
         if fill_w > 0:
             draw.rectangle([x, y, x + fill_w - 1, y + h - 1], fill=fg_color)
 
-    def draw_sparkline(self, draw, x, y, w, h, values, min_v=0.0, max_v=100.0, line_color=(255, 60, 80), fill_color=(100, 15, 25, 100), bg_color=(30, 10, 15), border_color=(120, 25, 35)):
+    def draw_sparkline(self, draw, x, y, w, h, values, min_v=0.0, max_v=100.0, line_color=(255, 60, 80), fill_color=(100, 15, 25, 100), bg_color=(30, 10, 15), border_color=(120, 25, 35), grid=False, y_labels=False):
         if bg_color:
             draw.rectangle([x, y, x + w - 1, y + h - 1], fill=bg_color, outline=border_color, width=1)
-        if not values or len(values) < 2:
-            return
-        
-        dx = float(w - 2) / float(len(values) - 1)
+            if grid:
+                for pct, lbl in [(0.25, '75%'), (0.50, '50%'), (0.75, '25%')]:
+                    gy = y + int(h * pct)
+                    draw.line([(x + 1, gy), (x + w - 2, gy)], fill=(20, 55, 75), width=1)
+                    if y_labels:
+                        draw.text((x + 6, gy - 6), lbl, fill=(0, 150, 170), font=self.font_small_micro)
+                for vx_pct in (0.25, 0.50, 0.75):
+                    gx = x + int(w * vx_pct)
+                    draw.line([(gx, y + 1), (gx, y + h - 2)], fill=(20, 55, 75), width=1)
+
+        vals = list(values) if values else [0.0]
+        if len(vals) == 1:
+            vals = [vals[0], vals[0]]
+
+        dx = float(w - 2) / float(len(vals) - 1)
         pts = []
         range_v = max_v - min_v if max_v > min_v else 1.0
-        
-        for i, val in enumerate(values):
+
+        for i, val in enumerate(vals):
             norm = max(0.0, min(1.0, (val - min_v) / float(range_v)))
             px = x + 1 + int(i * dx)
             py = y + h - 2 - int(norm * (h - 4))
             pts.append((px, py))
-            
+
         if fill_color and len(pts) >= 2:
-            poly_pts = [(x + 1, y + h - 2)] + pts + [(x + 1 + int((len(values) - 1) * dx), y + h - 2)]
+            poly_pts = [(x + 1, y + h - 2)] + pts + [(x + 1 + int((len(vals) - 1) * dx), y + h - 2)]
             draw.polygon(poly_pts, fill=fill_color)
-            
+
         for i in range(len(pts) - 1):
             draw.line([pts[i], pts[i+1]], fill=line_color, width=2)
 
@@ -184,93 +228,99 @@ class DashboardRenderer:
             y_info += 21
 
         # ----------------------------------------------------
-        # SECTION 1: CPU MONITOR (Y: 190 - 510)
+        # SECTION 1: CPU MONITOR (Y: 190 - 510) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 190, x1, 510, title="CPU PROCESSOR", title_color=CYAN_TEXT)
-        
+        self.draw_cyberpunk_panel(draw, x0, 190, x1, 510, title="CPU", title_color=NEON_PINK)
+
+        # Tightened Metrics Spacing: Large CPU % (Left), Temperature (Right)
         cpu_pct = cpu['utilization']
-        draw.text((28, 245), f"{cpu_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
-        
-        cpu_temp_str = f"TEMP: {cpu_temp}°C" if cpu_temp else "TEMP: N/A"
-        draw.text((250, 250), cpu_temp_str, fill=NEON_PINK, font=self.font_title)
-            
-        load_str = f"LOAD: {cpu['load_avg'][0]}  {cpu['load_avg'][1]}  {cpu['load_avg'][2]}"
-        draw.text((28, 305), load_str, fill=CYAN_TEXT, font=self.font_micro)
-        
-        self.draw_progress_bar(draw, inner_x, 340, inner_w, 24, cpu_pct, fg_color=(0, 220, 250), bg_color=(12, 20, 30), border_color=CYAN_DIM)
-        self.draw_sparkline(draw, inner_x, 380, inner_w, 110, hist['cpu'], min_v=0.0, max_v=100.0, line_color=(0, 240, 255), fill_color=(0, 100, 150, 80), bg_color=(12, 18, 28), border_color=CYAN_DIM)
+        draw.text((28, 226), f"{cpu_pct:.1f}%", fill=(245, 250, 255), font=self.font_large)
+
+        cpu_temp_val = f"{cpu_temp}°C" if cpu_temp else "N/A"
+        draw.text((305, 222), "TEMP", fill=CYAN_TEXT, font=self.font_small_micro)
+        draw.text((305, 234), cpu_temp_val, fill=NEON_PINK, font=self.font_title)
+
+        # Load Average
+        load_str = f"LOAD: {cpu['load_avg'][0]}   {cpu['load_avg'][1]}   {cpu['load_avg'][2]}"
+        draw.text((28, 276), load_str, fill=CYAN_TEXT, font=self.font_micro)
+
+        # Thin Usage Progress Bar (height 12px)
+        self.draw_progress_bar(draw, inner_x, 298, inner_w, 12, cpu_pct, fg_color=(0, 220, 250), bg_color=(12, 22, 32), border_color=CYAN_DIM)
+
+        # Larger CPU History Graph (Live Magenta line + Grid + Labels + Padding fix)
+        self.draw_sparkline(draw, inner_x, 318, inner_w, 180, hist['cpu'], min_v=0.0, max_v=100.0, line_color=NEON_PINK, fill_color=(160, 0, 80, 70), bg_color=(12, 18, 28), border_color=CYAN_DIM, grid=True, y_labels=True)
 
         # ----------------------------------------------------
-        # SECTION 2: GPU MONITOR (Y: 525 - 845)
+        # SECTION 2: GPU MONITOR (Y: 525 - 845) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        gpu_title = "GPU GRAPHICS" if gpu else "GPU N/A"
-        self.draw_cyberpunk_panel(draw, x0, 525, x1, 845, title=gpu_title, title_color=CYAN_TEXT)
+        gpu_title = "GPU" if gpu else "GPU N/A"
+        self.draw_cyberpunk_panel(draw, x0, 525, x1, 845, title=gpu_title, title_color=NEON_PINK)
         
         if gpu:
             gpu_pct = gpu['utilization']
-            draw.text((28, 580), f"{gpu_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
-            draw.text((270, 585), f"TEMP: {gpu['temp_c']}°C", fill=NEON_PINK, font=self.font_sub)
+            draw.text((28, 560), f"{gpu_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
+            draw.text((270, 565), f"TEMP: {gpu['temp_c']}°C", fill=NEON_PINK, font=self.font_sub)
             vram_str = f"VRAM: {gpu['vram_used_gb']} / {gpu['vram_total_gb']} GB ({gpu['vram_pct']}%)"
-            draw.text((28, 640), vram_str, fill=CYAN_TEXT, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 675, inner_w, 24, gpu['vram_pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
-            self.draw_sparkline(draw, inner_x, 715, inner_w, 110, hist['gpu'], min_v=0.0, max_v=100.0, line_color=(255, 0, 128), fill_color=(140, 0, 70, 80), bg_color=(18, 12, 22), border_color=CYAN_DIM)
+            draw.text((28, 620), vram_str, fill=CYAN_TEXT, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 655, inner_w, 24, gpu['vram_pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
+            self.draw_sparkline(draw, inner_x, 695, inner_w, 130, hist['gpu'], min_v=0.0, max_v=100.0, line_color=(255, 0, 128), fill_color=(140, 0, 70, 80), bg_color=(18, 12, 22), border_color=CYAN_DIM, grid=True)
         else:
-            draw.text((28, 600), "NVIDIA GPU NOT DETECTED", fill=LIGHT_GRAY, font=self.font_sub)
+            draw.text((28, 580), "NVIDIA GPU NOT DETECTED", fill=LIGHT_GRAY, font=self.font_sub)
 
         # ----------------------------------------------------
-        # SECTION 3: RAM MEMORY (Y: 860 - 1180)
+        # SECTION 3: RAM MEMORY (Y: 860 - 1180) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 860, x1, 1180, title="RAM MEMORY", title_color=CYAN_TEXT)
+        self.draw_cyberpunk_panel(draw, x0, 860, x1, 1180, title="RAM", title_color=NEON_PINK)
         
         ram_pct = ram['pct']
-        draw.text((28, 915), f"{ram_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
-        draw.text((240, 925), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=LIGHT_GRAY, font=self.font_sub)
-        self.draw_progress_bar(draw, inner_x, 975, inner_w, 24, ram_pct, fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
-        self.draw_sparkline(draw, inner_x, 1015, inner_w, 145, hist['ram'], min_v=0.0, max_v=100.0, line_color=(0, 255, 210), fill_color=(0, 130, 110, 80), bg_color=(12, 22, 22), border_color=CYAN_DIM)
+        draw.text((28, 895), f"{ram_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
+        draw.text((240, 905), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=LIGHT_GRAY, font=self.font_sub)
+        self.draw_progress_bar(draw, inner_x, 955, inner_w, 24, ram_pct, fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
+        self.draw_sparkline(draw, inner_x, 995, inner_w, 165, hist['ram'], min_v=0.0, max_v=100.0, line_color=(0, 255, 210), fill_color=(0, 130, 110, 80), bg_color=(12, 22, 22), border_color=CYAN_DIM, grid=True)
 
         # ----------------------------------------------------
-        # SECTION 4: DISK STORAGE (ROOT, HDD1, HDD2) (Y: 1195 - 1500)
+        # SECTION 4: DISK STORAGE (Y: 1195 - 1500) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 1195, x1, 1500, title="DISK STORAGE MONITOR", title_color=CYAN_TEXT)
+        self.draw_cyberpunk_panel(draw, x0, 1195, x1, 1500, title="DISK", title_color=NEON_PINK)
         
         # Disk 1: Root /
         root_info = storage['root']
-        draw.text((28, 1245), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
-        self.draw_progress_bar(draw, inner_x, 1268, inner_w, 18, root_info['pct'], fg_color=(0, 220, 250), bg_color=(12, 20, 30), border_color=CYAN_DIM)
+        draw.text((28, 1232), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+        self.draw_progress_bar(draw, inner_x, 1255, inner_w, 18, root_info['pct'], fg_color=(0, 220, 250), bg_color=(12, 20, 30), border_color=CYAN_DIM)
 
         # Disk 2: HDD1 (/mnt/dd)
         hdd1_info = storage.get('hdd1')
         if hdd1_info:
-            draw.text((28, 1298), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 1321, inner_w, 18, hdd1_info['pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
+            draw.text((28, 1285), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 1308, inner_w, 18, hdd1_info['pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
 
         # Disk 3: HDD2 (/mnt/dd2)
         hdd2_info = storage.get('hdd2')
         if hdd2_info:
-            draw.text((28, 1351), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 1374, inner_w, 18, hdd2_info['pct'], fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
+            draw.text((28, 1338), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+            self.draw_progress_bar(draw, inner_x, 1361, inner_w, 18, hdd2_info['pct'], fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
 
         draw.text((28, 1465), "FILESYSTEMS: EXT4 / BTRFS", fill=CYAN_TEXT, font=self.font_micro)
 
         # ----------------------------------------------------
-        # SECTION 5: NETWORK TRAFFIC (Y: 1515 - 1815)
+        # SECTION 5: NETWORK TRAFFIC (Y: 1515 - 1815) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 1515, x1, 1815, title="NETWORK TRAFFIC", title_color=CYAN_TEXT)
+        self.draw_cyberpunk_panel(draw, x0, 1515, x1, 1815, title="NETWORK", title_color=NEON_PINK)
         
         rx_str = format_net_rate(net.get('rx_mb_s', 0.0))
         tx_str = format_net_rate(net.get('tx_mb_s', 0.0))
         
         # Single dual sparkline graph box overlay (Download = Cyan/Blue, Upload = Bright Pink/Red)
-        draw.text((28, 1565), f"▼ {rx_str}", fill=CYAN_ACCENT, font=self.font_sub)
-        draw.text((250, 1565), f"▲ {tx_str}", fill=NEON_PINK, font=self.font_sub)
+        draw.text((28, 1550), f"▼ {rx_str}", fill=CYAN_ACCENT, font=self.font_sub)
+        draw.text((250, 1550), f"▲ {tx_str}", fill=NEON_PINK, font=self.font_sub)
 
-        graph_y, graph_h = 1605, 185
+        graph_y, graph_h = 1585, 215
         max_rx_graph = max(5.0, max(hist['net_rx'] or [1.0]))
         max_tx_graph = max(5.0, max(hist['net_tx'] or [1.0]))
         max_net_graph = max(max_rx_graph, max_tx_graph)
 
         # Base box & Download graph (Cyan / Blue)
-        self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_rx'], min_v=0.0, max_v=max_net_graph, line_color=CYAN_ACCENT, fill_color=(0, 150, 220, 80), bg_color=(12, 18, 28), border_color=CYAN_DIM)
+        self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_rx'], min_v=0.0, max_v=max_net_graph, line_color=CYAN_ACCENT, fill_color=(0, 150, 220, 80), bg_color=(12, 18, 28), border_color=CYAN_DIM, grid=True)
         # Overlay Upload graph (Bright Pink) into same box
         self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_tx'], min_v=0.0, max_v=max_net_graph, line_color=NEON_PINK, fill_color=(200, 0, 100, 60), bg_color=None, border_color=None)
 
