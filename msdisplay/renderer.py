@@ -47,7 +47,39 @@ class DashboardRenderer:
         self.font_micro  = find_system_font(size=17, bold=False)
         self.font_small_micro = find_system_font(size=11, bold=False)
 
-    def draw_cyberpunk_panel(self, draw, x0, y0, x1, y1, title=None, title_color=(255, 0, 128)):
+    def draw_glitch_text(self, draw, pos, text, font, base_color=(0, 220, 240), glow_color=(0, 110, 130), quantum_offset=0):
+        t = time.time()
+        quantum = int(t * 12) + quantum_offset
+        glitch_active = (quantum % 37 in (0, 1))
+
+        dx, dy = 0, 0
+        if glitch_active:
+            dx = ((quantum * 7) % 7) - 3
+            dy = ((quantum * 3) % 3) - 1
+
+            glitch_colors = [
+                (220, 60, 255),  # Neon Purple
+                (0, 255, 128),   # Neon Green
+                (50, 255, 50),   # Bright Green
+            ]
+            c1 = glitch_colors[(quantum * 3) % len(glitch_colors)]
+            c2 = glitch_colors[(quantum * 5 + 1) % len(glitch_colors)]
+
+            # Chromatic aberration offset with random neon purple / neon green colors
+            draw.text((pos[0] + dx - 2, pos[1] + dy), text, fill=c1, font=font)
+            draw.text((pos[0] + dx + 2, pos[1] + dy), text, fill=c2, font=font)
+
+        if glitch_active:
+            glitch_main_colors = [(220, 60, 255), (0, 255, 128), (50, 255, 50)]
+            main_color = glitch_main_colors[(quantum * 7) % len(glitch_main_colors)]
+        else:
+            main_color = base_color
+
+        if glow_color:
+            draw.text((pos[0] + dx + 1, pos[1] + dy + 1), text, fill=glow_color, font=font)
+        draw.text((pos[0] + dx, pos[1] + dy), text, fill=main_color, font=font)
+
+    def draw_cyberpunk_panel(self, draw, x0, y0, x1, y1, title=None, title_color=(0, 220, 240), quantum_offset=0):
         BLACK_HUD    = (6, 6, 12)
         NEON_PINK    = (255, 0, 128)
         GLOW_PINK    = (130, 0, 65)
@@ -91,8 +123,7 @@ class DashboardRenderer:
             draw.line([(tab_x_end, y0 + 26), (x1 - 12, y0 + 26)], fill=CYAN_DIM, width=1)
             draw.line([(x1 - 12, y0 + 24), (x1 - 12, y0 + 28)], fill=CYAN_ACCENT, width=2)
 
-            draw.text((x0 + 34, y0 + 8), title, fill=GLOW_PINK, font=self.font_sub)
-            draw.text((x0 + 33, y0 + 7), title, fill=title_color, font=self.font_sub)
+            self.draw_glitch_text(draw, (x0 + 33, y0 + 7), title, self.font_sub, base_color=title_color, glow_color=(0, 110, 130), quantum_offset=quantum_offset)
         else:
             poly_pts = [
                 (x0 + 12, y0),
@@ -219,15 +250,13 @@ class DashboardRenderer:
         # ----------------------------------------------------
         self.draw_cyberpunk_panel(draw, x0, 18, x1, 175)
 
-        # Title (NECTARINES) with subtle neon pink glow
-        draw.text((27, 31), sys_info['hostname'], fill=GLOW_PINK, font=self.font_header)
-        draw.text((29, 31), sys_info['hostname'], fill=GLOW_PINK, font=self.font_header)
-        draw.text((28, 30), sys_info['hostname'], fill=NEON_PINK, font=self.font_header)
+        # Title (NECTARINES) with random cyan/green/purple glitch
+        self.draw_glitch_text(draw, (28, 30), sys_info['hostname'], self.font_header, base_color=CYAN_ACCENT, glow_color=(0, 110, 130), quantum_offset=0)
 
         # Digital Instrument Clock & Date (Right)
         clk_str = time.strftime("%H:%M:%S")
         date_str = time.strftime("%Y-%m-%d")
-        draw.text((305, 28), clk_str, fill=(230, 255, 255), font=self.font_title)
+        draw.text((305, 28), clk_str, fill=CYAN_ACCENT, font=self.font_title)
         draw.text((320, 54), date_str, fill=CYAN_TEXT, font=self.font_micro)
 
         # Divider line with cyan end ticks
@@ -246,17 +275,17 @@ class DashboardRenderer:
         y_info = 82
         for label, val in info_items:
             draw.text((28, y_info), label, fill=CYAN_TEXT, font=self.font_micro)
-            draw.text((125, y_info), val, fill=LIGHT_GRAY, font=self.font_micro)
+            draw.text((125, y_info), val, fill=CYAN_ACCENT, font=self.font_micro)
             y_info += 21
 
         # ----------------------------------------------------
         # SECTION 1: CPU MONITOR (Y: 190 - 510) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 190, x1, 510, title="CPU", title_color=NEON_PINK)
+        self.draw_cyberpunk_panel(draw, x0, 190, x1, 510, title="CPU", title_color=CYAN_TEXT, quantum_offset=5)
 
         # Tightened Metrics Spacing: Large CPU % (Left), Temperature (Right)
         cpu_pct = cpu['utilization']
-        draw.text((28, 226), f"{cpu_pct:.1f}%", fill=(245, 250, 255), font=self.font_large)
+        draw.text((28, 226), f"{cpu_pct:.1f}%", fill=CYAN_ACCENT, font=self.font_large)
 
         cpu_temp_val = f"{cpu_temp}°C" if cpu_temp else "N/A"
         draw.text((305, 222), "TEMP", fill=CYAN_TEXT, font=self.font_small_micro)
@@ -276,50 +305,55 @@ class DashboardRenderer:
         # SECTION 2: GPU MONITOR (Y: 525 - 845) - Cyberpunk HUD Panel
         # ----------------------------------------------------
         gpu_title = "GPU" if gpu else "GPU N/A"
-        self.draw_cyberpunk_panel(draw, x0, 525, x1, 845, title=gpu_title, title_color=NEON_PINK)
+        self.draw_cyberpunk_panel(draw, x0, 525, x1, 845, title=gpu_title, title_color=CYAN_TEXT, quantum_offset=11)
         
         if gpu:
             gpu_pct = gpu['utilization']
-            draw.text((28, 560), f"{gpu_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
-            draw.text((270, 565), f"TEMP: {gpu['temp_c']}°C", fill=NEON_PINK, font=self.font_sub)
+            draw.text((28, 561), f"{gpu_pct:.1f}%", fill=CYAN_ACCENT, font=self.font_large)
+
+            gpu_temp_val = f"{gpu['temp_c']}°C"
+            draw.text((305, 557), "TEMP", fill=CYAN_TEXT, font=self.font_small_micro)
+            draw.text((305, 569), gpu_temp_val, fill=NEON_PINK, font=self.font_title)
+
             vram_str = f"VRAM: {gpu['vram_used_gb']} / {gpu['vram_total_gb']} GB ({gpu['vram_pct']}%)"
-            draw.text((28, 620), vram_str, fill=CYAN_TEXT, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 655, inner_w, 24, gpu['vram_pct'], fg_color=NEON_PINK, bg_color=(30, 10, 20), border_color=CYAN_DIM)
-            self.draw_sparkline(draw, inner_x, 695, inner_w, 130, hist['gpu'], min_v=0.0, max_v=100.0, line_color=NEON_PINK, fill_color=(160, 0, 90, 80), bg_color=(18, 8, 22), border_color=CYAN_DIM, grid=True)
+            draw.text((28, 615), vram_str, fill=CYAN_TEXT, font=self.font_micro)
+            
+            self.draw_progress_bar(draw, inner_x, 637, inner_w, 12, gpu['vram_pct'], fg_color=NEON_PINK, bg_color=(30, 10, 20), border_color=CYAN_DIM)
+            self.draw_sparkline(draw, inner_x, 657, inner_w, 175, hist['gpu'], min_v=0.0, max_v=100.0, line_color=NEON_PINK, fill_color=(160, 0, 90, 80), bg_color=(18, 8, 22), border_color=CYAN_DIM, grid=True, y_labels=True)
         else:
-            draw.text((28, 580), "NVIDIA GPU NOT DETECTED", fill=LIGHT_GRAY, font=self.font_sub)
+            draw.text((28, 580), "NVIDIA GPU NOT DETECTED", fill=CYAN_TEXT, font=self.font_sub)
 
         # ----------------------------------------------------
         # SECTION 3: RAM MEMORY (Y: 860 - 1180) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 860, x1, 1180, title="RAM", title_color=NEON_PINK)
+        self.draw_cyberpunk_panel(draw, x0, 860, x1, 1180, title="RAM", title_color=CYAN_TEXT, quantum_offset=17)
         
         ram_pct = ram['pct']
-        draw.text((28, 895), f"{ram_pct:.1f}%", fill=(245, 250, 255), font=self.font_large)
-        draw.text((240, 905), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=LIGHT_GRAY, font=self.font_sub)
+        draw.text((28, 895), f"{ram_pct:.1f}%", fill=CYAN_ACCENT, font=self.font_large)
+        draw.text((240, 905), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=CYAN_TEXT, font=self.font_sub)
         self.draw_progress_bar(draw, inner_x, 955, inner_w, 14, ram_pct, fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
         self.draw_ram_matrix_grid(draw, inner_x, 980, inner_w, 185, ram_pct)
 
         # ----------------------------------------------------
         # SECTION 4: DISK STORAGE (Y: 1195 - 1500) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 1195, x1, 1500, title="DISK", title_color=NEON_PINK)
+        self.draw_cyberpunk_panel(draw, x0, 1195, x1, 1500, title="DISK", title_color=CYAN_TEXT, quantum_offset=23)
         
         # Disk 1: Root /
         root_info = storage['root']
-        draw.text((28, 1232), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+        draw.text((28, 1232), f"ROOT (/): {root_info['used_gb']} / {root_info['total_gb']} GB ({root_info['pct']}%)", fill=CYAN_TEXT, font=self.font_micro)
         self.draw_progress_bar(draw, inner_x, 1255, inner_w, 18, root_info['pct'], fg_color=(0, 220, 250), bg_color=(12, 20, 30), border_color=CYAN_DIM)
 
         # Disk 2: HDD1 (/mnt/dd)
         hdd1_info = storage.get('hdd1')
         if hdd1_info:
-            draw.text((28, 1285), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+            draw.text((28, 1285), f"HDD1 (/mnt/dd): {hdd1_info['used_tb']} / {hdd1_info['total_tb']} {hdd1_info['unit']} ({hdd1_info['pct']}%)", fill=CYAN_TEXT, font=self.font_micro)
             self.draw_progress_bar(draw, inner_x, 1308, inner_w, 18, hdd1_info['pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
 
         # Disk 3: HDD2 (/mnt/dd2)
         hdd2_info = storage.get('hdd2')
         if hdd2_info:
-            draw.text((28, 1338), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=LIGHT_GRAY, font=self.font_micro)
+            draw.text((28, 1338), f"HDD2 (/mnt/dd2): {hdd2_info['used_tb']} / {hdd2_info['total_tb']} {hdd2_info['unit']} ({hdd2_info['pct']}%)", fill=CYAN_TEXT, font=self.font_micro)
             self.draw_progress_bar(draw, inner_x, 1361, inner_w, 18, hdd2_info['pct'], fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
 
         draw.text((28, 1465), "FILESYSTEMS: EXT4 / BTRFS", fill=CYAN_TEXT, font=self.font_micro)
@@ -327,7 +361,7 @@ class DashboardRenderer:
         # ----------------------------------------------------
         # SECTION 5: NETWORK TRAFFIC (Y: 1515 - 1815) - Cyberpunk HUD Panel
         # ----------------------------------------------------
-        self.draw_cyberpunk_panel(draw, x0, 1515, x1, 1815, title="NETWORK", title_color=NEON_PINK)
+        self.draw_cyberpunk_panel(draw, x0, 1515, x1, 1815, title="NETWORK", title_color=CYAN_TEXT, quantum_offset=29)
         
         rx_str = format_net_rate(net.get('rx_mb_s', 0.0))
         tx_str = format_net_rate(net.get('tx_mb_s', 0.0))
@@ -351,41 +385,11 @@ class DashboardRenderer:
         # ----------------------------------------------------
         self.draw_cyberpunk_panel(draw, x0, 1825, x1, 1885)
 
-        # Programmatic Glitch & Marquee state derived from live timestamp
-        t = time.time()
-        quantum = int(t * 12)
-        glitch_active = (quantum % 29 in (0, 1, 2))
-
-        dx = 0
-        dy = 0
-        if glitch_active:
-            dx = ((quantum * 7) % 9) - 4
-            dy = ((quantum * 3) % 3) - 1
-
         # Subtle Hardware Scanlines
         for sy in range(1831, 1880, 4):
             draw.line([(x0 + 12, sy), (x1 - 12, sy)], fill=(12, 28, 42), width=1)
 
-        # Distortion line burst during glitch
-        if glitch_active:
-            slice_y = 1838 + ((quantum * 11) % 30)
-            draw.line([(x0 + 20, slice_y), (x1 - 20, slice_y)], fill=CYAN_ACCENT, width=1)
-
-        tx0 = x0 + 28 + dx
-        ty0 = 1839 + dy
-
-        # Chromatic Aberration offset (Cyan left / Pink right) during glitch
-        if glitch_active:
-            draw.text((tx0 - 3, ty0), "Torkzz", fill=CYAN_ACCENT, font=self.font_title)
-            draw.text((tx0 + 3, ty0), "Torkzz", fill=NEON_PINK, font=self.font_title)
-
-        # Main Identity
-        main_color = NEON_PINK if (glitch_active and quantum % 2 == 0) else (245, 250, 255)
-        draw.text((tx0 + 1, ty0 + 1), "Torkzz", fill=GLOW_PINK, font=self.font_title)
-        draw.text((tx0, ty0), "Torkzz", fill=main_color, font=self.font_title)
-
-        # Hardware Status Tagline
-        tag_color = NEON_PINK if glitch_active else CYAN_TEXT
-        draw.text((x0 + 165, 1845), "// SYSTEM ONLINE", fill=tag_color, font=self.font_sub)
+        # Main Torkzz Identity with random glitch
+        self.draw_glitch_text(draw, (x0 + 28, 1839), "Torkzz", self.font_title, base_color=CYAN_TEXT, glow_color=(0, 110, 130), quantum_offset=33)
 
         return img
