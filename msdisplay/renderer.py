@@ -49,8 +49,8 @@ class DashboardRenderer:
 
     def draw_cyberpunk_panel(self, draw, x0, y0, x1, y1, title=None, title_color=(255, 0, 128)):
         BLACK_HUD    = (6, 6, 12)
-        NEON_MAGENTA = (255, 0, 128)
-        GLOW_MAGENTA = (130, 0, 65)
+        NEON_PINK    = (255, 0, 128)
+        GLOW_PINK    = (130, 0, 65)
         CYAN_ACCENT  = (0, 255, 240)
         CYAN_DIM     = (0, 140, 160)
 
@@ -70,7 +70,7 @@ class DashboardRenderer:
                 (x0 + 12, y1),
                 (x0, y1 - 12)
             ]
-            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_MAGENTA)
+            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_PINK)
 
             glow_pts = [
                 (x0 + 1, y0 + 27),
@@ -85,13 +85,13 @@ class DashboardRenderer:
                 (x0 + 13, y1 - 1),
                 (x0 + 1, y1 - 13)
             ]
-            draw.polygon(glow_pts, outline=GLOW_MAGENTA)
+            draw.polygon(glow_pts, outline=GLOW_PINK)
 
             draw.line([(x0 + 24, y0 + 5), (tab_x_end - 10, y0 + 5)], fill=CYAN_ACCENT, width=2)
             draw.line([(tab_x_end, y0 + 26), (x1 - 12, y0 + 26)], fill=CYAN_DIM, width=1)
             draw.line([(x1 - 12, y0 + 24), (x1 - 12, y0 + 28)], fill=CYAN_ACCENT, width=2)
 
-            draw.text((x0 + 34, y0 + 8), title, fill=GLOW_MAGENTA, font=self.font_sub)
+            draw.text((x0 + 34, y0 + 8), title, fill=GLOW_PINK, font=self.font_sub)
             draw.text((x0 + 33, y0 + 7), title, fill=title_color, font=self.font_sub)
         else:
             poly_pts = [
@@ -104,7 +104,7 @@ class DashboardRenderer:
                 (x0, y1 - 12),
                 (x0, y0 + 12)
             ]
-            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_MAGENTA)
+            draw.polygon(poly_pts, fill=BLACK_HUD, outline=NEON_PINK)
 
             glow_pts = [
                 (x0 + 13, y0 + 1),
@@ -116,7 +116,7 @@ class DashboardRenderer:
                 (x0 + 1, y1 - 13),
                 (x0 + 1, y0 + 13)
             ]
-            draw.polygon(glow_pts, outline=GLOW_MAGENTA)
+            draw.polygon(glow_pts, outline=GLOW_PINK)
 
         draw.line([(x0 + 18, y1 + 1), (x0 + 45, y1 + 1)], fill=CYAN_ACCENT, width=2)
         draw.line([(x1 - 45, y1 + 1), (x1 - 18, y1 + 1)], fill=CYAN_ACCENT, width=2)
@@ -161,16 +161,38 @@ class DashboardRenderer:
         for i in range(len(pts) - 1):
             draw.line([pts[i], pts[i+1]], fill=line_color, width=2)
 
+    def draw_ram_matrix_grid(self, draw, x, y, w, h, pct):
+        draw.rectangle([x, y, x + w - 1, y + h - 1], fill=(12, 22, 22), outline=(0, 140, 160), width=1)
+        cols, rows = 20, 5
+        dot_radius = 4
+        padding_x = (w - (cols * 18)) // 2
+        padding_y = (h - (rows * 16)) // 2
+
+        active_dots = int(round(pct))
+        dot_idx = 0
+
+        for r in range(rows):
+            for c in range(cols):
+                dot_idx += 1
+                cx = x + padding_x + c * 18 + 9
+                cy = y + padding_y + r * 16 + 8
+
+                if dot_idx <= active_dots:
+                    draw.ellipse([cx - dot_radius - 1, cy - dot_radius - 1, cx + dot_radius + 1, cy + dot_radius + 1], fill=(0, 130, 110))
+                    draw.ellipse([cx - dot_radius, cy - dot_radius, cx + dot_radius, cy + dot_radius], fill=(0, 255, 210))
+                else:
+                    draw.ellipse([cx - 3, cy - 3, cx + 3, cy + 3], fill=(18, 35, 35))
+
     def render(self, metrics_data):
-        # All Dark Cyberpunk Background
+        # Dark Cyberpunk Background
         img = Image.new('RGB', (self.width, self.height), (6, 6, 12))
         draw = ImageDraw.Draw(img)
 
-        # Outer Frame Accent Lines
+        # Outer Frame Accent Lines (Neon Pink & Cyan)
         CYAN_ACCENT = (0, 255, 240)
         CYAN_TEXT   = (0, 220, 240)
         CYAN_DIM    = (0, 140, 160)
-        LIGHT_GRAY  = (220, 225, 230)
+        LIGHT_GRAY  = (245, 250, 255)
         NEON_PINK   = (255, 0, 128)
         GLOW_PINK   = (130, 0, 65)
 
@@ -197,7 +219,7 @@ class DashboardRenderer:
         # ----------------------------------------------------
         self.draw_cyberpunk_panel(draw, x0, 18, x1, 175)
 
-        # Title (NECTARINES) with subtle neon glow
+        # Title (NECTARINES) with subtle neon pink glow
         draw.text((27, 31), sys_info['hostname'], fill=GLOW_PINK, font=self.font_header)
         draw.text((29, 31), sys_info['hostname'], fill=GLOW_PINK, font=self.font_header)
         draw.text((28, 30), sys_info['hostname'], fill=NEON_PINK, font=self.font_header)
@@ -247,7 +269,7 @@ class DashboardRenderer:
         # Thin Usage Progress Bar (height 12px)
         self.draw_progress_bar(draw, inner_x, 298, inner_w, 12, cpu_pct, fg_color=(0, 220, 250), bg_color=(12, 22, 32), border_color=CYAN_DIM)
 
-        # Larger CPU History Graph (Live Magenta line + Grid + Labels + Padding fix)
+        # Larger CPU History Graph (Neon Pink line + Grid + Labels)
         self.draw_sparkline(draw, inner_x, 318, inner_w, 180, hist['cpu'], min_v=0.0, max_v=100.0, line_color=NEON_PINK, fill_color=(160, 0, 80, 70), bg_color=(12, 18, 28), border_color=CYAN_DIM, grid=True, y_labels=True)
 
         # ----------------------------------------------------
@@ -262,8 +284,8 @@ class DashboardRenderer:
             draw.text((270, 565), f"TEMP: {gpu['temp_c']}°C", fill=NEON_PINK, font=self.font_sub)
             vram_str = f"VRAM: {gpu['vram_used_gb']} / {gpu['vram_total_gb']} GB ({gpu['vram_pct']}%)"
             draw.text((28, 620), vram_str, fill=CYAN_TEXT, font=self.font_micro)
-            self.draw_progress_bar(draw, inner_x, 655, inner_w, 24, gpu['vram_pct'], fg_color=(255, 0, 128), bg_color=(30, 10, 20), border_color=CYAN_DIM)
-            self.draw_sparkline(draw, inner_x, 695, inner_w, 130, hist['gpu'], min_v=0.0, max_v=100.0, line_color=(255, 0, 128), fill_color=(140, 0, 70, 80), bg_color=(18, 12, 22), border_color=CYAN_DIM, grid=True)
+            self.draw_progress_bar(draw, inner_x, 655, inner_w, 24, gpu['vram_pct'], fg_color=NEON_PINK, bg_color=(30, 10, 20), border_color=CYAN_DIM)
+            self.draw_sparkline(draw, inner_x, 695, inner_w, 130, hist['gpu'], min_v=0.0, max_v=100.0, line_color=NEON_PINK, fill_color=(160, 0, 90, 80), bg_color=(18, 8, 22), border_color=CYAN_DIM, grid=True)
         else:
             draw.text((28, 580), "NVIDIA GPU NOT DETECTED", fill=LIGHT_GRAY, font=self.font_sub)
 
@@ -273,10 +295,10 @@ class DashboardRenderer:
         self.draw_cyberpunk_panel(draw, x0, 860, x1, 1180, title="RAM", title_color=NEON_PINK)
         
         ram_pct = ram['pct']
-        draw.text((28, 895), f"{ram_pct:.1f}%", fill=(240, 250, 255), font=self.font_val)
+        draw.text((28, 895), f"{ram_pct:.1f}%", fill=(245, 250, 255), font=self.font_large)
         draw.text((240, 905), f"{ram['used_gb']} / {ram['total_gb']} GB", fill=LIGHT_GRAY, font=self.font_sub)
-        self.draw_progress_bar(draw, inner_x, 955, inner_w, 24, ram_pct, fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
-        self.draw_sparkline(draw, inner_x, 995, inner_w, 165, hist['ram'], min_v=0.0, max_v=100.0, line_color=(0, 255, 210), fill_color=(0, 130, 110, 80), bg_color=(12, 22, 22), border_color=CYAN_DIM, grid=True)
+        self.draw_progress_bar(draw, inner_x, 955, inner_w, 14, ram_pct, fg_color=(0, 240, 200), bg_color=(10, 25, 22), border_color=CYAN_DIM)
+        self.draw_ram_matrix_grid(draw, inner_x, 980, inner_w, 185, ram_pct)
 
         # ----------------------------------------------------
         # SECTION 4: DISK STORAGE (Y: 1195 - 1500) - Cyberpunk HUD Panel
@@ -310,18 +332,18 @@ class DashboardRenderer:
         rx_str = format_net_rate(net.get('rx_mb_s', 0.0))
         tx_str = format_net_rate(net.get('tx_mb_s', 0.0))
         
-        # Single dual sparkline graph box overlay (Download = Cyan/Blue, Upload = Bright Pink/Red)
-        draw.text((28, 1550), f"▼ {rx_str}", fill=CYAN_ACCENT, font=self.font_sub)
-        draw.text((250, 1550), f"▲ {tx_str}", fill=NEON_PINK, font=self.font_sub)
+        # Single dual sparkline graph box overlay (Download = Electric Cyan, Upload = Neon Pink)
+        draw.text((28, 1550), f"↓ {rx_str}", fill=CYAN_ACCENT, font=self.font_sub)
+        draw.text((250, 1550), f"↑ {tx_str}", fill=NEON_PINK, font=self.font_sub)
 
         graph_y, graph_h = 1585, 215
         max_rx_graph = max(5.0, max(hist['net_rx'] or [1.0]))
         max_tx_graph = max(5.0, max(hist['net_tx'] or [1.0]))
         max_net_graph = max(max_rx_graph, max_tx_graph)
 
-        # Base box & Download graph (Cyan / Blue)
+        # Base box & Download graph (Electric Cyan)
         self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_rx'], min_v=0.0, max_v=max_net_graph, line_color=CYAN_ACCENT, fill_color=(0, 150, 220, 80), bg_color=(12, 18, 28), border_color=CYAN_DIM, grid=True)
-        # Overlay Upload graph (Bright Pink) into same box
+        # Overlay Upload graph (Neon Pink) into same box
         self.draw_sparkline(draw, inner_x, graph_y, inner_w, graph_h, hist['net_tx'], min_v=0.0, max_v=max_net_graph, line_color=NEON_PINK, fill_color=(200, 0, 100, 60), bg_color=None, border_color=None)
 
         # ----------------------------------------------------
@@ -352,7 +374,7 @@ class DashboardRenderer:
         tx0 = x0 + 28 + dx
         ty0 = 1839 + dy
 
-        # Chromatic Aberration offset (Cyan left / Magenta right) during glitch
+        # Chromatic Aberration offset (Cyan left / Pink right) during glitch
         if glitch_active:
             draw.text((tx0 - 3, ty0), "Torkzz", fill=CYAN_ACCENT, font=self.font_title)
             draw.text((tx0 + 3, ty0), "Torkzz", fill=NEON_PINK, font=self.font_title)
