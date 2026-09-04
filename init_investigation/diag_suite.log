@@ -1,0 +1,36 @@
+[22:08:12.08S] === DIAGNOSTIC SUITE START ===
+[22:08:12.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 0 ms ---
+[22:08:12.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:12.08S] TX Result: 10 bytes written.
+[22:08:15.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:15.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 10 ms ---
+[22:08:15.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:15.08S] TX Result: 10 bytes written.
+[22:08:18.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:18.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 100 ms ---
+[22:08:18.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:18.08S] TX Result: 10 bytes written.
+[22:08:21.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:21.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 500 ms ---
+[22:08:22.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:22.08S] TX Result: 10 bytes written.
+[22:08:25.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:25.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 1000 ms ---
+[22:08:26.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:26.08S] TX Result: 10 bytes written.
+[22:08:29.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:29.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 2000 ms ---
+[22:08:31.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:31.08S] TX Result: 10 bytes written.
+[22:08:34.08S] Total RX Length: 0 bytes. Payload: <NO DATA>
+[22:08:34.08S] 
+--- TESTING TIMING DELAY AFTER OPEN/INIT: 5000 ms ---
+[22:08:39.08S] TX Handshake: 41 48 00 02 00 80 00 00 4d 49
+[22:08:39.08S] TX Result: 10 bytes written.
+[22:08:42.08S] Total RX Length: 0 bytes. Payload: <NO DATA>

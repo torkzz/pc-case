@@ -1,0 +1,29 @@
+=== RAW ENDPOINT OBSERVATION LOG ===
+
+--- Sequence A ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence B ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence C ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence D ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence E ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence F ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence G ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence H ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+
+--- Sequence I ---
+usbmon error: [Errno 13] Permission denied: '/dev/usbmon1'
+

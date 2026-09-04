@@ -1,0 +1,266 @@
+[
+  {
+    "seq_id": "A",
+    "description": "OPEN -> WAIT 100ms -> HANDSHAKE 0x0080",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.1024,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 392192
+  },
+  {
+    "seq_id": "B",
+    "description": "OPEN -> WAIT 10ms -> HANDSHAKE",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0122,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 369664
+  },
+  {
+    "seq_id": "C",
+    "description": "OPEN -> WAIT 100ms -> HANDSHAKE",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.1023,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 391168
+  },
+  {
+    "seq_id": "D",
+    "description": "OPEN -> WAIT 500ms -> HANDSHAKE",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.503,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 489472
+  },
+  {
+    "seq_id": "E",
+    "description": "OPEN -> DTR ON -> RTS ON -> WAIT 50ms -> HANDSHAKE",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0724,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 384000
+  },
+  {
+    "seq_id": "F",
+    "description": "OPEN -> DTR OFF -> RTS OFF -> WAIT 50ms -> HANDSHAKE",
+    "tx_count": 1,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0754,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 386048
+  },
+  {
+    "seq_id": "G",
+    "description": "HANDSHAKE -> HARDWARE_INFO",
+    "tx_count": 2,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0023,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.6033,
+        "cmd": "HARDWARE_INFO",
+        "frame_hex": "41 48 00 02 00 72 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 754688
+  },
+  {
+    "seq_id": "H",
+    "description": "HANDSHAKE -> CHANGE_STATUS 0x0071 -> HANDSHAKE",
+    "tx_count": 3,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.003,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.604,
+        "cmd": "CHANGE_STATUS",
+        "frame_hex": "41 48 00 03 00 71 01 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 3.2057,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 1143808
+  },
+  {
+    "seq_id": "I",
+    "description": "HANDSHAKE -> RESTART 0x0070 -> WAIT 1s -> HANDSHAKE",
+    "tx_count": 3,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0022,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.6032,
+        "cmd": "RESTART",
+        "frame_hex": "41 48 00 02 00 70 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 4.1042,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 1360896
+  },
+  {
+    "seq_id": "J",
+    "description": "CHANGE_STATUS -> HANDSHAKE -> HARDWARE_INFO",
+    "tx_count": 3,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0023,
+        "cmd": "CHANGE_STATUS",
+        "frame_hex": "41 48 00 03 00 71 01 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.6039,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 3.2056,
+        "cmd": "HARDWARE_INFO",
+        "frame_hex": "41 48 00 02 00 72 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 1143808
+  },
+  {
+    "seq_id": "K",
+    "description": "RESTART -> WAIT 100ms -> HANDSHAKE -> HARDWARE_INFO",
+    "tx_count": 3,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.0026,
+        "cmd": "RESTART",
+        "frame_hex": "41 48 00 02 00 70 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.6043,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 3.206,
+        "cmd": "HARDWARE_INFO",
+        "frame_hex": "41 48 00 02 00 72 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 1143808
+  },
+  {
+    "seq_id": "L",
+    "description": "HARDWARE_INFO -> HANDSHAKE",
+    "tx_count": 2,
+    "rx_bytes_total": 0,
+    "rx_hex": "",
+    "tx_events": [
+      {
+        "time_offset_s": 0.003,
+        "cmd": "HARDWARE_INFO",
+        "frame_hex": "41 48 00 02 00 72 00 00 4d 49",
+        "bytes_written": 10
+      },
+      {
+        "time_offset_s": 1.6041,
+        "cmd": "HANDSHAKE",
+        "frame_hex": "41 48 00 02 00 80 00 00 4d 49",
+        "bytes_written": 10
+      }
+    ],
+    "rx_events": [],
+    "usbmon_raw_len": 754688
+  }
+]
