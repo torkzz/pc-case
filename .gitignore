@@ -4,3 +4,14 @@ __pycache__/
 *.ppm
 dashboard_tmp/
 .DS_Store
+init_investigation/
+*.png
+*.jpeg
+*.jpg
+*.log
+*.bin
+*.exe
+*.dll
+*.so
+vmax_bundle/
+vmax_extracted/

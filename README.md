@@ -38,15 +38,21 @@ Copyright (c) 2026. All Rights Reserved. See [LICENSE](LICENSE) for terms.
 
 ---
 
-## 🚀 Quick Setup (Automated)
+## 🚀 Quick Setup & Execution
 
 Clone the repository and execute `setup.sh`:
 
 ```bash
 git clone git@github.com:torkzz/pc-case.git pc-case-lcd
 cd pc-case-lcd
-chmod +x setup.sh
+chmod +x setup.sh start.sh
 ./setup.sh
+```
+
+To quickly start/restart the service at any time:
+
+```bash
+./start.sh
 ```
 
 `setup.sh` automatically:
@@ -64,6 +70,7 @@ pc-case-lcd/
 ├── msdisplay_system_stats.py   # Systemd entrypoint & CLI executable daemon
 ├── msdisplay-stats.service     # Systemd boot service definition
 ├── setup.sh                    # Automated installer & environment provisioner
+├── start.sh                    # Service launcher / restarter
 └── msdisplay/
     ├── dashboard.py            # Main refresh loop & USB auto-reconnect coordinator
     ├── metrics.py              # Real-time Linux telemetry collector (/proc & /sys)
