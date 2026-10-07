@@ -8,18 +8,18 @@ from msdisplay.jpeg import prepare_image, encode_jpeg, create_solid_color_jpeg, 
 class TestMSDisplayDriverOffline(unittest.TestCase):
 
     def test_header_packing(self):
-        hdr = pack_msdisplay_header(460, 1920, 0, 1)
+        hdr = pack_msdisplay_header(480, 1920, 480, 1)
         self.assertEqual(len(hdr), 12)
         magic, w, h, stride, flag = struct.unpack("<IHHHH", hdr)
         self.assertEqual(magic, 0x0008100A)
-        self.assertEqual(w, 460)
+        self.assertEqual(w, 480)
         self.assertEqual(h, 1920)
-        self.assertEqual(stride, 0)
+        self.assertEqual(stride, 480)
         self.assertEqual(flag, 1)
 
     def test_header_hex_signature(self):
-        hdr = pack_msdisplay_header(460, 1920, 0, 1)
-        self.assertEqual(hdr.hex(), "0a100800cc01800700000100")
+        hdr = pack_msdisplay_header(480, 1920, 480, 1)
+        self.assertEqual(hdr.hex(), "0a100800e0018007e0010100")
 
     def test_payload_building(self):
         dummy_jpeg = b"\xff\xd8\xff\xe0\x00\x10JFIF"

@@ -1,6 +1,7 @@
 import time
 from .usb import MSDisplayUSBDevice
 from .protocol import build_frame_payload, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_STRIDE, DEFAULT_FLAG
+from .jpeg import prepare_image, encode_jpeg, create_solid_color_jpeg, create_test_grid_jpeg
 
 class MSDisplayController:
     def __init__(self, device=None, width=DEFAULT_WIDTH, height=DEFAULT_HEIGHT):
